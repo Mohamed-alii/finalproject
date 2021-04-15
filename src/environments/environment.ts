@@ -5,6 +5,15 @@
 export const environment = {
   production: false
 };
+export const firebaseConfig = {
+  apiKey: "AIzaSyBNJg3AA8dwehDpWcM2-ECO8PxatNGL3uo",
+  authDomain: "kitchen-jungle.firebaseapp.com",
+  projectId: "kitchen-jungle",
+  storageBucket: "kitchen-jungle.appspot.com",
+  messagingSenderId: "89307112077",
+  appId: "1:89307112077:web:d4bb593ac5aae682cdb8c4",
+  measurementId: "G-KCVN6ZB4QQ"
+};
 
 /*
  * For easier debugging in development mode, you can import the following file

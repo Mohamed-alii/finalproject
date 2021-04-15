@@ -25,7 +25,9 @@
     "bootstrap": "^4.6.0",
     "firebase": "^8.4.1",
     "jquery": "^3.6.0",
+    "ngp-image-picker": "^1.4.0",
     "popper.js": "^1.16.1",
+    "resize-observer": "^1.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"

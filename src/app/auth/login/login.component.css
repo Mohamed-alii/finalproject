@@ -1,0 +1,63 @@
+
+.login-form{
+    background-image: url('/assets/reg-bg.png');
+    background-size: cover;
+    height:120%;
+    padding: 6rem;
+}
+.row{
+    width:80%;
+    height:89%;
+    background-color: #f8ede3;
+    box-shadow: 7px 7px 20px #464f41;
+}
+.img-regist{
+    width: 55%;
+    height:100%;
+}
+.signup-form{
+    width: 45%;
+    height: 24rem;
+}
+input{
+    border-radius: 20px;
+    border:1px solid #184d47;
+    border-width: 0px 0px 2px;
+    background-color: transparent;
+    box-shadow: 2px 2px 5px #184d47;
+    margin-bottom: 1.5rem;
+}
+input:focus{
+    background-color:  rgba(189, 210, 182, .3);
+}
+input::placeholder{
+    text-align: center;
+    font-size: .8rem;
+    font-weight: 800;
+    font-family: 'Petit Formal Script', cursive;
+}
+button.log-btn{
+    background-color:  rgb(189, 210, 182);
+    border-radius: 20px;
+    width: 50%;
+    border:1px solid transparent ;
+    display: block;
+    margin: auto;
+}
+button.log-btn:hover{
+    background-color: transparent;
+    box-shadow: 2px 2px 5px #184d47;
+    color:#464f41;
+}
+.validat-txt{
+    border-radius: 20px;
+    background-color: transparent;
+}
+h2{
+    font-family: 'Petit Formal Script', cursive;
+    font-weight: 900;
+    padding-bottom: 0px;
+}
+p{
+    font-family: 'Petit Formal Script', cursive;
+}

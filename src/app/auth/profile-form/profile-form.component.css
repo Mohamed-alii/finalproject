@@ -1,0 +1,80 @@
+
+.profile-form{
+    background-image: url('/assets/bgProfile.jpeg');
+    background-size: cover;
+    width: 100%;
+    height:138%;
+    position: relative;
+}
+.formContainer{
+    background-color: rgba(70, 79, 65, .9);
+    width:68%;
+    margin-top: 13rem;
+    padding: 5rem 0rem;
+}
+input{
+    background-color: transparent!important;
+    border:1px solid #f2f2f2;
+    border-width: 0px 0px 2px ;
+    box-shadow: 1px 1px 3px #f2f2f2;
+    margin-bottom: 1.5rem;
+    height:2.3rem;
+    border-bottom-left-radius: 18px;
+    border-top-right-radius: 18px;
+}
+input.inpTxt{
+    width: 23%;
+    
+}
+input.inpNum{
+    width: 10%;
+}
+input:focus{
+    background-color:  rgba(189, 210, 182, .3);
+    border-width: 2px 0px 0px ;
+    outline: transparent !important;
+}
+button.pro-btn{
+    background-color: #81b214;
+    border-radius: 4px;
+    width: 15%;
+    border:1px solid transparent ;
+    display: block;
+    margin: auto;
+    border-bottom-left-radius: 18px;
+    border-top-right-radius: 18px;
+    font-family: 'Petit Formal Script', cursive;
+    color: #000000;
+    font-weight: 600;
+}
+button.pro-btn:hover{
+    background-color: transparent;
+    box-shadow: 2px 2px 5px #81b214;
+    color:#f2f2f2;
+}
+h2{
+    font-family: 'Petit Formal Script', cursive;
+    font-size:2.5rem;
+    padding-bottom: 1rem;
+    color: #f2f2f2;
+    font-weight: 900;
+}
+p{
+    font-family: 'Petit Formal Script', cursive;
+    color: #f2f2f2;
+    font-weight: 600;
+}
+input::placeholder{
+    text-align: center;
+    font-size: .8rem;
+    color: #f2f2f2;
+    font-weight: 700;
+    font-family: 'Petit Formal Script', cursive;
+}
+.profile-img{
+    width: 7rem;
+    height:7rem;
+    background-color: #f2f2f2;
+    border-radius: 50%;
+    margin-bottom: 2rem !important;
+}

@@ -5,15 +5,20 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthModule } from './auth/auth.module';
 
+
+// import { NgpImagePickerModule } from 'ngp-image-picker';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    
   ],
   imports: [
-    BrowserModule,
+    BrowserModule,  
     AppRoutingModule,
     BrowserAnimationsModule,
     AuthModule
+
+    // NgpImagePickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

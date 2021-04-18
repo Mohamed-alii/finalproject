@@ -6,13 +6,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthModule } from './auth/auth.module';
 import { StoreModule } from '@ngrx/store';
 import { userReducer } from './store/user.reducer';
+import { NavbarComponent } from './navbar/navbar.component';
+import{ SharedModule} from './shared/shared.module';
+import{MainModule} from './main/main.module';
+import {FormsModule} from '@angular/forms'
 
 
-// import { NgpImagePickerModule } from 'ngp-image-picker';
 @NgModule({
   declarations: [
     AppComponent,
-    
+    NavbarComponent 
   ],
   imports: [
     BrowserModule,  
@@ -20,9 +23,11 @@ import { userReducer } from './store/user.reducer';
     BrowserAnimationsModule,
     AuthModule,
     StoreModule.forRoot({ user: userReducer }),
-    // NgpImagePickerModule
+    SharedModule,
+    MainModule,
+    FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

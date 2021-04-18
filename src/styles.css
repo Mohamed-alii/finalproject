@@ -1,7 +1,51 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+body{
+    background-color: #fff;
+    font-family: 'Indie Flower', cursive;
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+:root {
+    --base: #40AA54;
+    --p-padding : 1.4rem;
+    --p-size:1.4rem ;
+}
+.sec-padding{
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+hr{
+    height: 2px;
+    width: 130px;
+    background:var(--base);
+}
+.gen-btn{
+        padding: 1rem !important;
+        background-color: var(--base);
+        border-color: var(--base);
+        border-radius: 7px;
+        cursor: pointer;
+        width: 200px;
+        color: #FFFFFF;
+        outline: none;
+        border: none;
+        transition: 0.3s linear;
+        text-decoration: none;
+}
+.input-style{
+    display: inline-block;
+    text-align: center;
+    border-radius: 10px;
+    background: #eee;
+    padding: 1rem ;
+    outline: none;
+    min-width: 241.5px;
+    border: none;
+    color: #222;
+    transition: 0.3s linear;
+}

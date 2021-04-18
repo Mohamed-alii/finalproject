@@ -1,0 +1,102 @@
+<!-- header section -->
+<header>
+  <div class="container-fluid">
+    <video src="/assets/images/hbg.mp4" autoplay muted loop></video>
+    <div class="overlay">
+      <div class="container d-flex flex-column  text-center">
+        <h1 class="w-100">welcome to kitchen jungle</h1>
+        <p class="w-100">your way to healthy life style</p>
+        <a class="gen-btn"> learn more</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- our Goals sec -->
+
+<section class="goals-sec sec-padding">
+  <div class="container d-flex flex-lg-row flex-column justify-content-lg-between align-items-center">
+    <div class="goals-sec_img w-50 w-md-100 img-sec">
+        <img src="/assets/images/goals.jpg" alt="goals-image" class="img-fluid">
+    </div>
+    <div class="goals-sec_content w-lg-50 p-5">
+      <h2 class="text-lg-left pb-4">OUR Goals</h2>
+      <hr class="m-3">
+      <ul class="text-left">
+        <li class="p-2">- Get active and try to be a healthy weight.</li>
+        <li class="p-2">- Cut down on saturated fat and sugar.</li>
+        <li class="p-2">- Base your meals on starchy foods.</li>
+        <li class="p-2">- Drink plenty of water.</li>
+        <li class="p-2">- Help you to make your own life syle routine</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- about us section-->
+
+<section class="about-us sec-padding">
+  <div class="container">
+    <h5>what we do ?</h5>
+    <h2 class="about-us-head">
+      the story About us
+    </h2>
+    <hr>
+    <p>Kitchen Jungle is truly my own little passion project, gaining more and more traction each day. I hope you enjoy
+      browsing my site and all of the unique content I have to offer. Take a look around; perhaps you’ll discover what
+      fuels you as well. Read on and enjoy!</p>
+  </div>
+</section>
+
+<!-- weight calculator -->
+<section class="weightcalc sec-padding ">
+  <div class="container d-flex flex-column">
+    <div class="weightcalc-head mb-5">
+      <h2 class="text-center mb-5"> calculate your Bmi value</h2>
+      <hr class="m-auto">
+    </div>
+    <div class="weightcalc-method">
+      <form [formGroup]="userdata" (ngSubmit)="bmimethod()" class="">
+        <div class="row align-items-center justify-content-between justify-content-md-center mb-4">
+          <label for="userweight" class="col-md-3 col-4 ">Weight in kg </label>
+          <input type="number"  name="userweight" formControlName="userweight"  class="form-control input-style col-6 m-0" placeholder="enter your weight">
+        </div>
+        <div class="row align-items-center justify-content-between justify-content-md-center mb-4">
+          <label for="userheight" class="col-md-3 col-4 ">Height In CM </label>
+          <input type="number" name="userheight" formControlName="userheight"  class="form-control input-style col-6 m-0 "  placeholder="enter your height">  
+        </div>
+        <div class=" row  align-items-center justify-content-between justify-content-md-center mb-4">
+          <label for="userheight" class="col-md-3 col-4   "> Select Gender </label>
+          <select class="input-style col-6 m-0 " aria-label="Default select example">
+            <option  selected disabled >Select Gender</option>
+            <option value="male">male</option>
+            <option value="female">female</option>
+          </select>
+        </div>  
+        <div class="text-center">
+          <input type="submit" class=" gen-btn"value="submit">
+        </div>
+       
+      </form>
+    </div>
+    <div class="text-center">
+      <h3 class="p-5 h1">{{bmimessage}}</h3>
+    </div>
+  </div>
+</section>
+
+<!-- subscribe sec -->
+
+<section class="subscribe sec-padding">
+  <div class="container">
+    <div class="subsribe-content m-auto w-100 text-center">
+      <h2 class=" mb-5">Subscribe now</h2>
+      <hr class="m-auto">
+      <p class=" mt-4">Stay updated with our last recipes and Diets types</p>
+      <form class="row mt-5 justify-content-center">
+        <input type="email" class="col-8 col-md-6 email-field text-left" placeholder="Type your Email" required>
+        <button class="gen-btn col-4 col-md-2 subs-btn">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>

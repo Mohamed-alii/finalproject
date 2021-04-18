@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl ,Validators } from '@angular/forms';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-registration',
@@ -7,25 +8,34 @@ import { FormGroup, FormControl ,Validators } from '@angular/forms';
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
+  firebaseError
 
 registForm : FormGroup;
 
-  constructor() {  
+  constructor(private auth : AuthService) {  
     this.registForm = new FormGroup({
       Email : new FormControl('', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]),
-      Pass : new FormControl('', [Validators.required , Validators.minLength(8)]),
+      Pass : new FormControl('', [Validators.required , Validators.minLength(6)]),
       confirmPass : new FormControl('', [Validators.required])
     });
-
-   }
-get registControls(){
-  return this.registForm.controls;
-}
+  }
+  get registControls(){
+    return this.registForm.controls;
+  }
   ngOnInit(): void {
   }
-  submitRegisterForm(){
-    console.log(this.registForm.value);
+  submitRegisterForm() {
+    const email = this.registForm.get("Email").value
+    const password = this.registForm.get("Pass").value
+    console.log(email, password)
+    this.auth.signUp(email, password).catch(error => {
+      this.firebaseError = error.message
+      //console.log(this.errorMessage)
+    })
+
   }
+
+
 }
 
 // function MustMatch(controlName: string, matchingControlName: string) {

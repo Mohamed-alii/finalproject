@@ -1,16 +1,16 @@
 <div class="row py-5 color w-100 no-gutters">
-    <div class="container">
+    <div class="container-fluid">
         <div class="col-md-12 ">
             <!-- Profile widget -->
             <div class="bg-white shadow rounded overflow-hidden">
                 <div class="px-4 pt-0 pb-4 cover">
                     <div class="media align-items-end profile-head">
                         <div class="profile mr-3">
-                            <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
+                            <img src="{{user.photo}}"
                                 alt="..." width="130" class="rounded mb-2 img-thumbnail" />
                         </div>
                         <div class="media-body mb-5 text-white">
-                            <h4 class="mt-0 mb-0">Mark Williams</h4>
+                            <h4 class="mt-0 mb-0">{{user.fName}} {{user.lName}}</h4>
                             <p class="small mb-4">
                                 <i class="fas fa-map-marker-alt mr-2"></i>New York
                             </p>
@@ -20,16 +20,16 @@
                 <div class="bg-light p-4 d-flex justify-content-end text-center">
                     <ul class="list-inline mb-0">
                         <li class="list-inline-item">
-                            <h3 class="font-weight-bold mb-0 d-block">215</h3>
-                            <h4>weight</h4>
+                            <h3 class="font-weight-bold mb-0 d-block">{{user.age}}</h3>
+                            <h3>Age</h3>
                         </li>
                         <li class="list-inline-item">
-                            <h3 class="font-weight-bold mb-0 d-block">745</h3>
-                            <h4>weight</h4>
+                            <h3 class="font-weight-bold mb-0 d-block">{{user.weight}}</h3>
+                            <h3>weight</h3>
                         </li>
                         <li class="list-inline-item">
-                            <h3 class="font-weight-bold mb-0 d-block">340</h3>
-                            <h4>weight</h4>
+                            <h3 class="font-weight-bold mb-0 d-block">{{user.height}}</h3>
+                            <h3>Height</h3>
                         </li>
                     </ul>
                 </div>

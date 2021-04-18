@@ -1,15 +1,17 @@
 
 <section class="profile-form d-flex  justify-content-center">
-    <form [formGroup]="profileForm" (ngSubmit)="sendProfileData()" class="formContainer">
+    <form [formGroup]="profileForm" (ngSubmit)="sendProfileData()" class="formContainer  d-flex flex-column   justify-content-center">
 
         <div class="pro py-2">
             <h2 class="text-center">Kichen Jungle</h2>
             <p class="text-center">Fill Your Data Please And You Will Enjoy With Us Here In Your Kichen...</p>
           </div>
               
-              <div class="mb-3 mx-auto form-group">
+              <div class="mb-3 mx-auto form-group  ">
+             
               <ngp-image-picker class="m-auto" [_config]="config2" ($imageChanged)="onImageChange($event)"></ngp-image-picker>
-              </div>
+          
+            </div>
 
               <div class="mb-3 form-group d-flex justify-content-center">
                 <input type="text" placeholder="First Name" formControlName="firstName" class="form-control mr-4 inpTxt"  id="name" aria-describedby="emailHelp">

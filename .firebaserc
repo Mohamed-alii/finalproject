@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "kitchen-jungle": {
+      "hosting": {
+        "kitchen-jungle": [
+          "kitchen-jungle"
+        ]
+      }
+    }
+  }
+}

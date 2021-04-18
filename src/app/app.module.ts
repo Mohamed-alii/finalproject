@@ -4,6 +4,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthModule } from './auth/auth.module';
+import { StoreModule } from '@ngrx/store';
+import { userReducer } from './store/user.reducer';
 
 
 // import { NgpImagePickerModule } from 'ngp-image-picker';
@@ -16,8 +18,8 @@ import { AuthModule } from './auth/auth.module';
     BrowserModule,  
     AppRoutingModule,
     BrowserAnimationsModule,
-    AuthModule
-
+    AuthModule,
+    StoreModule.forRoot({ user: userReducer }),
     // NgpImagePickerModule
   ],
   providers: [],

@@ -1,6 +1,7 @@
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { ImagePickerConf } from 'ngp-image-picker';
+import { AuthService } from '../services/auth.service';
 // import { ImagePickerConf } from 'ngp-image-picker';
 
 @Component({
@@ -10,21 +11,34 @@ import { ImagePickerConf } from 'ngp-image-picker';
 })
 
 export class ProfileFormComponent implements OnInit {
+  photoLink
+  constructor(private auth: AuthService) { }
+  profileForm = new FormGroup({
+    datePic: new FormControl('', [Validators.required]),
+    firstName: new FormControl('', [Validators.required]),
+    lastName: new FormControl('', [Validators.required]),
+    height: new FormControl('', [Validators.required]),
+    weight: new FormControl('', [Validators.required]),
+    phoneNumber: new FormControl('', [Validators.required])
+  })
+  sendProfileData() {
+    const firstName = this.profileForm.get("firstName").value
+    const lastName = this.profileForm.get("lastName").value
+    const datePic = 2021- this.profileForm.get("datePic").value.getFullYear()
+    const weight = this.profileForm.get("weight").value
+    const phoneNumber = this.profileForm.get("phoneNumber").value
+    const height = this.profileForm.get("height").value
 
-  constructor() { }
- profileForm = new FormGroup({
-  datePic : new FormControl('', [Validators.required]),
-  firstName : new FormControl('', [Validators.required]),
-  lastName : new FormControl('', [Validators.required]),
-  height : new FormControl('', [Validators.required]),
-  weight : new FormControl('', [Validators.required]),
-  phoneNumber : new FormControl('', [Validators.required])
- })
- sendProfileData(){}
+    this.auth.setUserInfo(this.photoLink , firstName, lastName, datePic, weight, phoneNumber, height)
 
- onImageChange(event) {
-   console.log(event);
- }
+
+
+
+  }
+
+  onImageChange(event) {
+    this.photoLink = event
+  }
 
   ngOnInit(): void {
   }
@@ -58,6 +72,6 @@ export class ProfileFormComponent implements OnInit {
   //   language: "en",
   // };
   // initialImage = "https://havanatursa.com/assets/images/carousel/Hoteles.webp";
-  
+
 }
 

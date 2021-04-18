@@ -13,26 +13,31 @@ export class ProfileFormComponent implements OnInit {
 
   constructor() { }
  profileForm = new FormGroup({
-  datePic : new FormControl('', [Validators.required]),
-  firstName : new FormControl('', [Validators.required]),
-  lastName : new FormControl('', [Validators.required]),
-  height : new FormControl('', [Validators.required]),
-  weight : new FormControl('', [Validators.required]),
-  phoneNumber : new FormControl('', [Validators.required])
+  datePic : new FormControl(''),
+  firstName : new FormControl(''),
+  lastName : new FormControl(''),
+  height : new FormControl('', [ Validators.pattern('[0-9]{2}$')]),
+  weight : new FormControl('', [Validators.pattern('[0-9]{3}$')]),
+  phoneNumber : new FormControl('', [Validators.pattern('[0-9]{11}$')])
  })
  sendProfileData(){}
 
- onImageChange(event) {
+ onImageChange(event) { 
    console.log(event);
  }
-
+ get profileControls(){
+  return this.profileForm.controls;
+}
   ngOnInit(): void {
+  }
+  submitRegisterForm(){
+    console.log(this.profileForm.value);
   }
   config2: ImagePickerConf = {
     borderRadius: "50%",
     language: "es",
-    width: "10rem",
-    height: "10rem"
+    width: "9rem",
+    height: "9rem"
   };
 
   // imagePickerConf: ImagePickerConf = {

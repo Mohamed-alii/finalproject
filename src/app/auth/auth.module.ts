@@ -13,6 +13,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input'
 import { NgpImagePickerModule } from 'ngp-image-picker';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
                   
 
@@ -21,7 +22,8 @@ import { NgpImagePickerModule } from 'ngp-image-picker';
     ProfileComponent,
     LoginComponent,
     RegistrationComponent,
-    ProfileFormComponent
+    ProfileFormComponent,
+    ContactUsComponent
   ],
   imports: [
     CommonModule,
@@ -39,7 +41,8 @@ import { NgpImagePickerModule } from 'ngp-image-picker';
   exports: [ProfileComponent,
     LoginComponent,
     RegistrationComponent,
-    ProfileFormComponent
+    ProfileFormComponent,
+    ContactUsComponent,
   ]
 
 })

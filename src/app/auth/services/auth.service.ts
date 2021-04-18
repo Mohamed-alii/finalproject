@@ -5,6 +5,7 @@ import { Store } from '@ngrx/store';
 import { GetUser } from 'src/app/store/user.action';
 import { HttpClient } from '@angular/common/http';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { Router } from '@angular/router';
 
 
 @Injectable({
@@ -19,7 +20,8 @@ export class AuthService {
   constructor(private fireBaseAuth: AngularFireAuth,
     private firestore: AngularFirestore,
     private store: Store<{ user }>,
-    private Http: HttpClient) {
+    private Http: HttpClient,
+    private route: Router) {
 
   }
 
@@ -30,6 +32,7 @@ export class AuthService {
         console.log(res)
         this.token = res.user.uid
         localStorage.setItem('token', JSON.stringify(res.user.uid))
+        this.route.navigate(['/profile-form']);
       })
   }
 
@@ -40,6 +43,7 @@ export class AuthService {
         localStorage.setItem('token', JSON.stringify(res.user.uid))
         this.token = res.user.uid;
         this.getInfo()
+        this.route.navigate(['/home-form']);
       })
   }
 
@@ -77,7 +81,7 @@ export class AuthService {
         console.log(user.photoURL)
         this.setUserInfo(user.photoURL, user.displayName)
         this.getInfo()
-
+        this.route.navigate(['/profile-form']);
 
       })
       .catch((error) => {

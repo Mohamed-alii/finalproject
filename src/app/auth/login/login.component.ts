@@ -17,16 +17,16 @@ export class LoginComponent implements OnInit {
     console.log(event.target.value);
   }
   loginFormSubmit(form) {
-    //   const email = form.controls.email.value
-    //   const password = form.controls.pass.value
-    //   this.auth.signIn(email, password).catch(error => {
-    //     this.firebaseError = error.message
-    //     //console.log(this.errorMessage)
-    //   })
-
+    const email = form.controls.email.value
+    const password = form.controls.pass.value
+    this.auth.signIn(email, password).catch(error => {
+      this.firebaseError = error.message
+      //console.log(this.errorMessage)
+    })
     this.auth.facebookLogin()
-
-
   }
 
+
+
+  
 }

@@ -43,7 +43,7 @@ export class AuthService {
         localStorage.setItem('token', JSON.stringify(res.user.uid))
         this.token = res.user.uid;
         this.getInfo()
-        this.route.navigate(['/home-form']);
+        this.route.navigate(['/home']);
       })
   }
 
@@ -69,6 +69,7 @@ export class AuthService {
       height: height,
     })
     this.getInfo()
+    this.route.navigate(['/home']);
   }
 
   facebookLogin() {
@@ -81,7 +82,7 @@ export class AuthService {
         console.log(user.photoURL)
         this.setUserInfo(user.photoURL, user.displayName)
         this.getInfo()
-        this.route.navigate(['/profile-form']);
+
 
       })
       .catch((error) => {

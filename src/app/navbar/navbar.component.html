@@ -43,15 +43,16 @@
       <li class="nav-item">
         <a class="nav-link " href="#">INFO</a>
       </li>
+    
     </ul>
     <div>
-      <ul>
-        <li class="nav-item dropdown ">
-          <a class="nav-link dropdown-toggle gen-btn reg-btn m-2" href="#" id="navbarDropdown" role="button"
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown " [ngClass]="{'user-token' : token == true}">
+          <a class="nav-link dropdown-toggle gen-btn reg-btn" href="#" id="navbarDropdown" role="button"
             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             REGISTER
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <div class="dropdown-menu " aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="#">LOGIN</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#"> SIGNUP</a>
@@ -59,6 +60,13 @@
         </li>
       </ul>
     </div>
+    <div class="nav-item user-img" [ngClass]="{'user-token' : token == false}" >
+      <a href="#"> <img src="assets/images/1.jpg" alt="profileimage"></a>
+    </div>
+    <div  class="nav-item Logout "  [ngClass]="{'user-token' : token == false}" >
+      <a class="nav-link " href="#">Logout</a>
+    </div>
+   
   </div>
   
 </nav>

@@ -29,6 +29,25 @@ ul li .reg-btn:hover{
     transition: all 0.3s ease-in-out;
     border-bottom: 1px solid var(--base);
 }
+.user-img{
+    height: 40px;
+    width: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.user-img img{
+    margin: 0 auto;
+}
+.Logout a{
+    color: #fff;
+    letter-spacing: 0.1rem;
+    padding: 0.5rem;
+    font-weight: 700;
+}
+.user-token{
+   display: none;
+}
 
+ 
 
 

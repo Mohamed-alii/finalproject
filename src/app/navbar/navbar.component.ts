@@ -8,7 +8,7 @@ import { HostListener } from '@angular/core';
 })
 
 export class NavbarComponent implements OnInit {
-  token = true;
+  token = false;
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(e) {
     let element = document.querySelector('.navbar');

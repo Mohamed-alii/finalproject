@@ -43,7 +43,7 @@
       <li class="nav-item">
         <a class="nav-link " href="#">INFO</a>
       </li>
-    
+
     </ul>
     <div>
       <ul class="navbar-nav">
@@ -60,13 +60,12 @@
         </li>
       </ul>
     </div>
-    <div class="nav-item user-img" [ngClass]="{'user-token' : token == false}" >
-      <a href="#"> <img src="assets/images/1.jpg" alt="profileimage"></a>
-    </div>
-    <div  class="nav-item Logout "  [ngClass]="{'user-token' : token == false}" >
-      <a class="nav-link " href="#">Logout</a>
-    </div>
-   
   </div>
-  
+  <div class="user-img" [ngClass]="{'user-token' : token == false}">
+    <a href="#"> <img src="assets/images/1.jpg" alt="profileimage"></a>
+  </div>
+  <div class=" Logout " [ngClass]="{'user-token' : token == false}">
+    <a class="nav-link " href="#">Logout</a>
+  </div>
+
 </nav>

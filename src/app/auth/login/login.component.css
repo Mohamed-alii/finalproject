@@ -1,9 +1,10 @@
 
 .login-form{
     background-image: url('/assets/reg-bg.png');
-    background-size: 75%;
     background-size: cover;
-    padding: 6rem;
+    background-position: center;
+    padding: 13rem 6rem;
+    background-attachment: fixed;
 }
 .row{
     width:80%;
@@ -60,6 +61,7 @@ button.log-btn{
     color: rgb(255, 251, 239);
     font-family: 'Petit Formal Script', cursive;
     font-weight: 800;
+    margin-top: 1.5rem;
 }
 button.log-btn:hover{
     background-color: rgba(70, 79, 65, .2);
@@ -101,18 +103,20 @@ h2{
 }
 @media (max-width:1025px){
     .login-form{
-        padding: 6rem 5rem;
+        padding: 19rem 3rem;
+        background-size:180% 80%;
     }
     .log-form{
         padding: 2rem;
     }
     .cont{
-        height:90%;
+        height:95%;
         margin: 1rem auto;
-        padding: 1rem 1.5rem;
+        padding: 5rem 2rem;
     }
     .row{
-        height:24rem;
+        height:35rem;
+        width: 95%;
     }
     input{
         margin-bottom: 0rem !important;
@@ -142,17 +146,18 @@ h2{
         width:95%;
         height:99%;
         margin: 0rem auto;
-        padding: .6rem 1rem;
+        padding: 3rem 1rem;
     }
     .log-form{
         padding: .7rem .5rem;
     }
     .row{
-        height:17rem;
+        height:26rem;
+        width:98%;
     }
     input{
         margin-bottom: 1.5rem;
-        height:1.8rem;
+        height:2rem;
     }
     input::placeholder{
         font-size: .55rem;
@@ -164,7 +169,7 @@ h2{
     }
     h2{
         font-size: 1.1rem;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
     }
     .mb-1{
         margin-bottom: .3rem !important;
@@ -175,8 +180,8 @@ h2{
 }
 @media (max-width:541px){
     .login-form{
-        background-size: 100%;
-        padding: 4rem 3rem;
+        background-size: cover;
+        padding: 13rem 3rem;
     }
     .cont{
         height:99%;
@@ -204,8 +209,7 @@ h2{
 }
 @media (max-width:361px){
     .login-form{
-        background-size: 100% 105%;
-        padding: 0rem 2rem;
+        padding: 10rem 2rem;
     }
     .img-login{
         display: none;

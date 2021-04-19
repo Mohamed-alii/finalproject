@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { AuthService } from '../services/auth.service';
 
 
 @Component({
@@ -9,12 +10,12 @@ import { Store } from '@ngrx/store';
 })
 export class ProfileComponent {
   user;
-  constructor(private store: Store<{ user }>) {
+  constructor(private store: Store<{ user }>, private auth: AuthService) {
     this.store.select("user").subscribe(data => {
-        this.user = data.user
-    
-    })
+      this.user = data.user
 
+    })
+    this.auth.getInfo()
 
   }
 

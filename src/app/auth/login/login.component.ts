@@ -23,9 +23,11 @@ export class LoginComponent implements OnInit {
       this.firebaseError = error.message
       //console.log(this.errorMessage)
     })
-    this.auth.facebookLogin()
   }
+  facebookLogin() {
+    this.auth.facebookLogin()
 
+  }
 
 
   

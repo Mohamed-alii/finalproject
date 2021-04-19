@@ -1,7 +1,7 @@
 <section class="login-form">
     <div class="row m-auto ">
 
-<form class="container log-form" #loginform="ngForm" (ngSubmit)="loginFormSubmit(loginform.value)">
+<form class="container log-form" #loginform="ngForm" (ngSubmit)="loginFormSubmit(loginform)">
   <div class="cont">
   <div class="pro">
     <h2 class="text-center">LogIn</h2>
@@ -31,11 +31,12 @@
         </div>
     </div>
     <button type="submit" class="btn btn-primary log-btn">Submit</button>
-    <button type="submit" class="btn btn-primary  mt-2  log-btn"><i class="fab fa-facebook "></i> Login With
-      Facebook</button>
+
+     <button type="button" class="btn btn-primary  mt-2  log-btn" (click)="facebookLogin()"><i class="fab fa-facebook "></i> 
+      Facebook</button> 
     <div class="register my-2"><b>Don't have account ? <a class="regist-link" >Register</a></b></div>
 
-    <h2 class="text-danger">{{firebaseError}}</h2>
+    <h3 class="text-danger">{{firebaseError}}</h3>
   </div>
 </form>
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup,Validators,FormBuilder} from '@angular/forms';
+import { AuthService } from 'src/app/auth/services/auth.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -11,11 +12,13 @@ export class HomeComponent implements OnInit {
   bmival;
   bmimessage;
 
-  constructor(private fb : FormBuilder) {
+  constructor(private fb : FormBuilder , private auth : AuthService) {
     this.userdata =this.fb.group({
       userweight :[, [Validators.required]],
       userheight :[,Validators.required],
     })
+
+    this.auth.getInfo()
   }
 
   ngOnInit(): void {

@@ -23,6 +23,12 @@ export class AuthService {
     private Http: HttpClient,
     private route: Router) {
 
+    if (localStorage.getItem("token")) {
+      this.token = JSON.parse(localStorage.getItem("token"))
+
+      this.getInfo()
+  }
+    
   }
 
 
@@ -56,6 +62,7 @@ export class AuthService {
         this.store.dispatch(new GetUser(user))
         this.store.select("user").subscribe(data => console.log(data))
       }
+
     })
   }
   setUserInfo(photo, fName, lName = null, age = null, weight = null, phone = null, height = null) {
@@ -73,16 +80,16 @@ export class AuthService {
   }
 
   facebookLogin() {
-    console.log("face")
+
     var provider = new firebase.auth.FacebookAuthProvider();
     firebase.auth().signInWithPopup(provider)
       .then((result) => {
         var user = result.user;
+        localStorage.setItem('token', JSON.stringify(user.uid))
         this.token = user.uid
-        console.log(user.photoURL)
         this.setUserInfo(user.photoURL, user.displayName)
         this.getInfo()
-
+        this.route.navigate(['/profile-form']);
 
       })
       .catch((error) => {

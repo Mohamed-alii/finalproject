@@ -16,8 +16,8 @@ body{
     --p-size:1.4rem ;
 }
 .sec-padding{
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 hr{
@@ -31,17 +31,24 @@ hr{
         border-color: var(--base);
         border-radius: 7px;
         cursor: pointer;
-        width: 180px;
+        width: 190px;
         color: #FFFFFF;
         outline: none;
+        font-family: 'Original Surfer', cursive;
         border: none;
         transition: 0.3s linear;
         text-decoration: none;
+}
+.gen-btn:hover{
+    transition: all 0.5s ease-in-out;
+    transform: translate(0.1rem,0.1rem);
+
 }
 .input-style{
     display: inline-block;
     text-align: center;
     border-radius: 10px;
+    font-family: 'Source Sans Pro', sans-serif;
     background: #eee;
     padding: 1rem ;
     outline: none;

@@ -48,6 +48,24 @@ ul li .reg-btn:hover{
    display: none;
 }
 
- 
-
+ /* media query */
+ @media(max-width:990px){
+    .show{
+         background-color: #3E4140;
+         padding:15px ;
+         border-radius: 20px;
+         border: 1px solid #3E4140;
+     }
+     ul li .nav-link{
+         padding: 15px;
+     }
+     .reg-btn{
+         background-color: transparent;
+     }
+     .dropdown-item{
+         color: #fff;
+         padding: 5px;
+     }
+   
+ }
 

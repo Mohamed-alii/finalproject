@@ -4,8 +4,8 @@
     <video src="/assets/images/hbg.mp4" autoplay muted loop></video>
     <div class="overlay">
       <div class="container d-flex flex-column  text-center">
-        <h1 class="w-100">welcome to kitchen jungle</h1>
-        <p class="w-100">your way to healthy life style</p>
+        <h1 class="w-100 p-lg-4">welcome to kitchen jungle</h1>
+        <p class="w-100 ">your way to healthy life style</p>
         <a class="gen-btn"> learn more</a>
       </div>
     </div>
@@ -21,13 +21,13 @@
     </div>
     <div class="goals-sec_content w-lg-50 p-5">
       <h2 class="text-lg-left pb-4">OUR Goals</h2>
-      <hr class="m-3">
+      <hr class="m-lg-3">
       <ul class="text-left">
-        <li class="p-2">- Get active and try to be a healthy weight.</li>
-        <li class="p-2">- Cut down on saturated fat and sugar.</li>
-        <li class="p-2">- Base your meals on starchy foods.</li>
-        <li class="p-2">- Drink plenty of water.</li>
-        <li class="p-2">- Help you to make your own life syle routine</li>
+        <li class="p-lg-2 text-muted">Get active and try to be a healthy weight.</li>
+        <li class="p-lg-2 text-muted ">Cut down on saturated fat and sugar.</li>
+        <li class="p-lg-2 text-muted">Base your meals on starchy foods.</li>
+        <li class="p-lg-2 text-muted">Drink plenty of water.</li>
+        <li class="p-lg-2 text-muted" >Help you to make your own life syle routine</li>
       </ul>
     </div>
   </div>
@@ -35,14 +35,14 @@
 
 <!-- about us section-->
 
-<section class="about-us sec-padding">
+<section class="about-us sec-padding text-center" >
   <div class="container">
     <h5>what we do ?</h5>
     <h2 class="about-us-head">
       the story About us
     </h2>
     <hr>
-    <p>Kitchen Jungle is truly my own little passion project, gaining more and more traction each day. I hope you enjoy
+    <p class="text-center">Kitchen Jungle is truly my own little passion project, gaining more and more traction each day. I hope you enjoy
       browsing my site and all of the unique content I have to offer. Take a look around; perhaps you’ll discover what
       fuels you as well. Read on and enjoy!</p>
   </div>
@@ -50,49 +50,36 @@
 
 <!-- weight calculator -->
 <section class="weightcalc sec-padding " >
-  <div class="container d-flex flex-column">
-    <div class="weightcalc-head mb-5">
-      <h2 class="text-center mb-5"> calculate your Bmi value</h2>
+  <div class="container">
+    <div class="row  text-center">
+      <h2 class="col-12 text center">Lets calculate your BMI</h2>
       <hr class="m-auto">
     </div>
-    <div class="weightcalc-method">
-      <form [formGroup]="userdata" (ngSubmit)="bmimethod()" class="">
-        <div class="row align-items-center justify-content-between justify-content-md-center mb-4">
-          <label for="userweight" class="col-md-3 col-4 ">Weight in kg </label>
-          <input type="number"  name="userweight" formControlName="userweight"  class="form-control input-style col-6 m-0" placeholder="enter your weight">
-        </div>
-        <div class="row align-items-center justify-content-between justify-content-md-center mb-4">
-          <label for="userheight" class="col-md-3 col-4 ">Height In CM </label>
-          <input type="number" name="userheight" formControlName="userheight"  class="form-control input-style col-6 m-0 "  placeholder="enter your height">  
-        </div>
-        <div class=" row  align-items-center justify-content-between justify-content-md-center mb-4">
-          <label for="userheight" class="col-md-3 col-4   "> Select Gender </label>
-          <select class="input-style col-6 m-0 " aria-label="Default select example">
-            <option  selected disabled >Select Gender</option>
-            <option value="male">male</option>
-            <option value="female">female</option>
-          </select>
-        </div>  
+    <div class="row my-1">
+      <form class="sec-padding" [formGroup]="userdata" (ngSubmit)="bmimethod()">
+        <label for="weight" class="col-4 text-right text-muted my-4">Your weight in Kg *</label>
+        <input type="number" id="weight" class="form-control  col-6 email-field" formControlName="userweight">
+        <label for="height" class="col-4 text-right text-muted my-3">Your Height in CM *</label>
+        <input type="number" id="height" class="text-left form-control col-6 email-field"  placeholder="enter your height" formControlName="userheight">
+        <label for="gender" class="col-4 text-right text-muted my-5">Your Gender *</label>
+        <input type="radio" id="gender" name="gender" class="mx-2" >Male
+        <input type="radio" id="gender" name="gender" class="mx-2" >Female
         <div class="text-center">
-          <input type="submit" class=" gen-btn"value="submit">
+          <input type="submit" class=" gen-btn">
         </div>
-       
       </form>
     </div>
-    <div class="text-center">
-      <h3 class="p-5 h1">{{bmimessage}}</h3>
+    <div class="text-center p-2">
+      <h2>{{bmimessage}}</h2>
     </div>
   </div>
 </section>
-
-<!-- subscribe sec -->
-
 <section class="subscribe sec-padding">
   <div class="container">
     <div class="subsribe-content m-auto w-100 text-center">
       <h2 class=" mb-5">Subscribe now</h2>
       <hr class="m-auto">
-      <p class=" mt-4">Stay updated with our last recipes and Diets types</p>
+      <p class=" mt-4  text-muted">Stay updated with our last recipes and Diets types</p>
       <form class="row mt-5 justify-content-center">
         <input type="email" class="col-8 col-md-6 email-field text-left" placeholder="Type your Email" required>
         <button class="gen-btn col-4 col-md-2 subs-btn">Subscribe</button>

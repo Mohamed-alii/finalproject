@@ -1,5 +1,5 @@
-<div class="regist-form container-fluid">
-  <div class="row m-auto  d-flex specify-content-arround">
+<section class="regist-form container-fluid">
+    <div class="row m-auto">
 
 
     <div class="img-regist">
@@ -10,63 +10,64 @@
           <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner">
-          <div class="carousel-item w-100 active">
-            <img src="./assets/6.png" class="d-block w-100" alt="...">
+          <div class="carousel-item ci1 w-100 active">
+            <img src="./assets/6.png" class="d-block w-100 h-100" alt="...">
           </div>
-          <div class="carousel-item w-100">
-            <img src="./assets/9.png" class="d-block w-100" alt="...">
+          <div class="carousel-item ci2 w-100">
+            <img src="./assets/9.png" class="d-block w-100 h-100" alt="...">
           </div>
-          <div class="carousel-item w-100">
-            <img src="./assets/10.png" class="d-block w-100" alt="...">
+          <div class="carousel-item ci3 w-100">
+            <img src="./assets/10.png" class="d-block w-100 h-100" alt="...">
           </div>
         </div>
       </div>
     </div>
 
 
-    <form class="container signup-form py-5 h-100" [formGroup]="registForm" (ngSubmit)="submitRegisterForm()">
-      <div class="pro">
-        <h2 class="text-center">Kichen Jungle</h2>
-        <p class="text-center">Welcome To Your Dream's Kichen...</p>
-      </div>
-      <div class="mb-3">
-        <input type="email" placeholder="EMAIL ADDRESS..." formControlName="Email" class="form-control"
-          id="exampleInputEmail1" aria-describedby="emailHelp">
-        <div class="validat-txt" *ngIf="registControls.Email.errors && registControls.Email.touched">
-          <div *ngIf="registControls.Email.errors.required">
-            <div class="validat-txt">This feild is required</div>
-          </div>
-          <div *ngIf="registControls.Email.errors?.pattern">
-            <div class="validat-txt">invalid Pattern</div>
-          </div>
-        </div>
-      </div>
-      <div class="mb-3">
-        <input type="password" placeholder="PASSWORD..." formControlName="Pass" class="form-control" id="pass">
-        <div *ngIf="registControls.Pass.errors && registControls.Pass.touched">
-          <div *ngIf="registControls.Pass.errors.required">
-            <div class="validat-txt">This feild is required</div>
-          </div>
-          <div *ngIf="registControls.Pass.errors.minlength">
-            <div class="validat-txt">you must enter 8 characters at least</div>
-          </div>
-        </div>
-      </div>
-      <div class="mb-3">
-        <input type="password" placeholder="CONFIRM PASSWORD..." formControlName="confirmPass" class="form-control"
-          id="confirmPass">
-        <div *ngIf="registControls.confirmPass.errors && registControls.confirmPass.touched">
-          <div *ngIf="registControls.confirmPass.errors.required">
-            <div class=" validat-txt">This feild is required</div>
-          </div>
-        </div>
-      </div>
-      <button type="submit" class="reg-btn btn btn-primary">Register</button>
-
-      <div class="mt-2">
-  
-        <h2 class="text-danger ">{{firebaseError}}</h2>
-      </div>
-    </form>
-  </div>
+<form class=" signup-form" [formGroup]="registForm" (ngSubmit)="submitRegisterForm">
+  <div class="cont">
+  <div class="pro">
+  <h2 class="text-center">Sign Up</h2>
+  <p class="text-center">Welcome To Your Dream's Kichen...</p>
 </div>
+  <div class="mb-1">
+        <input type="email" placeholder="EMAIL ADDRESS..." formControlName="Email" class="form-control m-0" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div class="validat-txxt" *ngIf="registControls.Email.errors && registControls.Email.touched">
+            <div *ngIf="registControls.Email.errors.required">
+                <div class="validat-txt text-center m-auto">This feild is required</div>
+            </div>
+            <div *ngIf="registControls.Email.errors?.pattern">
+                <div class="validat-txt text-center m-auto">invalid Pattern</div>
+            </div>
+        </div>
+    </div>
+    <div class="mb-1">
+        <input type="password" placeholder="PASSWORD..." formControlName="Pass" class="form-control m-0" id="pass">
+        <div *ngIf="registControls.Pass.errors && registControls.Pass.touched">
+            <div *ngIf="registControls.Pass.errors.required">
+                <div class="validat-txt text-center m-auto">This feild is required</div>
+            </div>
+            <div *ngIf="registControls.Pass.errors.minlength">
+                <div class="validat-txt text-center m-auto">at least 8 characters</div>
+            </div>
+        </div>
+    </div>
+    <div class="mb-1">
+        <input type="password" placeholder="CONFIRM PASSWORD..." formControlName="confirmPass" class="form-control m-0" id="confirmPass">
+        <div *ngIf="registControls.confirmPass.errors && registControls.confirmPass.touched">
+            <div *ngIf="registControls.confirmPass.errors.required">
+                <div class=" validat-txt text-center m-auto">This feild is required</div>
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="reg-btn btn btn-primary">Register</button>
+  </div>
+    <div class="mt-2">
+    
+      <h2 class="text-danger ">{{firebaseError}}</h2>
+    </div>
+
+</form>
+
+</div>
+</section>

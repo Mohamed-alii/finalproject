@@ -30,11 +30,12 @@ export class ProfileFormComponent implements OnInit {
     const height = this.profileForm.get("height").value
 
     this.auth.setUserInfo(this.photoLink , firstName, lastName, datePic, weight, phoneNumber, height)
-
-
-
-
   }
+
+  get profileControls() {
+    return this.profileForm.controls;
+  }
+
 
   onImageChange(event) {
     this.photoLink = event
@@ -42,11 +43,14 @@ export class ProfileFormComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+
+  
   config2: ImagePickerConf = {
     borderRadius: "50%",
     language: "es",
-    width: "10rem",
-    height: "10rem"
+    width: "9rem",
+    height: "9rem"
   };
 
   // imagePickerConf: ImagePickerConf = {

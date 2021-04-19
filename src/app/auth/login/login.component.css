@@ -1,63 +1,235 @@
 
 .login-form{
     background-image: url('/assets/reg-bg.png');
+    background-size: 75%;
     background-size: cover;
-    height:120%;
     padding: 6rem;
 }
 .row{
     width:80%;
-    height:89%;
-    background-color: #f8ede3;
     box-shadow: 7px 7px 20px #464f41;
+    height: 31rem;
+    overflow: unset;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-.img-regist{
+.img-login{
     width: 55%;
-    height:100%;
+    display: table-cell;
+    opacity: .7;
 }
-.signup-form{
+.log-form{
     width: 45%;
-    height: 24rem;
+    display: table-cell;
+    padding: 2rem 1rem;
+}
+.cont{
+    width:95%;
+    height:90%;
+    margin: 1.5rem auto;
+    padding: 1rem 3rem;
+    background-color: rgba(70, 79, 65, .1);
 }
 input{
     border-radius: 20px;
     border:1px solid #184d47;
     border-width: 0px 0px 2px;
-    background-color: transparent;
-    box-shadow: 2px 2px 5px #184d47;
-    margin-bottom: 1.5rem;
+    background-color: rgba(255, 251, 239, .8);
+    box-shadow: 2px 2px 4px rgb(172, 165, 147) inset;
 }
 input:focus{
-    background-color:  rgba(189, 210, 182, .3);
+    background-color:transparent;
+    box-shadow: 2px 2px 4px #184d47 inset; 
 }
 input::placeholder{
+    color: #2f5d62 ;
     text-align: center;
     font-size: .8rem;
     font-weight: 800;
     font-family: 'Petit Formal Script', cursive;
 }
 button.log-btn{
-    background-color:  rgb(189, 210, 182);
+    background-color:#2f5d62 ;
     border-radius: 20px;
     width: 50%;
     border:1px solid transparent ;
     display: block;
     margin: auto;
+    box-shadow: 2px 2px 4px #9dbeb9;
+    color: rgb(255, 251, 239);
+    font-family: 'Petit Formal Script', cursive;
+    font-weight: 800;
 }
 button.log-btn:hover{
-    background-color: transparent;
+    background-color: rgba(70, 79, 65, .2);
     box-shadow: 2px 2px 5px #184d47;
-    color:#464f41;
+    color:#184d47;
 }
 .validat-txt{
     border-radius: 20px;
     background-color: transparent;
-}
-h2{
-    font-family: 'Petit Formal Script', cursive;
-    font-weight: 900;
-    padding-bottom: 0px;
+    color: rgb(255, 251, 239);
+    color:#184d47;
+    width:60%;
+    border-bottom: 2px solid #ec4646;
 }
 p{
     font-family: 'Petit Formal Script', cursive;
+    
+}
+h2{
+    text-align: center;
+    font-family: 'Petit Formal Script', cursive;
+    font-weight: 900;
+    color: #2f5d62 ;
+    font-size: 1.8rem;
+    transform: skew(45deg);
+    transform: rotate(-10deg);
+    margin-bottom: 1.8rem;
+    border-bottom: 1px solid #2f5d62 ;
+}
+.mb-1{
+    margin-bottom: 1rem !important;
+}
+.register{
+    font-size: .55rem;
+    text-align: center !important;
+}
+.regist-link{
+    color:red;
+}
+@media (max-width:1025px){
+    .login-form{
+        padding: 6rem 5rem;
+    }
+    .log-form{
+        padding: 2rem;
+    }
+    .cont{
+        height:90%;
+        margin: 1rem auto;
+        padding: 1rem 1.5rem;
+    }
+    .row{
+        height:24rem;
+    }
+    input{
+        margin-bottom: 0rem !important;
+    }
+    input::placeholder{
+        font-size: .8rem;
+        font-weight: 700;
+    }
+    .validat-txt{
+        font-size: .6rem;
+        width:70%;
+    }
+    p{
+        font-size: .7rem;
+        margin-bottom: 0rem;
+    }
+    h2{
+        margin-bottom: 1.2rem;
+    }
+    button.log-btn{
+        font-weight: 700;
+        font-size: .7rem;
+    }
+}
+@media (max-width:769px){
+    .cont{
+        width:95%;
+        height:99%;
+        margin: 0rem auto;
+        padding: .6rem 1rem;
+    }
+    .log-form{
+        padding: .7rem .5rem;
+    }
+    .row{
+        height:17rem;
+    }
+    input{
+        margin-bottom: 1.5rem;
+        height:1.8rem;
+    }
+    input::placeholder{
+        font-size: .55rem;
+        font-weight: 800;
+    }
+    button.log-btn{
+        font-weight: 800;
+        font-size: .6rem;
+    }
+    h2{
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+    .mb-1{
+        margin-bottom: .3rem !important;
+    }
+    p{
+        display: none;
+    }
+}
+@media (max-width:541px){
+    .login-form{
+        background-size: 100%;
+        padding: 4rem 3rem;
+    }
+    .cont{
+        height:99%;
+        padding: 1.3rem 1rem;
+    }
+    .row{
+        width:100%;
+        height:17.8rem;
+    }
+    input{
+        height:1.5rem;
+    }
+    input::placeholder{
+        font-size: .5rem;
+        font-weight: 700;
+    }
+    button.log-btn{
+        font-weight: 700;
+        font-size: .55rem;
+        margin-top: .7rem;
+    }
+    p{
+        display: none;
+    }
+}
+@media (max-width:361px){
+    .login-form{
+        background-size: 100% 105%;
+        padding: 0rem 2rem;
+    }
+    .img-login{
+        display: none;
+    }
+    .log-form{
+        width: 100%;
+        padding: 0rem 1rem;
+    }
+    .cont{
+        height:100%;
+        padding: .5rem 1.5rem;
+    }
+    input{
+        height:1.3rem;
+    }
+    input::placeholder{
+        font-size: .45rem;
+        font-weight: 700;
+    }
+    
+    h2{
+        margin-bottom: 1.5rem;
+    }
+    .validat-txt{
+        font-size: .55rem;
+    }
 }

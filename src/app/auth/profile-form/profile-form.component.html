@@ -1,35 +1,57 @@
 
-<section class="profile-form d-flex  justify-content-center">
-    <form [formGroup]="profileForm" (ngSubmit)="sendProfileData()" class="formContainer  d-flex flex-column   justify-content-center">
+<section class="profile-form d-flex justify-content-center">
+    <form [formGroup]="profileForm" (ngSubmit)="sendProfileData()" class="formContainer m-auto d-flex flex-column justify-content-center">
 
         <div class="pro py-2">
-            <h2 class="text-center">Kichen Jungle</h2>
+            <h2 class="text-center mb-5">Kichen Jungle</h2>
             <p class="text-center">Fill Your Data Please And You Will Enjoy With Us Here In Your Kichen...</p>
           </div>
               
-              <div class="mb-3 mx-auto form-group  ">
-             
-              <ngp-image-picker class="m-auto" [_config]="config2" ($imageChanged)="onImageChange($event)"></ngp-image-picker>
-          
-            </div>
+              <div class="mb-1 mx-auto form-group">
+              <ngp-image-picker [_config]="config2" ($imageChanged)="onImageChange($event)"></ngp-image-picker>
+              </div>
 
               <div class="mb-3 form-group d-flex justify-content-center">
-                <input type="text" placeholder="First Name" formControlName="firstName" class="form-control mr-4 inpTxt"  id="name" aria-describedby="emailHelp">
-                <input type="text" formControlName="lastName" placeholder="Last Name" class="form-control mr-4 inpTxt"  id="name" aria-describedby="emailHelp">
+                <input type="text" placeholder="First Name" formControlName="firstName" class="ml-auto form-control mr-4 inpTxt mb-0"  id="name" aria-describedby="emailHelp">
+                <input type="text" formControlName="lastName" placeholder="Last Name" class="mr-auto form-control inpTxt mb-0"  id="name" aria-describedby="emailHelp">
             </div>
 
-            <div class="mb-3 m-auto form-group">
+            <div class="mb-1 m-auto form-group">
               <mat-form-field appearance="fill">
-                  <input formControlName="datePic" matInput [matDatepicker]="picker">
+                  <input formControlName="datePic" placeholder="BoD" style="height: 2.5rem;" matInput [matDatepicker]="picker">
                   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                   <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
                 </div>
-          
-                <div class="mb-3 form-group d-flex justify-content-center">
-                  <input type="text" placeholder="Weight" formControlName="weight" class="form-control inpNum mx-2" id="name" aria-describedby="emailHelp">
-                  <input type="text" placeholder="Phone Number" formControlName="phoneNumber" class="form-control inpTxt mx-3" id="name" aria-describedby="emailHelp">
-                  <input type="text" placeholder="Height" formControlName="height" class="form-control inpNum mx-2" id="name" aria-describedby="emailHelp">
+                <div class="d-flex justify-content-center">
+                <div class="mb-1 ml-auto form-group inpNum">
+                  <input type="text" placeholder="Weight" formControlName="weight" class="form-control w-50 mb-0 ml-auto" id="name" aria-describedby="emailHelp">
+                  <div class="validat-txxt" *ngIf="profileControls.weight.errors && profileControls.weight.touched">
+                    
+                    <div *ngIf="profileControls.weight.errors?.pattern">
+                        <div class="validat-txt text-center m-auto">max 3 num</div>
+                    </div>
+                </div>
+                </div>
+                <div class="mb-1 form-group inpNum">
+                  <input type="text" placeholder="Phone Number" formControlName="phoneNumber" class="form-control w-100 mb-0" id="name" aria-describedby="emailHelp">
+                  <div class="validat-txxt" *ngIf="profileControls.phoneNumber.errors && profileControls.phoneNumber.touched">
+                    
+                    <div *ngIf="profileControls.phoneNumber.errors?.pattern">
+                        <div class="validat-txt text-center m-auto">max 11 num</div>
+                    </div>
+                </div>
+                </div>
+                  <div class="mb-1 mr-auto form-group inpNum">
+                  <input type="text" placeholder="Height" formControlName="height" class="mr-auto form-control w-50 inpNum mb-0"  id="name" aria-describedby="emailHelp">
+                    <div class="clearfix"></div>
+                  <div class="validat-txxt" *ngIf="profileControls.height.errors && profileControls.height.touched">
+                    
+                    <div *ngIf="profileControls.height.errors?.pattern">
+                        <div class="validat-txt text-center m-auto" >max 2 num</div>
+                    </div>
+                </div>
+                </div>
               </div>
 
             <!-- <div class="mb-3 form-group d-flex justify-content-center">

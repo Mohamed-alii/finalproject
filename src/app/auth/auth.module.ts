@@ -19,6 +19,7 @@ import { AuthService } from './services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 
 
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     ProfileComponent,
     LoginComponent,
     RegistrationComponent,
-    ProfileFormComponent
+    ProfileFormComponent,
+    ContactUsComponent
   ],
   imports: [
     CommonModule,
@@ -57,7 +59,8 @@ import { HttpClientModule } from '@angular/common/http';
   exports: [ProfileComponent,
     LoginComponent,
     RegistrationComponent,
-    ProfileFormComponent
+    ProfileFormComponent,
+    ContactUsComponent
   ],
   providers : [AuthService]
 

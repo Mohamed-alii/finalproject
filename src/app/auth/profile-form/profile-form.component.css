@@ -3,9 +3,8 @@
     background-image: url('/assets/25.png');
     background-attachment: fixed;
     position: relative;
-    padding: 5rem 0rem;
+    padding: 12rem 0rem;
     width:100%;
-    height:150vh;
 }
 .formContainer{
     background-color: rgba(47, 93, 98, 1) ;
@@ -86,9 +85,7 @@ button.pro-btn:hover{
 
 @media (max-width:1025px){
     .profile-form{
-        padding: 1rem 0rem;
         width:100%;
-        height:80vh;
     }
     .formContainer{
         background-size: 92% 90%;
@@ -108,7 +105,7 @@ button.pro-btn:hover{
 }
 @media (max-width:769px){
     .profile-form{
-        padding: 0rem 0rem;
+        padding: 10rem 0rem;
     }
     .formContainer{
         background-size: 92% 85%;
@@ -119,6 +116,9 @@ button.pro-btn:hover{
     }
 }
 @media (max-width:541px){
+    .profile-form{
+        padding: 12rem 0rem;
+    }
     .profile-form{
         padding: 0rem 0rem;
         height:100vh;
@@ -140,10 +140,6 @@ button.pro-btn:hover{
     }
 }
 @media (max-width:361px){
-    .profile-form{
-        padding: 0rem 0rem;
-        height:100vh;
-    }
     .formContainer{
         background-size: 90% 85%;
         width:90%;

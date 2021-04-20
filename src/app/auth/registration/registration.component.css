@@ -4,6 +4,7 @@
     background-size: 100%;
     background-position: center;
     padding: 6rem;
+    padding: 13rem 6rem;
     background-attachment: fixed;
 }
 .row{
@@ -62,6 +63,7 @@ button.reg-btn{
     color: rgb(255, 251, 239);
     font-family: 'Petit Formal Script', cursive;
     font-weight: 800;
+    margin-top: 1.5rem;
 }
 button.reg-btn:hover{
     background-color: rgba(70, 79, 65, .2);
@@ -96,21 +98,21 @@ h2{
 }
 @media (max-width:1025px){
     .regist-form{
-        background-image: url('/assets/backG1.png');
-        background-size: 90% 115%;
-        padding: 6rem;
+        padding: 19rem 3rem;
+        background-size:180% 80%;
     }
     .signup-form{
         padding: 0rem 1rem;
     }
     .cont{
-        height:85%;
+        height:95%;
         margin: 1rem auto;
-        padding: 1rem 1.5rem;
+        padding: 5rem 2rem;
         background-color: rgba(70, 79, 65, .1);
     }
     .row{
-        height:22.8rem;
+        height:35rem;
+        width:95%;
     }
     
     input::placeholder{
@@ -131,17 +133,15 @@ h2{
     }
 }
 @media (max-width:769px){
-    .signup-form{
-        padding: .5rem .5rem;
-    }
     .cont{
         width:95%;
         height:99%;
         margin: 0rem auto;
-        padding: .6rem 1rem;
+        padding: 3rem 1rem;
     }
     .row{
-        height:15.8rem;
+        height:22.5rem;
+        width:98%;
     }
     input{
         margin-bottom: 1.5rem;
@@ -157,7 +157,7 @@ h2{
     }
     h2{
         font-size: 1.1rem;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
     }
     .mb-1{
         margin-bottom: .3rem !important;
@@ -168,8 +168,8 @@ h2{
 }
 @media (max-width:541px){
     .regist-form{
-        background-size: 100% 115%;
-        padding: 4rem 3rem;
+        background-size: cover;
+        padding: 13rem 3rem;
     }
     .cont{
         height:99%;
@@ -197,8 +197,7 @@ h2{
 }
 @media (max-width:361px){
     .regist-form{
-        background-size: 95% 115%;
-        padding: 2rem;
+        padding: 10rem 2rem;
     }
     .img-regist{
         display: none;

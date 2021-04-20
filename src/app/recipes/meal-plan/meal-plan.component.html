@@ -1,0 +1,576 @@
+
+<div class="w-100 h-100 d-flex justify-content-center align-items-center" *ngIf='!mealPlan && planTimeFrame'>
+    <div class="spinner-grow text-success" role="status" *ngIf='!mealPlan'>
+        <span class="sr-only">Loading...</span>
+    </div>    
+</div>
+
+<section class="user-input">
+
+    <form>
+
+        <div class="form-group">
+            <label for="usr">Name:</label>
+            <input class="form-control" id="target-calories" type="search" placeholder="Enter you Target calories per day">
+          </div>
+
+        <input type="radio" id="day" name="time" value="day" checked>
+        <label for="day">day</label><br>
+        <input type="radio" id="week" name="time" value="week">
+        <label for="week">week</label><br>
+  
+        <button class="btn btn-outline-danger " id="target-calories" type="button" (click)='search()'>Search</button>
+  
+      </form>
+
+</section>
+
+<section class="plan-results" *ngIf='mealPlan'>
+    <div class="container">
+        <div class="row">
+
+
+            <!-- if plan = day -->
+            <div class="week-plan col-md-12 text-center mt-5 " *ngIf='planTimeFrame=="day" '>
+
+                <div class="row row-cols-1 row-cols-md-3">
+
+                    <h2 class="col-md-12 recipes-header rounded">Your day plan</h2>
+
+                    <div class="col-md-4 mb-5" *ngFor='let meal of mealPlan.meals'>
+
+                        <a class="recipe-link" [routerLink]="['/recipeInfo', meal.id]">
+                            <div class="card h-100 recipe-card">
+                                <figure class="img-wrapper position-relative" >
+                                    <div class="img-overlay d-flex align-items-center justify-content-center rounded">
+                                        <h2 class="text-white">View Details</h2>
+                                    </div>
+                                    <img [src]="prefixImgSrc+meal.id+imgSize" [alt]='meal.title' class="card-img-top" >
+                                </figure>
+                                <div class="card-body p-1 pt-2 ">
+                                  <h2 class="card-title ">{{meal.title}}</h2>
+                                </div>
+                              </div>
+                          </a>
+
+                    </div>
+
+                    <div class="nutrients col-md-12 recipes-header" >
+
+                        <h2 class="col-md-12 recipes-header rounded">nutrients</h2>
+
+                        <table class="table col-md-12">
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">name</th>
+                                <th scope="col">amount</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr >
+                                <th scope="row">1</th>
+                                <td>protein</td>
+                                <td>{{mealPlan.nutrients.protein}}</td>
+                              </tr>
+
+                              <tr >
+                                <th scope="row">22</th>
+                                <td>fat</td>
+                                <td>{{mealPlan.nutrients.fat}}</td>
+                              </tr>
+
+                              <tr >
+                                <th scope="row">3</th>
+                                <td>carbohydrates</td>
+                                <td>{{mealPlan.nutrients.carbohydrates}}</td>
+                              </tr>
+
+                              <tr >
+                                <th scope="row">4</th>
+                                <td>Total calories</td>
+                                <td>{{mealPlan.nutrients.calories}}</td>
+                              </tr>
+
+                            </tbody>
+                          </table>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- if plan = week -->
+            <div class="week-plan col-md-12 text-center mt-5 " *ngIf='planTimeFrame=="week" '>
+
+                <div class="row row-cols-1 row-cols-md-3">
+
+                    <!-- friday -->
+                    <h2 class="col-md-12 recipes-header rounded">Friday</h2>
+
+                    <div class="col-md-4 mb-5" *ngFor='let meal of mealPlan.friday.meals'>
+
+                        <a class="recipe-link" [routerLink]="['/recipeInfo', meal.id]">
+                            <div class="card h-100 recipe-card">
+                                <figure class="img-wrapper position-relative" >
+                                    <div class="img-overlay d-flex align-items-center justify-content-center rounded">
+                                        <h2 class="text-white">View Details</h2>
+                                    </div>
+                                    <img [src]="prefixImgSrc+meal.id+imgSize" [alt]='meal.title' class="card-img-top" >
+                                </figure>
+                                <div class="card-body p-1 pt-2 ">
+                                  <h2 class="card-title ">{{meal.title}}</h2>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <div class="nutrients col-md-12 " >
+
+                        <h2 class="col-md-12 recipes-header rounded">nutrients</h2>
+
+                        <table class="table col-md-12 my-3">
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">name</th>
+                                <th scope="col">amount</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr >
+                                <th scope="row">1</th>
+                                <td>protein</td>
+                                <td>{{mealPlan.friday.nutrients.protein}}</td>
+                              </tr>
+
+                              <tr >
+                                <th scope="row">2</th>
+                                <td>fat</td>
+                                <td>{{mealPlan.friday.nutrients.fat}}</td>
+                              </tr>
+
+                              <tr >
+                                <th scope="row">3</th>
+                                <td>carbohydrates</td>
+                                <td>{{mealPlan.friday.nutrients.carbohydrates}}</td>
+                              </tr>
+
+                              <tr >
+                                <th scope="row">4</th>
+                                <td>Total calories</td>
+                                <td>{{mealPlan.friday.nutrients.calories}}</td>
+                              </tr>
+
+                            </tbody>
+                        </table>
+
+
+                    </div>
+
+                    <!-- friday -->
+
+                    <!-- saturday -->
+                    <h2 class="col-md-12 recipes-header rounded">Saturday</h2>
+
+                    <div class="col-md-4 mb-5" *ngFor='let meal of mealPlan.saturday.meals'>
+
+                        <a class="recipe-link" [routerLink]="['/recipeInfo', meal.id]">
+                            <div class="card h-100 recipe-card">
+                                <figure class="img-wrapper position-relative" >
+                                    <div class="img-overlay d-flex align-items-center justify-content-center rounded">
+                                        <h2 class="text-white">View Details</h2>
+                                    </div>
+                                    <img [src]="prefixImgSrc+meal.id+imgSize" [alt]='meal.title' class="card-img-top" >
+                                </figure>
+                                <div class="card-body p-1 pt-2 ">
+                                  <h2 class="card-title ">{{meal.title}}</h2>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <div class="nutrients col-md-12 " >
+
+                        <h2 class="col-md-12 recipes-header rounded">nutrients</h2>
+
+                        <table class="table col-md-12 my-3">
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">name</th>
+                                <th scope="col">amount</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr >
+                                <th scope="row">1</th>
+                                <td>protein</td>
+                                <td>{{mealPlan.saturday.nutrients.protein}}</td>
+                              </tr>
+
+                              <tr >
+                                <th scope="row">2</th>
+                                <td>fat</td>
+                                <td>{{mealPlan.saturday.nutrients.fat}}</td>
+                              </tr>
+
+                              <tr >
+                                <th scope="row">3</th>
+                                <td>carbohydrates</td>
+                                <td>{{mealPlan.saturday.nutrients.carbohydrates}}</td>
+                              </tr>
+
+                              <tr >
+                                <th scope="row">4</th>
+                                <td>Total calories</td>
+                                <td>{{mealPlan.saturday.nutrients.calories}}</td>
+                              </tr>
+
+                            </tbody>
+                        </table>
+
+
+                    </div>
+
+                    <!-- saturday -->
+
+                    <!-- sunday -->
+                    <h2 class="col-md-12 recipes-header rounded">Sunday</h2>
+
+                    <div class="col-md-4 mb-5" *ngFor='let meal of mealPlan.sunday.meals'>
+
+                        <a class="recipe-link" [routerLink]="['/recipeInfo', meal.id]">
+                            <div class="card h-100 recipe-card">
+                                <figure class="img-wrapper position-relative" >
+                                    <div class="img-overlay d-flex align-items-center justify-content-center rounded">
+                                        <h2 class="text-white">View Details</h2>
+                                    </div>
+                                    <img [src]="prefixImgSrc+meal.id+imgSize" [alt]='meal.title' class="card-img-top" >
+                                </figure>
+                                <div class="card-body p-1 pt-2 ">
+                                  <h2 class="card-title ">{{meal.title}}</h2>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <div class="nutrients col-md-12 " >
+
+                        <h2 class="col-md-12 recipes-header rounded">nutrients</h2>
+
+                        <table class="table col-md-12 my-3">
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">name</th>
+                                <th scope="col">amount</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr >
+                                <th scope="row">1</th>
+                                <td>protein</td>
+                                <td>{{mealPlan.sunday.nutrients.protein}}</td>
+                              </tr>
+
+                              <tr >
+                                <th scope="row">2</th>
+                                <td>fat</td>
+                                <td>{{mealPlan.sunday.nutrients.fat}}</td>
+                              </tr>
+
+                              <tr >
+                                <th scope="row">3</th>
+                                <td>carbohydrates</td>
+                                <td>{{mealPlan.sunday.nutrients.carbohydrates}}</td>
+                              </tr>
+
+                              <tr >
+                                <th scope="row">4</th>
+                                <td>Total calories</td>
+                                <td>{{mealPlan.sunday.nutrients.calories}}</td>
+                              </tr>
+
+                            </tbody>
+                        </table>
+
+
+                    </div>
+
+                    <!-- sunday -->
+
+                    <!-- monday -->
+                    <h2 class="col-md-12 recipes-header rounded">Monday</h2>
+
+                    <div class="col-md-4 mb-5" *ngFor='let meal of mealPlan.monday.meals'>
+
+                        <a class="recipe-link" [routerLink]="['/recipeInfo', meal.id]">
+                            <div class="card h-100 recipe-card">
+                                <figure class="img-wrapper position-relative" >
+                                    <div class="img-overlay d-flex align-items-center justify-content-center rounded">
+                                        <h2 class="text-white">View Details</h2>
+                                    </div>
+                                    <img [src]="prefixImgSrc+meal.id+imgSize" [alt]='meal.title' class="card-img-top" >
+                                </figure>
+                                <div class="card-body p-1 pt-2 ">
+                                  <h2 class="card-title ">{{meal.title}}</h2>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <div class="nutrients col-md-12 " >
+
+                        <h2 class="col-md-12 recipes-header rounded">nutrients</h2>
+
+                        <table class="table col-md-12 my-3">
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">name</th>
+                                <th scope="col">amount</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr >
+                                <th scope="row">1</th>
+                                <td>protein</td>
+                                <td>{{mealPlan.monday.nutrients.protein}}</td>
+                              </tr>
+
+                              <tr >
+                                <th scope="row">2</th>
+                                <td>fat</td>
+                                <td>{{mealPlan.monday.nutrients.fat}}</td>
+                              </tr>
+
+                              <tr >
+                                <th scope="row">3</th>
+                                <td>carbohydrates</td>
+                                <td>{{mealPlan.monday.nutrients.carbohydrates}}</td>
+                              </tr>
+
+                              <tr >
+                                <th scope="row">4</th>
+                                <td>Total calories</td>
+                                <td>{{mealPlan.monday.nutrients.calories}}</td>
+                              </tr>
+
+                            </tbody>
+                        </table>
+
+
+                    </div>
+
+                    <!-- monday -->
+
+                    <!-- tuesday -->
+                    <h2 class="col-md-12 recipes-header rounded">Tuesday</h2>
+
+                    <div class="col-md-4 mb-5" *ngFor='let meal of mealPlan.tuesday.meals'>
+
+                        <a class="recipe-link" [routerLink]="['/recipeInfo', meal.id]">
+                            <div class="card h-100 recipe-card">
+                                <figure class="img-wrapper position-relative" >
+                                    <div class="img-overlay d-flex align-items-center justify-content-center rounded">
+                                        <h2 class="text-white">View Details</h2>
+                                    </div>
+                                    <img [src]="prefixImgSrc+meal.id+imgSize" [alt]='meal.title' class="card-img-top" >
+                                </figure>
+                                <div class="card-body p-1 pt-2 ">
+                                  <h2 class="card-title ">{{meal.title}}</h2>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <div class="nutrients col-md-12 " >
+
+                        <h2 class="col-md-12 recipes-header rounded">nutrients</h2>
+
+                        <table class="table col-md-12 my-3">
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">name</th>
+                                <th scope="col">amount</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr >
+                                <th scope="row">1</th>
+                                <td>protein</td>
+                                <td>{{mealPlan.tuesday.nutrients.protein}}</td>
+                              </tr>
+
+                              <tr >
+                                <th scope="row">2</th>
+                                <td>fat</td>
+                                <td>{{mealPlan.tuesday.nutrients.fat}}</td>
+                              </tr>
+
+                              <tr >
+                                <th scope="row">3</th>
+                                <td>carbohydrates</td>
+                                <td>{{mealPlan.tuesday.nutrients.carbohydrates}}</td>
+                              </tr>
+
+                              <tr >
+                                <th scope="row">4</th>
+                                <td>Total calories</td>
+                                <td>{{mealPlan.tuesday.nutrients.calories}}</td>
+                              </tr>
+
+                            </tbody>
+                        </table>
+
+
+                    </div>
+
+                    <!-- tuesday -->
+
+                    <!-- wednesday -->
+                    <h2 class="col-md-12 recipes-header rounded">Wednesday</h2>
+
+                    <div class="col-md-4 mb-5" *ngFor='let meal of mealPlan.wednesday.meals'>
+
+                        <a class="recipe-link" [routerLink]="['/recipeInfo', meal.id]">
+                            <div class="card h-100 recipe-card">
+                                <figure class="img-wrapper position-relative" >
+                                    <div class="img-overlay d-flex align-items-center justify-content-center rounded">
+                                        <h2 class="text-white">View Details</h2>
+                                    </div>
+                                    <img [src]="prefixImgSrc+meal.id+imgSize" [alt]='meal.title' class="card-img-top" >
+                                </figure>
+                                <div class="card-body p-1 pt-2 ">
+                                  <h2 class="card-title ">{{meal.title}}</h2>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <div class="nutrients col-md-12 " >
+
+                        <h2 class="col-md-12 recipes-header rounded">nutrients</h2>
+
+                        <table class="table col-md-12 my-3">
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">name</th>
+                                <th scope="col">amount</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr >
+                                <th scope="row">1</th>
+                                <td>protein</td>
+                                <td>{{mealPlan.wednesday.nutrients.protein}}</td>
+                              </tr>
+
+                              <tr >
+                                <th scope="row">2</th>
+                                <td>fat</td>
+                                <td>{{mealPlan.wednesday.nutrients.fat}}</td>
+                              </tr>
+
+                              <tr >
+                                <th scope="row">3</th>
+                                <td>carbohydrates</td>
+                                <td>{{mealPlan.wednesday.nutrients.carbohydrates}}</td>
+                              </tr>
+
+                              <tr >
+                                <th scope="row">4</th>
+                                <td>Total calories</td>
+                                <td>{{mealPlan.wednesday.nutrients.calories}}</td>
+                              </tr>
+
+                            </tbody>
+                        </table>
+
+
+                    </div>
+
+                    <!-- wednesday -->
+
+                    <!-- thursday -->
+                    <h2 class="col-md-12 recipes-header rounded">Thursday</h2>
+
+                    <div class="col-md-4 mb-5" *ngFor='let meal of mealPlan.thursday.meals'>
+
+                        <a class="recipe-link" [routerLink]="['/recipeInfo', meal.id]">
+                            <div class="card h-100 recipe-card">
+                                <figure class="img-wrapper position-relative" >
+                                    <div class="img-overlay d-flex align-items-center justify-content-center rounded">
+                                        <h2 class="text-white">View Details</h2>
+                                    </div>
+                                    <img [src]="prefixImgSrc+meal.id+imgSize" [alt]='meal.title' class="card-img-top" >
+                                </figure>
+                                <div class="card-body p-1 pt-2 ">
+                                  <h2 class="card-title ">{{meal.title}}</h2>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <div class="nutrients col-md-12 " >
+
+                        <h2 class="col-md-12 recipes-header rounded">nutrients</h2>
+
+                        <table class="table col-md-12 my-3">
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">name</th>
+                                <th scope="col">amount</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr >
+                                <th scope="row">1</th>
+                                <td>protein</td>
+                                <td>{{mealPlan.thursday.nutrients.protein}}</td>
+                              </tr>
+
+                              <tr >
+                                <th scope="row">2</th>
+                                <td>fat</td>
+                                <td>{{mealPlan.thursday.nutrients.fat}}</td>
+                              </tr>
+
+                              <tr >
+                                <th scope="row">3</th>
+                                <td>carbohydrates</td>
+                                <td>{{mealPlan.thursday.nutrients.carbohydrates}}</td>
+                              </tr>
+
+                              <tr >
+                                <th scope="row">4</th>
+                                <td>Total calories</td>
+                                <td>{{mealPlan.thursday.nutrients.calories}}</td>
+                              </tr>
+
+                            </tbody>
+                        </table>
+
+
+                    </div>
+
+                    <!-- thursday -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

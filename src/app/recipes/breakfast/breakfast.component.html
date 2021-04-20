@@ -1,0 +1,67 @@
+
+<div class="w-100 h-100 d-flex justify-content-center align-items-center" *ngIf='!breakfastRecipes'>
+    <div class="spinner-grow text-success" role="status" *ngIf='!breakfastRecipes'>
+        <span class="sr-only">Loading...</span>
+    </div>    
+</div>
+
+<header class="mt-5" *ngIf='breakfastRecipes'>
+
+    <div class="container">
+        <div class="row">
+            <div class="recipes-header col-md-12 py-2 text-center rounded">
+                <h1>Breakfast Recipes</h1>
+            </div>
+        </div>
+    </div>
+    
+</header>
+
+<section class="recipes text-center" *ngIf='breakfastRecipes'>
+    <div class="container recipe-container rounded py-5 px-0">
+        
+        <div class="row row-cols-1 row-cols-md-3">
+
+            <div class="col mb-4 p-3 " *ngFor="let recipe of breakfastRecipes">
+
+              <a class="recipe-link" [routerLink]="['/recipeInfo', recipe.id]">
+                <div class="card h-100 recipe-card">
+                    <figure class="img-wrapper position-relative" >
+                        <div class="img-overlay d-flex align-items-center justify-content-center rounded">
+                            <h2 class="text-white">View Details</h2>
+                        </div>
+                        <img [src]="recipe.image" [alt]='recipe.title' class="card-img-top" >
+                    </figure>
+                    <div class="card-body p-1 pt-2 ">
+                      <h2 class="card-title ">{{recipe.title}}</h2>
+                    </div>
+                  </div>
+              </a>
+
+            </div>
+            
+        </div>
+
+    </div>
+</section>
+
+<!-- <section class="general-recipes pt-5">
+    <div class="container">
+        <div class="row">
+
+            <div class="recipe col-md-3 " *ngFor="let recipe of breakfastRecipes" >
+
+                <a [routerLink]="['/recipeInfo', recipe.id]" >
+
+                <img class="img-fluid rounded" [src]="recipe.image" [alt]='recipe.title'>
+
+                <h2>{{recipe.title}}</h2>
+            
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+</section> -->
+

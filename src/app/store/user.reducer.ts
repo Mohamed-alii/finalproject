@@ -1,4 +1,4 @@
-import { GET_USER } from './user.action';
+import { CLEAR_USER, GET_USER } from './user.action';
 
 const initialState = {
     user: {},
@@ -9,6 +9,12 @@ export function userReducer(state = initialState, action) {
             return {
                 ...state,
                 user: { ...action.payload },
+            };
+        }
+        case CLEAR_USER: {
+            return {
+                ...state,
+                user: { },
             };
         }
             

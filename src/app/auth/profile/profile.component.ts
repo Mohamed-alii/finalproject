@@ -13,8 +13,8 @@ export class ProfileComponent {
   constructor(private store: Store<{ user }>, private auth: AuthService) {
     this.store.select("user").subscribe(data => {
       this.user = data.user
-
     })
+
     this.auth.getInfo()
 
   }

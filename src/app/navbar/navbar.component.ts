@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HostListener } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { AuthService } from '../auth/services/auth.service';
+import { GetUser } from '../store/user.action';
 
 @Component({
   selector: 'app-navbar',
@@ -17,10 +20,21 @@ export class NavbarComponent implements OnInit {
       element.classList.remove('sticky-nav');
     }
   }
-
-  constructor() { }
-
+  constructor(private auth: AuthService) { }
   ngOnInit(): void {
   }
+ 
+  logout() {
+    this.auth.logout()
+  }
+
+
+
+
+
+
+
+
+
 
 }

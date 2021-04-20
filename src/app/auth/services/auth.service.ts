@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import firebase from "firebase/app";
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Store } from '@ngrx/store';
-import { GetUser } from 'src/app/store/user.action';
+import { ClearUser, GetUser } from 'src/app/store/user.action';
 import { HttpClient } from '@angular/common/http';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
@@ -25,12 +25,9 @@ export class AuthService {
 
     if (localStorage.getItem("token")) {
       this.token = JSON.parse(localStorage.getItem("token"))
-
       this.getInfo()
   }
-    
   }
-
 
   signUp(email, password) {
     return this.fireBaseAuth.createUserWithEmailAndPassword(email, password)
@@ -53,14 +50,24 @@ export class AuthService {
       })
   }
 
+  logout() {
+ //   this.route.navigate(['/home']);
+    this.store.dispatch(new ClearUser())
+  this.store.select("user").subscribe(data =>{console.log(data)})
+    // this.token = undefined
+    localStorage.removeItem("token")
+    this.fireBaseAuth.signOut()
+  
+}
   getInfo() {
     //this.firestore.collection('users').valueChanges().subscribe(data => console.log(data));
     let user;
+ 
     this.firestore.collection('users').doc(this.token).valueChanges().subscribe(data => {
       if (data) {
         user = data
         this.store.dispatch(new GetUser(user))
-        this.store.select("user").subscribe(data => console.log(data))
+      
       }
 
     })

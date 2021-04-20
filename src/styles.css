@@ -1,16 +1,88 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+html
+{
+    height: 100%;
+}
+body{
+    background-color: #fff;
+    font-family: 'Indie Flower', cursive;
+    height: 100%;
+
+}
+
 
 :root {
+    --base: #40AA54;
+    --p-padding : 1.4rem;
+    --p-size:1.4rem ;
     --green: #40AA54;
     --lightGreen: 213, 240, 219;
     --lightGrey: #F3F3F5;
     --paraGrey:#70757A;
 }
-
-html , body
-{
-    height: 100%;
+.sec-padding{
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
+
+hr{
+    height: 2px;
+    width: 130px;
+    background:var(--base);
+}
+.gen-btn{
+        padding: 1rem !important;
+        background-color: var(--base);
+        border-color: var(--base);
+        border-radius: 7px;
+        cursor: pointer;
+        width: 190px;
+        color: #FFFFFF;
+        outline: none;
+        font-family: 'Original Surfer', cursive;
+        border: none;
+        transition: 0.3s linear;
+        text-decoration: none;
+}
+.gen-btn:hover{
+    transition: all 0.5s ease-in-out;
+    transform: translate(0.1rem,0.1rem);
+
+}
+.input-style{
+    display: inline-block;
+    text-align: center;
+    border-radius: 10px;
+    font-family: 'Source Sans Pro', sans-serif;
+    background: #eee;
+    padding: 1rem ;
+    outline: none;
+    min-width: 241.5px;
+    border: none;
+    color: #222;
+    transition: 0.3s linear;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* recipes style end-------------------------------------------------------------------------------------------*/
+
 
 a 
 {
@@ -30,7 +102,6 @@ a:hover
 }
   
 
-/* style */
 
 .recipe-card
 {
@@ -63,7 +134,4 @@ a:hover
     visibility: hidden;
 }
 
-
-/* sdfsfs */
-
-
+/* recipes style end-------------------------------------------------------------------------------------------*/

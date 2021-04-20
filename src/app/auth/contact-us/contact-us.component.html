@@ -1,0 +1,29 @@
+<section>
+        <form class="contactForm" [formGroup]="contactForm" (ngSubmit)="submitContactForm">
+            <h2>Contact Us</h2>
+            <div class="mb-3">
+                <input type="email" placeholder="Email Address..." formControlName="Email" class="form-control m-0" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div class="validat-txxt" *ngIf="contactControls.Email.errors && contactControls.Email.touched">
+                    <div *ngIf="contactControls.Email.errors.required">
+                        <div class="validat-txt text-center m-auto">This feild is required</div>
+                    </div>
+                    <div *ngIf="contactControls.Email.errors?.pattern">
+                        <div class="validat-txt text-center m-auto">invalid Pattern</div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="form-floating">
+                    <textarea class="form-control m-0" placeholder="Tell Us Your advice..." formControlName="Comment" id="floatingTextarea"></textarea>
+                    <div class="validat-txxt"  *ngIf="contactControls.Comment.errors && contactControls.Comment.touched">
+                        <div class="m-auto" *ngIf="contactControls.Comment.errors.required">
+                            <div class="validat-txt text-center m-auto">This feild is required</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="cont-btn btn">Send</button>
+        </form>
+    
+
+</section>

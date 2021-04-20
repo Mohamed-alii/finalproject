@@ -15,12 +15,21 @@ import { BreakfastComponent } from './recipes/breakfast/breakfast.component';
 import { SnackComponent } from './recipes/snack/snack.component';
 import { SearchComponent } from './recipes/search/search.component';
 import { MealPlanComponent } from './recipes/meal-plan/meal-plan.component';
-
+import { LoginComponent } from './auth/login/login.component';
+import { ProfileFormComponent } from './auth/profile-form/profile-form.component';
+import { ProfileComponent } from './auth/profile/profile.component';
+import { RegistrationComponent } from './auth/registration/registration.component';
+import { HomeComponent } from './main/home/home.component';
 
 
 
 const routes: Routes = [
-  {path:"" , redirectTo:"generalRecipes" ,pathMatch:"full"},
+  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'profile-form', component: ProfileFormComponent },
+  { path: 'profile', component: ProfileComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegistrationComponent },
   {path:"generalRecipes" , component:GeneralRecipesComponent},
   {path:"glutenFreeRecipes" , component:GlutenFreeComponent},
   {path:"ketogenicRecipes" , component:KetogenicComponent},
@@ -36,7 +45,8 @@ const routes: Routes = [
   {path:"mealPlan" , component:MealPlanComponent},
   {path:"recipeInfo/:id" , component:RecipeInfoComponent},
   {path:"search/:query" , component:SearchComponent}
-];
+
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

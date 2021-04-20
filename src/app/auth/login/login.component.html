@@ -1,0 +1,64 @@
+<section class="login-form">
+    <div class="row m-auto ">
+
+<form class="container log-form" #loginform="ngForm" (ngSubmit)="loginFormSubmit(loginform)">
+  <div class="cont">
+  <div class="pro">
+    <h2 class="text-center">LogIn</h2>
+    <p class="text-center">Welcome To Your Dream's Kichen...</p>
+  </div>
+
+  <div class="mb-1 form-group">
+        <input type="email" placeholder="Email Address..." pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="form-control" id="email" name="email" aria-describedby="emailHelp" ngModel #email="ngModel" required>
+        <div id="email" *ngIf="email.errors && email.touched || email.dirty">
+          <div *ngIf="email.errors.required">
+            <div class=" validat-txt m-auto text-center">This feild is required</div>
+        </div>
+        <div *ngIf="email.errors?.pattern">
+            <div class="validat-txt m-auto text-center" [hidden]="!email.errors?.pattern">Invalid pattern</div>
+        </div>
+        </div>
+    </div>
+    <div class="mb-1">
+        <input type="password" placeholder="Password..." class="form-control" id="pass" name="pass" ngModel #pass="ngModel" minlength="8" required>
+        <div *ngIf="pass.errors && pass.touched">
+            <div *ngIf="pass.errors.required">
+                <div class=" validat-txt m-auto text-center">This feild is required</div>
+            </div>
+            <div *ngIf="pass.errors.minlength">
+                <div class="validat-txt m-auto text-center">at least 8 characters</div>
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary log-btn">Submit</button>
+
+     <button type="button" class="btn btn-primary  mt-2  log-btn" (click)="facebookLogin()"><i class="fab fa-facebook "></i> 
+      Facebook</button> 
+    <div class="register my-2"><b>Don't have account ? <a class="regist-link" >Register</a></b></div>
+
+    <h3 class="text-danger">{{firebaseError}}</h3>
+  </div>
+</form>
+
+<div class="img-login">
+  <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item w-100 active">
+        <img src="./assets/mostafa3.png" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item w-100">
+        <img src="./assets/mostafa2.png" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item w-100">
+        <img src="./assets/mostafa.png" class="d-block w-100" alt="...">
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+  </section>

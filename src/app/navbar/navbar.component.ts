@@ -11,6 +11,7 @@ import { GetUser } from '../store/user.action';
 })
 
 export class NavbarComponent implements OnInit {
+  token = false;
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(e) {
     let element = document.querySelector('.navbar');

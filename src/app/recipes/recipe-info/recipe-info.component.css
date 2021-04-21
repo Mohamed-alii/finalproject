@@ -73,13 +73,11 @@ i
 
 /* sdsadas */
 
-/* .table-body
+.btn-green
 {
-    overflow-y: scroll;
-    height: 300px;
-    display: block;
-} */
-
+    background-color: var(--green);
+    color: white;
+}
 .table-wrapper
 {
     overflow:hidden;

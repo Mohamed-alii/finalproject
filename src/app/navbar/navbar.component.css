@@ -3,6 +3,8 @@
     z-index: 100;
     width: 100%;
     top: 0;
+    left: 0;
+    right: 0;
 }
 .navbar a img{
     width: 150px;

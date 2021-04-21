@@ -106,7 +106,7 @@ export class FoodServiceService {
   // get meal plan
   getMealPlan(timeFrame , targetCalories):Observable<any>
   {
-    return this.http.get(`https://api.spoonacular.com/mealplanner/generate?timeFrame=${timeFrame}&targetCalories=${targetCalories}&apiKey=cf90ee8d96ad45a68cb4c292a2aabdfa`)
+    return this.http.get(`https://api.spoonacular.com/mealplanner/generate?timeFrame=${timeFrame}&targetCalories=${targetCalories}&apiKey=fe26a95e13b64e73946d15117dd36a89`)
   }
 
 

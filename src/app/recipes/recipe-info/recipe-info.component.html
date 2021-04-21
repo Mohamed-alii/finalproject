@@ -9,30 +9,30 @@
     <div class="container">
         <div class="row"> 
 
-            <figure class="col-md-6 header__left">
+            <figure class="col-md-6 header__left mb-md-0 mb-sm-5">
                 <img class="img-fluid" [src]='recipe.image' [alt]='recipe.title' >
             </figure>
 
-            <div class="col-md-6 header__right pt-sm-3 pt-md-0">
+            <div class="col-md-6 header__right pt-sm-3 pt-md-0 row">
 
-                <h1 class="mb-1">{{recipe.title}}</h1>
+                <h1 class="mb-1 col-md-12">{{recipe.title}}</h1>
 
 
-                <div class="row mb-5">
+                <div class="row col-md-12 mb-5">
 
-                    <p class="col-md-6 col-sm-6 light-parag"> <i class="far fa-clock pr-2"></i>Ready in {{recipe.readyInMinutes}} min</p>
+                    <p class="col-md-6 col-xs-3 light-parag"> <i class="far fa-clock pr-2"></i>Ready in {{recipe.readyInMinutes}} min</p>
 
-                    <div class="col-md-6 p-0 light-parag">
+                    <div class="col-md-6  light-parag">
                         <h4 class="d-inline mr-2">Servings</h4>
-                        <p class="d-inline">  {{recipe.servings}}</p>
+                        <p class="d-inline">{{recipe.servings}}</p>
                     </div>
                     
                 </div>
 
-                <div class="dish-types row" *ngIf='recipe.dishTypes.length != 0'>
-                    <h2 class="col-md-3" >Dish Types</h2>
+                <div class="dish-types col-md-12 row" *ngIf='recipe.dishTypes.length != 0'>
+                    <h2 class="col-md-4 mb-0" >Dish Types</h2>
 
-                    <div class="col-md-9 p-0 d-flex align-items-center flex-wrap">
+                    <div class="col-md-8 p-md-0 pl-xs-3 d-flex align-items-center flex-wrap pl-xs-3">
                         <p class="d-inline p-0" *ngFor='let recipeType of recipe.dishTypes ; let i = index'>
                             {{recipeType}} 
                             <span *ngIf="i != (recipeDishsLength-1)"> - </span>
@@ -41,15 +41,19 @@
                     
                 </div>
 
-                <div class="diets row" *ngIf='recipe.diets.length != 0'>
-                    <h2 class="col-md-3" >Diets</h2>
+                <div class="diets col-md-12 row" *ngIf='recipe.diets.length != 0'>
+                    <h2 class="col-md-4 mb-0" >Diets</h2>
 
-                    <div class="col-md-9 p-0 d-flex align-items-center flex-wrap">
+                    <div class="col-md-8 p-md-0 pl-xs-3 d-flex align-items-center flex-wrap">
                         <p class="d-inline p-0" *ngFor='let diet of recipe.diets ; let i = index'>
                             {{diet}} 
                             <span *ngIf="i != (recipeDietLength-1)"> - </span>
                         </p>
                     </div>
+                </div>
+
+                <div class="button-wrapper col-md-12  align-self-end" >
+                    <button type="button" class="btn btn-green" (click)='addToFavourate()'>Add to Favourates <i class="fas fa-heart text-white"></i></button>
                 </div>
 
             </div>
@@ -64,7 +68,7 @@
             <div class="col-md-12">
                 <div class="row ">
 
-                    <div class="col-md-2 " *ngFor='let ingredient of recipe.extendedIngredients'>
+                    <div class="col-md-2   " *ngFor='let ingredient of recipe.extendedIngredients'>
 
                         <figure class="ingredient-img d-flex align-items-end justify-content-center ">
                             <img class="img-fluid rounded" [src]='igredientsImgprefix+ingredient.image' >

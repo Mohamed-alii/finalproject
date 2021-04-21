@@ -17,6 +17,7 @@ export class RecipeInfoComponent implements OnInit {
   igredientsImgprefix;
   equipmentImgprefix;
 
+
   constructor(private foodServiceService:FoodServiceService , private activatedRoute:ActivatedRoute) {
 
     this.recipeId = this.activatedRoute.snapshot.paramMap.get('id');
@@ -34,6 +35,18 @@ export class RecipeInfoComponent implements OnInit {
 
 
      } )
+
+   }
+
+   addToFavourate(){
+
+    const favourateRecipe = {
+      title:String = this.recipe.title,
+      image:String = this.recipe.image,
+      id:Number = this.recipe.id,
+    }
+
+    console.log(favourateRecipe)
 
    }
 

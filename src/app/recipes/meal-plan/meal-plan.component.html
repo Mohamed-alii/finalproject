@@ -1,28 +1,62 @@
 
-<div class="w-100 h-100 d-flex justify-content-center align-items-center" *ngIf='!mealPlan && planTimeFrame'>
-    <div class="spinner-grow text-success" role="status" *ngIf='!mealPlan'>
+<!-- <div class="w-100 h-100 d-flex justify-content-center align-items-center" *ngIf='!(mealPlan && planTimeFrame)'>
+    <div class="spinner-grow text-success" role="status" *ngIf='!(mealPlan && planTimeFrame)'>
         <span class="sr-only">Loading...</span>
     </div>    
-</div>
+</div> -->
 
-<section class="user-input">
+<section class="user-input my-5 pt-5 ">
+  <div class="container ">
 
-    <form>
+    <form class="py-5 rounded bg-lightgreen">
 
-        <div class="form-group">
-            <label for="usr">Name:</label>
-            <input class="form-control" id="target-calories" type="search" placeholder="Enter you Target calories per day">
+        <div class="row">
+
+          <div class="form-group col-md-12 d-flex justify-content-center">
+            <input class="form-control w-50" id="target-calories" type="search" placeholder="Enter you Target calories per day (maximum per day 3500)">
           </div>
 
-        <input type="radio" id="day" name="time" value="day" checked>
-        <label for="day">day</label><br>
-        <input type="radio" id="week" name="time" value="week">
-        <label for="week">week</label><br>
-  
-        <button class="btn btn-outline-danger " id="target-calories" type="button" (click)='search()'>Search</button>
-  
-      </form>
+          <div class="form-group col-md-12 d-flex justify-content-center">
+            <p class="alert alert-danger py-2 px-5 w-50 text-center" *ngIf='emptyErrorMsg'>This filed can not be empty</p>
+          </div>
 
+          <div class="form-group col-md-12 d-flex justify-content-center">
+            <p class="alert alert-danger py-2 px-5 w-50 text-center" *ngIf='nanErrorMsg'>Input should be a number</p>
+          </div>
+
+          <div class="form-group col-md-12 d-flex justify-content-center">
+            <p class="alert alert-danger py-2 px-5 w-50 text-center" *ngIf='rangeErrorMsg'>maximum number is 3500</p>
+          </div>
+
+          <div class="col-md-12 d-flex justify-content-center " >
+
+            <div class="d-inline mr-4">
+              <div class="d-flex align-items-center">
+                <input type="radio" id="day" name="time" value="day" checked>
+                <label class="pl-2 mb-0" for="day">day</label><br>
+              </div>
+            </div>
+
+            <div class="d-inline ml-4 ">
+              <div class="d-flex align-items-center">
+                <input type="radio" id="week" name="time" value="week">
+                <label class="pl-2 mb-0" for="week">week</label><br>
+              </div>
+              
+            </div>
+            
+          </div>
+
+          <div class="col-md-12 d-flex justify-content-center my-3">
+            <button class="btn btn-green px-5" id="target-calories" type="button" (click)='search()'>Search</button>
+          </div>
+  
+
+        </div>
+        
+
+    </form>
+  </div>
 </section>
 
 <section class="plan-results" *ngIf='mealPlan'>
@@ -33,9 +67,9 @@
             <!-- if plan = day -->
             <div class="week-plan col-md-12 text-center mt-5 " *ngIf='planTimeFrame=="day" '>
 
-                <div class="row row-cols-1 row-cols-md-3">
+                <div class="row row-cols-1 row-cols-md-3 mx-3">
 
-                    <h2 class="col-md-12 recipes-header rounded">Your day plan</h2>
+                    <h2 class="col-md-12  rounded bg-green mb-5">Your day plan</h2>
 
                     <div class="col-md-4 mb-5" *ngFor='let meal of mealPlan.meals'>
 
@@ -55,12 +89,12 @@
 
                     </div>
 
-                    <div class="nutrients col-md-12 recipes-header" >
+                    <div class="nutrients col-md-12 " >
 
-                        <h2 class="col-md-12 recipes-header rounded">nutrients</h2>
+                        <h2 class="col-md-12 bg-lightgreen rounded">nutrients</h2>
 
-                        <table class="table col-md-12">
-                            <thead>
+                        <table class="table col-md-12 mt-3 mb-5 table-border ">
+                            <thead class="thead-light">
                               <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">name</th>
@@ -75,7 +109,7 @@
                               </tr>
 
                               <tr >
-                                <th scope="row">22</th>
+                                <th scope="row">2</th>
                                 <td>fat</td>
                                 <td>{{mealPlan.nutrients.fat}}</td>
                               </tr>
@@ -108,7 +142,7 @@
                 <div class="row row-cols-1 row-cols-md-3">
 
                     <!-- friday -->
-                    <h2 class="col-md-12 recipes-header rounded">Friday</h2>
+                    <h2 class="col-md-12 rounded bg-green mb-5">Friday</h2>
 
                     <div class="col-md-4 mb-5" *ngFor='let meal of mealPlan.friday.meals'>
 
@@ -130,10 +164,10 @@
 
                     <div class="nutrients col-md-12 " >
 
-                        <h2 class="col-md-12 recipes-header rounded">nutrients</h2>
+                        <h2 class="col-md-12  rounded bg-lightgreen">nutrients</h2>
 
-                        <table class="table col-md-12 my-3">
-                            <thead>
+                        <table class="table col-md-12 mt-3 mb-5 table-border">
+                            <thead class="thead-light">
                               <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">name</th>
@@ -174,7 +208,7 @@
                     <!-- friday -->
 
                     <!-- saturday -->
-                    <h2 class="col-md-12 recipes-header rounded">Saturday</h2>
+                    <h2 class="col-md-12  rounded bg-green mb-5">Saturday</h2>
 
                     <div class="col-md-4 mb-5" *ngFor='let meal of mealPlan.saturday.meals'>
 
@@ -196,10 +230,10 @@
 
                     <div class="nutrients col-md-12 " >
 
-                        <h2 class="col-md-12 recipes-header rounded">nutrients</h2>
+                        <h2 class="col-md-12  rounded bg-lightgreen">nutrients</h2>
 
-                        <table class="table col-md-12 my-3">
-                            <thead>
+                        <table class="table col-md-12 mt-3 mb-5 table-border">
+                            <thead class="thead-light">
                               <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">name</th>
@@ -240,7 +274,7 @@
                     <!-- saturday -->
 
                     <!-- sunday -->
-                    <h2 class="col-md-12 recipes-header rounded">Sunday</h2>
+                    <h2 class="col-md-12  rounded bg-green mb-5">Sunday</h2>
 
                     <div class="col-md-4 mb-5" *ngFor='let meal of mealPlan.sunday.meals'>
 
@@ -262,10 +296,10 @@
 
                     <div class="nutrients col-md-12 " >
 
-                        <h2 class="col-md-12 recipes-header rounded">nutrients</h2>
+                        <h2 class="col-md-12  rounded bg-lightgreen">nutrients</h2>
 
-                        <table class="table col-md-12 my-3">
-                            <thead>
+                        <table class="table col-md-12 mt-3 mb-5 table-border">
+                            <thead class="thead-light">
                               <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">name</th>
@@ -306,7 +340,7 @@
                     <!-- sunday -->
 
                     <!-- monday -->
-                    <h2 class="col-md-12 recipes-header rounded">Monday</h2>
+                    <h2 class="col-md-12  rounded bg-green mb-5">Monday</h2>
 
                     <div class="col-md-4 mb-5" *ngFor='let meal of mealPlan.monday.meals'>
 
@@ -328,10 +362,10 @@
 
                     <div class="nutrients col-md-12 " >
 
-                        <h2 class="col-md-12 recipes-header rounded">nutrients</h2>
+                        <h2 class="col-md-12  rounded bg-lightgreen">nutrients</h2>
 
-                        <table class="table col-md-12 my-3">
-                            <thead>
+                        <table class="table col-md-12 mt-3 mb-5 table-border">
+                            <thead class="thead-light">
                               <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">name</th>
@@ -372,7 +406,7 @@
                     <!-- monday -->
 
                     <!-- tuesday -->
-                    <h2 class="col-md-12 recipes-header rounded">Tuesday</h2>
+                    <h2 class="col-md-12  rounded bg-green mb-5">Tuesday</h2>
 
                     <div class="col-md-4 mb-5" *ngFor='let meal of mealPlan.tuesday.meals'>
 
@@ -394,10 +428,10 @@
 
                     <div class="nutrients col-md-12 " >
 
-                        <h2 class="col-md-12 recipes-header rounded">nutrients</h2>
+                        <h2 class="col-md-12  rounded bg-lightgreen">nutrients</h2>
 
-                        <table class="table col-md-12 my-3">
-                            <thead>
+                        <table class="table col-md-12 mt-3 mb-5 table-border">
+                            <thead class="thead-light">
                               <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">name</th>
@@ -438,7 +472,7 @@
                     <!-- tuesday -->
 
                     <!-- wednesday -->
-                    <h2 class="col-md-12 recipes-header rounded">Wednesday</h2>
+                    <h2 class="col-md-12  rounded bg-green mb-5">Wednesday</h2>
 
                     <div class="col-md-4 mb-5" *ngFor='let meal of mealPlan.wednesday.meals'>
 
@@ -460,10 +494,10 @@
 
                     <div class="nutrients col-md-12 " >
 
-                        <h2 class="col-md-12 recipes-header rounded">nutrients</h2>
+                        <h2 class="col-md-12  rounded bg-lightgreen">nutrients</h2>
 
-                        <table class="table col-md-12 my-3">
-                            <thead>
+                        <table class="table col-md-12 mt-3 mb-5 table-border">
+                            <thead class="thead-light">
                               <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">name</th>
@@ -504,7 +538,7 @@
                     <!-- wednesday -->
 
                     <!-- thursday -->
-                    <h2 class="col-md-12 recipes-header rounded">Thursday</h2>
+                    <h2 class="col-md-12  rounded bg-green mb-5">Thursday</h2>
 
                     <div class="col-md-4 mb-5" *ngFor='let meal of mealPlan.thursday.meals'>
 
@@ -526,10 +560,10 @@
 
                     <div class="nutrients col-md-12 " >
 
-                        <h2 class="col-md-12 recipes-header rounded">nutrients</h2>
+                        <h2 class="col-md-12  rounded bg-lightgreen">nutrients</h2>
 
-                        <table class="table col-md-12 my-3">
-                            <thead>
+                        <table class="table col-md-12 mt-3 mb-5 table-border">
+                            <thead class="thead-light">
                               <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">name</th>

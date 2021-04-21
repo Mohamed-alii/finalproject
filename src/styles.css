@@ -30,6 +30,11 @@ body{
     padding-bottom: 50px;
 }
 
+.bg-lightgreen
+{
+    background-color: rgb(var(--lightGreen));
+}
+
 hr{
     height: 2px;
     width: 130px;

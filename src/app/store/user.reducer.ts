@@ -1,7 +1,10 @@
-import { CLEAR_USER, GET_USER } from './user.action';
+import { ADD_TO_FAV, CLEAR_FAV, CLEAR_USER, GET_USER, ISLOGIN } from './user.action';
 
 const initialState = {
     user: {},
+    login: false,
+    fav: [],
+
 };
 export function userReducer(state = initialState, action) {
     switch (action.type) {
@@ -14,8 +17,28 @@ export function userReducer(state = initialState, action) {
         case CLEAR_USER: {
             return {
                 ...state,
-                user: { },
+                user: {},
             };
+        }
+            
+        case ADD_TO_FAV: {
+            return {
+                ...state,
+                fav: [...action.payload]
+            };
+        }
+            
+        case ISLOGIN: {
+            return {
+                ...state,
+                login: action.payload
+            }
+        }
+        case CLEAR_FAV: {
+            return {
+                ...state,
+                fav: []
+            }
         }
             
         default:

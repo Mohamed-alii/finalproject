@@ -10,7 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import{ SharedModule} from './shared/shared.module';
 import{MainModule} from './main/main.module';
 import {FormsModule} from '@angular/forms'
-
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,8 @@ import {FormsModule} from '@angular/forms'
     NavbarComponent 
   ],
   imports: [
-    BrowserModule,  
+    BrowserModule,
+    RouterModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     AuthModule,

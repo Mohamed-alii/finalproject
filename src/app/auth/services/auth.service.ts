@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import firebase from "firebase/app";
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Store } from '@ngrx/store';
-import { ClearUser, GetUser } from 'src/app/store/user.action';
+import { AddToFav, ClearFav, ClearUser, GetUser, isLogin } from 'src/app/store/user.action';
 import { HttpClient } from '@angular/common/http';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
@@ -17,22 +17,23 @@ export class AuthService {
 
 
 
-  constructor(private fireBaseAuth: AngularFireAuth,
+  constructor(
+    private fireBaseAuth: AngularFireAuth,
     private firestore: AngularFirestore,
     private store: Store<{ user }>,
     private Http: HttpClient,
-    private route: Router) {
-
+    private route: Router
+  ) {
     if (localStorage.getItem("token")) {
       this.token = JSON.parse(localStorage.getItem("token"))
-      this.getInfo()
-  }
+    }
   }
 
+
   signUp(email, password) {
+    console.log("sign up run")
     return this.fireBaseAuth.createUserWithEmailAndPassword(email, password)
       .then(res => {
-        console.log(res)
         this.token = res.user.uid
         localStorage.setItem('token', JSON.stringify(res.user.uid))
         this.route.navigate(['/profile-form']);
@@ -40,9 +41,9 @@ export class AuthService {
   }
 
   signIn(email, password) {
+    console.log("sign in run")
     return this.fireBaseAuth.signInWithEmailAndPassword(email, password)
       .then(res => {
-        console.log(res)
         localStorage.setItem('token', JSON.stringify(res.user.uid))
         this.token = res.user.uid;
         this.getInfo()
@@ -51,28 +52,18 @@ export class AuthService {
   }
 
   logout() {
- //   this.route.navigate(['/home']);
+    console.log("logout run")
     this.store.dispatch(new ClearUser())
-  this.store.select("user").subscribe(data =>{console.log(data)})
-    // this.token = undefined
+    this.store.dispatch(new isLogin(false))
     localStorage.removeItem("token")
-    this.fireBaseAuth.signOut()
-  
-}
-  getInfo() {
-    //this.firestore.collection('users').valueChanges().subscribe(data => console.log(data));
-    let user;
- 
-    this.firestore.collection('users').doc(this.token).valueChanges().subscribe(data => {
-      if (data) {
-        user = data
-        this.store.dispatch(new GetUser(user))
-      
-      }
-
-    })
+    this.route.navigate(['/home']);
+    this.store.dispatch(new ClearFav())
+    this.store.select("user").subscribe(data =>console.log(data))
+    // this.fireBaseAuth.signOut()
   }
+
   setUserInfo(photo, fName, lName = null, age = null, weight = null, phone = null, height = null) {
+    console.log("setuser run")
     this.firestore.collection("users").doc(this.token).set({
       photo: photo,
       fName: fName,
@@ -86,8 +77,41 @@ export class AuthService {
     this.route.navigate(['/home']);
   }
 
-  facebookLogin() {
+  getInfo() {
+    console.log("getinfo run")
+    let user;
+    let meals;
 
+    //get user data
+    this.firestore.collection('users').doc(this.token).valueChanges().subscribe(data => {
+      if (data) {
+        user = data
+        this.store.dispatch(new GetUser(user))
+        this.store.dispatch(new isLogin(true))
+      }
+    })
+
+    if (this.token != undefined) {
+      this.firestore.collection('meals').doc(this.token).collection(this.token).valueChanges().subscribe(data => {
+        if (data) {
+          meals = data
+          console.log(meals)
+          this.store.dispatch(new AddToFav(meals))
+        }
+      })
+    }
+
+  }
+
+  setFavMeal(meal) {
+    this.firestore.collection("meals").doc(this.token).collection(this.token).add(meal)
+  }
+
+
+
+
+  facebookLogin() {
+    console.log(" face run")
     var provider = new firebase.auth.FacebookAuthProvider();
     firebase.auth().signInWithPopup(provider)
       .then((result) => {
@@ -95,9 +119,7 @@ export class AuthService {
         localStorage.setItem('token', JSON.stringify(user.uid))
         this.token = user.uid
         this.setUserInfo(user.photoURL, user.displayName)
-        this.getInfo()
         this.route.navigate(['/profile-form']);
-
       })
       .catch((error) => {
         console.log(error)

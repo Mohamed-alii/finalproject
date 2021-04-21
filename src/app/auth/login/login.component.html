@@ -2,7 +2,7 @@
     <div class="row m-auto ">
 
 <form class="container log-form" #loginform="ngForm" (ngSubmit)="loginFormSubmit(loginform)">
-  <div class="cont">
+  <div class="cont"> 
   <div class="pro">
     <h2 class="text-center">LogIn</h2>
     <p class="text-center">Welcome To Your Dream's Kichen...</p>
@@ -11,9 +11,9 @@
   <div class="mb-1 form-group">
         <input type="email" placeholder="Email Address..." pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="form-control" id="email" name="email" aria-describedby="emailHelp" ngModel #email="ngModel" required>
         <div id="email" *ngIf="email.errors && email.touched || email.dirty">
-          <div *ngIf="email.errors.required">
+          <!-- <div *ngIf="email.errors.required">
             <div class=" validat-txt m-auto text-center">This feild is required</div>
-        </div>
+        </div> -->
         <div *ngIf="email.errors?.pattern">
             <div class="validat-txt m-auto text-center" [hidden]="!email.errors?.pattern">Invalid pattern</div>
         </div>

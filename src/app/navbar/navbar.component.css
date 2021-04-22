@@ -28,6 +28,7 @@ ul li .reg-btn:hover{
     background-color: #3E4140;
     transition: all 0.3s ease-in-out;
     border-bottom: 1px solid var(--base);
+    margin-left: auto;
 }
 .user-img{
     height: 40px;

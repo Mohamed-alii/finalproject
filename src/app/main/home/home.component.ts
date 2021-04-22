@@ -26,11 +26,11 @@ export class HomeComponent implements OnInit {
   bmimethod(){
     this.bmival=this.userdata.value.userweight / Math.pow( this.userdata.value.userheight,2) 
     if(this.bmival*100 <= 18.5){
-      this.bmimessage = `your bni is ${this.bmival} this means  you are too thin. `
+      this.bmimessage = `your bmi is ${this.bmival } this means  you are too thin. `
     }else if(this.bmival*100 <= 24.9){
-      this.bmimessage = `your bni is ${this.bmival} this means  you are healthy.`
+      this.bmimessage = `your bmi is ${this.bmival} this means  you are healthy.`
     }else if(this.bmival*100 > 24.9){
-      this.bmimessage =`your bni is ${this.bmival} this means you have overweight.`
+      this.bmimessage =`your bmi is ${this.bmival} this means you have overweight.`
     }
 
   }

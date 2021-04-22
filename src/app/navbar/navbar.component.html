@@ -1,19 +1,18 @@
 <nav class="navbar navbar-expand-lg navbar-light no-gutters">
-  <a class="navbar-brand m-0" href="#"><img class="img-fluid" src="/assets/images/logo.png"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <div class="d-flex ">
+    <a class="navbar-brand m-0" href="#"><img class="img-fluid" src="/assets/images/logo.png"></a>
+  </div>
+  
   <div class="collapse navbar-collapse " id="navbarSupportedContent">
-    <ul class="navbar-nav  m-auto">
+    <ul class="navbar-nav  m-lg-auto m-0">
       <li class="nav-item ">
-        <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
+        <a class="nav-link mx-lg-0 mx-3" href="#">HOME <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">CONTACT</a>
+        <a class="nav-link  mx-lg-0 mx-3" href="#">CONTACT</a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+        <a class="nav-link  mx-lg-0 mx-3 dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
           Meals
         </a>
@@ -26,7 +25,7 @@
         </div>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+        <a class="nav-link  mx-lg-0 mx-3 dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
           Diets
         </a>
@@ -41,14 +40,14 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link " href="#">INFO</a>
+        <a class="nav-link  mx-lg-0 mx-3 " href="#">INFO</a>
       </li>
 
     </ul>
-    <div>
-      <ul class="navbar-nav">
-        <li class="nav-item dropdown " [ngClass]="{'user-token' : token == true}">
-          <a class="nav-link dropdown-toggle gen-btn reg-btn text-center" href="#" id="navbarDropdown" role="button"
+    <div  >
+      <ul class="navbar-nav "   [ngClass]="{'user-token' : token == true}">
+        <li class="nav-item dropdown ">
+          <a class="nav-link dropdown-toggle gen-btn reg-btn text-center " href="#" id="navbarDropdown" role="button"
             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             REGISTER
           </a>
@@ -59,13 +58,21 @@
           </div>
         </li>
       </ul>
+      <div class=" Logout mx-lg-2" [ngClass]="{'user-token' : token == false}">
+        <a class="nav-link nav-item mx-lg-5 px-4 px-lg-2 order-1 " href="#">Logout</a>
+      </div>
     </div>
+   
   </div>
-  <div class="user-img" [ngClass]="{'user-token' : token == false}">
-    <a href="#"> <img src="assets/images/1.jpg" alt="profileimage"></a>
-  </div>
-  <div class=" Logout " [ngClass]="{'user-token' : token == false}">
-    <a class="nav-link " href="#">Logout</a>
-  </div>
-
+  <div class="d-flex flex-row-reverse fixed-top m-3">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="user-img mx-lg-3  mx-2 order-12" [ngClass]="{'user-token' : token == false}">
+      <a href="#"> <img src="assets/images/1.jpg" alt="profileimage"></a>
+    </div>
+   </div>
 </nav>
+ 
+

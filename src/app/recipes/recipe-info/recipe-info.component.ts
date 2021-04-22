@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FoodServiceService } from '../../food-service.service';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/auth/services/auth.service';
 
 @Component({
   selector: 'app-recipe-info',
@@ -18,7 +19,7 @@ export class RecipeInfoComponent implements OnInit {
   equipmentImgprefix;
 
 
-  constructor(private foodServiceService:FoodServiceService , private activatedRoute:ActivatedRoute) {
+  constructor(private foodServiceService:FoodServiceService , private activatedRoute:ActivatedRoute , private Auth : AuthService) {
 
     this.recipeId = this.activatedRoute.snapshot.paramMap.get('id');
 
@@ -41,12 +42,13 @@ export class RecipeInfoComponent implements OnInit {
    addToFavourate(){
 
     const favourateRecipe = {
-      title:String = this.recipe.title,
-      image:String = this.recipe.image,
-      id:Number = this.recipe.id,
+      title: this.recipe.title,
+      image:  this.recipe.image,
+      id : this.recipe.id,
     }
-
-    console.log(favourateRecipe)
+    //Mostafa Start here
+     console.log(favourateRecipe)
+     this.Auth.setFavMeal(favourateRecipe)
 
    }
 

@@ -20,6 +20,7 @@ import { ProfileFormComponent } from './auth/profile-form/profile-form.component
 import { ProfileComponent } from './auth/profile/profile.component';
 import { RegistrationComponent } from './auth/registration/registration.component';
 import { HomeComponent } from './main/home/home.component';
+import { AuthGuardGuard } from './services/auth-guard.guard';
 
 
 
@@ -41,8 +42,8 @@ const routes: Routes = [
   {path:"sideDish" , component:SideDishComponent},
   {path:"salad" , component:SaladComponent},
   {path:"breakfast" , component:BreakfastComponent},
-  {path:"snack" , component:SnackComponent},
-  {path:"mealPlan" , component:MealPlanComponent},
+  {path:"snack" , component:SnackComponent },
+  { path: "mealPlan", component: MealPlanComponent, canActivate: [AuthGuardGuard]},
   {path:"recipeInfo/:id" , component:RecipeInfoComponent},
   {path:"search/:query" , component:SearchComponent}
 

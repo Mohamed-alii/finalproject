@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { AddToFav } from 'src/app/store/user.action';
+import { AddToFav, RemoveFav } from 'src/app/store/user.action';
 import { AuthService } from '../services/auth.service';
 
 
@@ -11,22 +11,19 @@ import { AuthService } from '../services/auth.service';
 })
 export class ProfileComponent {
   user;
-
+  meals;
 
   constructor(private store: Store<{ user }>, private auth: AuthService) {
     this.store.select("user").subscribe(data => {
       this.user = data.user
+      this.meals = data.fav
+      console.log(this.meals)
     })
- 
   }
 
- addFav() {
-   this.store.select("user").subscribe(data => console.log(data.fav))   
-   this.auth.setFavMeal({
-     title: "Soy Ginger Glazed Halibut w/ Ginger Peach Relish",
-     image: "https://spoonacular.com/recipeImages/660736-556x370.jpg",
-     id: 660736
-   })
+  removeMeal(meal) {
+    this.store.dispatch(new RemoveFav(meal))
+    this.auth.removeFav(meal)
   }
 
 }

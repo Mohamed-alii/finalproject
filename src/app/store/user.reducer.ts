@@ -1,4 +1,4 @@
-import { ADD_TO_FAV, CLEAR_FAV, CLEAR_USER, GET_USER, ISLOGIN } from './user.action';
+import { ADD_TO_FAV, CLEAR_FAV, CLEAR_USER, GET_USER, ISLOGIN, REMOVE_FAV } from './user.action';
 
 const initialState = {
     user: {},
@@ -24,7 +24,9 @@ export function userReducer(state = initialState, action) {
         case ADD_TO_FAV: {
             return {
                 ...state,
-                fav: [...action.payload]
+                fav: [
+                    ...action.payload
+                ]
             };
         }
             
@@ -40,6 +42,15 @@ export function userReducer(state = initialState, action) {
                 fav: []
             }
         }
+        case REMOVE_FAV: {
+            return {
+                ...state,
+                fav: [
+                    ...state.fav.filter(item => item.id != action.payload.id )
+                ]
+            }
+        }
+            
             
         default:
             return {

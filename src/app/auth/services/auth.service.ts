@@ -58,7 +58,7 @@ export class AuthService {
     localStorage.removeItem("token")
     this.route.navigate(['/home']);
     this.store.dispatch(new ClearFav())
-    this.store.select("user").subscribe(data =>console.log(data))
+    this.store.select("user").subscribe(data => console.log(data))
     // this.fireBaseAuth.signOut()
   }
 
@@ -92,21 +92,41 @@ export class AuthService {
     })
 
     if (this.token != undefined) {
-      this.firestore.collection('meals').doc(this.token).collection(this.token).valueChanges().subscribe(data => {
-        if (data) {
-          meals = data
-          console.log(meals)
-          this.store.dispatch(new AddToFav(meals))
-        }
+      this.firestore.collection('meals').doc(this.token).collection(this.token).get().subscribe(data => {
+        let meals: {}[] = []
+        data.docs.forEach(doc => {
+          let meal: {} = {
+            ...doc.data(),
+            uid: doc.id
+          }
+          meals.push(meal)
+        })
+        this.store.dispatch(new AddToFav(meals))
       })
     }
-
   }
+
+
+
 
   setFavMeal(meal) {
     this.firestore.collection("meals").doc(this.token).collection(this.token).add(meal)
-  }
+    this.firestore.collection('meals').doc(this.token).collection(this.token).get().subscribe(data => {
+      let meals: {}[] = []
+      data.docs.forEach(doc => {
+        let meal: {} = {
+          ...doc.data(),
+          uid: doc.id
+        }
+        meals.push(meal)
+      })
+      this.store.dispatch(new AddToFav(meals))
+    })
 
+  }
+  removeFav(meal) {
+    this.firestore.collection('meals').doc(this.token).collection(this.token).doc(meal.uid).delete()
+  }
 
 
 

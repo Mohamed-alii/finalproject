@@ -4,19 +4,35 @@
     box-sizing: border-box;
     font-size: 16px;
 }
+html
+{
+    height: 100%;
+}
 body{
     background-color: #fff;
     font-family: 'Indie Flower', cursive;
+    height: 100%;
+
 }
+
 
 :root {
     --base: #40AA54;
     --p-padding : 1.4rem;
     --p-size:1.4rem ;
+    --green: #40AA54;
+    --lightGreen: 213, 240, 219;
+    --lightGrey: #F3F3F5;
+    --paraGrey:#70757A;
 }
 .sec-padding{
     padding-top: 50px;
     padding-bottom: 50px;
+}
+
+.bg-lightgreen
+{
+    background-color: rgb(var(--lightGreen));
 }
 
 hr{
@@ -56,3 +72,71 @@ hr{
     color: #222;
     transition: 0.3s linear;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* recipes style end-------------------------------------------------------------------------------------------*/
+
+
+a 
+{
+    color:black;
+    text-decoration: none;
+}
+
+a:hover
+{
+    color:var(--green);
+    text-decoration: none;
+}
+
+.recipe-title
+{
+    background-color: white;
+}
+  
+
+
+.recipe-card
+{
+    box-shadow: 0 1px 3px rgba(var(--lightGreen),0.12), 0 1px 2px rgba(var(--lightGreen),0.24);
+    transition: box-shadow 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.recipe-card:hover
+{
+    border: solid var(--green) 2px;
+    box-shadow: 0 3px 6px rgba(64, 170, 84,0.16), 0 3px 6px rgba(64, 170, 84,0.23);
+    box-shadow: 0 19px 38px rgba(64, 170, 84,0.30), 0 15px 12px rgba(64, 170, 84,0.22);
+}
+
+.recipe-link:hover .img-overlay
+{
+    visibility: visible;
+}
+
+.recipes-header
+{
+    background-color: var(--lightGrey);
+}
+.img-overlay
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color:  rgba( 64, 170, 84, 0.3);
+    visibility: hidden;
+}
+
+/* recipes style end-------------------------------------------------------------------------------------------*/

@@ -1,0 +1,163 @@
+
+<div class="w-100 h-100 d-flex justify-content-center align-items-center" *ngIf='!recipe'>
+    <div class="spinner-grow text-success" role="status" *ngIf='!recipe'>
+        <span class="sr-only">Loading...</span>
+    </div>    
+</div>
+
+<section class="header pt-5 " *ngIf='recipe'>
+    <div class="container">
+        <div class="row"> 
+
+            <figure class="col-md-6 header__left mb-md-0 mb-sm-5">
+                <img class="img-fluid" [src]='recipe.image' [alt]='recipe.title' >
+            </figure>
+
+            <div class="col-md-6 header__right pt-sm-3 pt-md-0 row">
+
+                <h1 class="mb-1 col-md-12">{{recipe.title}}</h1>
+
+
+                <div class="row col-md-12 mb-5">
+
+                    <p class="col-md-6 col-xs-3 light-parag"> <i class="far fa-clock pr-2"></i>Ready in {{recipe.readyInMinutes}} min</p>
+
+                    <div class="col-md-6  light-parag">
+                        <h4 class="d-inline mr-2">Servings</h4>
+                        <p class="d-inline">{{recipe.servings}}</p>
+                    </div>
+                    
+                </div>
+
+                <div class="dish-types col-md-12 row" *ngIf='recipe.dishTypes.length != 0'>
+                    <h2 class="col-md-4 mb-0" >Dish Types</h2>
+
+                    <div class="col-md-8 p-md-0 pl-xs-3 d-flex align-items-center flex-wrap pl-xs-3">
+                        <p class="d-inline p-0" *ngFor='let recipeType of recipe.dishTypes ; let i = index'>
+                            {{recipeType}} 
+                            <span *ngIf="i != (recipeDishsLength-1)"> - </span>
+                        </p>
+                    </div>
+                    
+                </div>
+
+                <div class="diets col-md-12 row" *ngIf='recipe.diets.length != 0'>
+                    <h2 class="col-md-4 mb-0" >Diets</h2>
+
+                    <div class="col-md-8 p-md-0 pl-xs-3 d-flex align-items-center flex-wrap">
+                        <p class="d-inline p-0" *ngFor='let diet of recipe.diets ; let i = index'>
+                            {{diet}} 
+                            <span *ngIf="i != (recipeDietLength-1)"> - </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="button-wrapper col-md-12  align-self-end" >
+                    <button type="button" class="btn btn-green" (click)='addToFavourate()'>Add to Favourates <i class="fas fa-heart text-white"></i></button>
+                </div>
+
+            </div>
+
+            
+            <p class="col-md-12 summary-parag rounded mx-3 mt-5 py-4 px-3" [innerHTML]="recipeSummary"> </p>
+
+            <div class="offset-md-3 col-md-6 horizontal-line my-5"></div>
+
+            <h2 class="col-md-12 text-center mb-4 section-header" >Ingredients</h2>
+
+            <div class="col-md-12">
+                <div class="row ">
+
+                    <div class="col-md-2   " *ngFor='let ingredient of recipe.extendedIngredients'>
+
+                        <figure class="ingredient-img d-flex align-items-end justify-content-center ">
+                            <img class="img-fluid rounded" [src]='igredientsImgprefix+ingredient.image' >
+                        </figure>
+        
+                        <h3 class="text-center reipe-title-bg">{{ingredient.name}}</h3>
+                        <p class="text-center">{{ingredient.original}}</p>
+        
+                    </div>
+
+                </div>
+            </div>
+
+            
+
+
+
+            <div class="offset-md-3 col-md-6 horizontal-line my-5"></div>
+
+            <!-- steps -->
+
+            <h2 class="col-md-12 section-header text-center mb-5">Instructions</h2>
+
+            <div class="col-md-12" *ngFor='let step of recipe.analyzedInstructions[0].steps' >
+
+                <div class="row">
+
+                    <div class="col-md-1 d-flex align-items-center ">
+                        <h2 class="rounded-circle p-1 step-number text-white text-center">{{step.number}}</h2>
+                    </div>
+
+                    <div class="col-md-6 d-flex align-items-center " >
+                        <p>{{step.step}}</p>
+                    </div>
+
+                    <div class="col-md-5 ">
+
+                        <div class="row equipments h-100">
+
+                            <div class="equipments-itemd-flex align-items-center justify-content-center" *ngFor='let equipment of step.equipment'>
+                                <figure class="equipment-img d-flex align-items-center ">
+                                    <img class="img-fluid" [src]='equipmentImgprefix+equipment.image' >
+                                </figure>
+                            </div>
+        
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+                
+            </div>
+
+            <div class="offset-md-3 col-md-6 horizontal-line my-5"></div>
+
+            <h2 class="col-md-12 section-header text-center">Nutrition</h2>
+
+            <div class="table-wrapper col-md-12 px-0 mb-5">
+                <table class="table  text-center">
+                    <thead class="table-header-bg ">
+                      <tr >
+                        <th scope="col">#</th>
+                        <th scope="col">name</th>
+                        <th scope="col">amount</th>
+                        <th scope="col">percent Of Daily Needs</th>
+                      </tr>
+                    </thead>
+                    <tbody class="table-body">
+                      <tr *ngFor='let nutrition of recipe.nutrition.nutrients; let i = index'>
+                        <td scope="row">{{i+1}}</td>
+                        <td>{{nutrition.name}}</td>
+                        <td>{{nutrition.amount + " " + nutrition.unit}}</td>
+                        <td>{{nutrition.percentOfDailyNeeds}} %</td>
+                      </tr>
+                  </table>
+            </div>
+
+            
+
+
+        </div>
+    </div>
+</section>
+
+<section>
+
+  
+
+</section>
+

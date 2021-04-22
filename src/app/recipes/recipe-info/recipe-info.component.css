@@ -1,0 +1,114 @@
+.horizontal-line
+{
+    background-color: var(--green);
+    height: 2px;
+}
+
+.ingredient-img 
+{
+    height: 250px;
+}
+
+.equipment-img
+{
+    height: 100px;
+}
+
+p{
+    vertical-align: middle;
+}
+
+i
+{
+    color: var(--green);
+    font-size: 1rem;
+}
+
+.light-parag
+{
+    color: var(--paraGrey);
+}
+
+.summary-parag
+{
+    background-color: rgb(var(--lightGreen));
+}
+
+.section-header::after
+{
+    content: "";
+    display: block;
+    height: 2px;
+    width: 5%;
+    background-color: var(--green);
+    margin: 0.6rem auto 0;
+}
+
+.reipe-title-bg
+{
+    background-color:  var(--green);
+}
+
+.section-lightGrey-bg
+{
+    background-color: rgb(var(--lightGreen));
+}
+
+.table-header-bg
+{
+    background-color: var(--green);
+}
+
+
+.section-light
+{
+    background-color: var(--lightGrey);
+}
+
+.step-number
+{
+    background-color: var(--green);
+    width: 50px;
+}
+
+/* sdsadas */
+
+.btn-green
+{
+    background-color: var(--green);
+    color: white;
+}
+.table-wrapper
+{
+    overflow:hidden;
+    overflow-y: scroll;
+    height: 500px;
+}
+
+.table-body
+{
+    border-left: solid #EFF0F3 1px;
+}
+
+th{
+    top: 0;
+    z-index: 2;
+    position: sticky;
+    color: white;
+    background-color: var(--green);
+ }
+
+.table-wrapper::-webkit-scrollbar{
+    background: rgba(#999999,  0.2);
+    width: 0.3rem;
+    border-radius: 10px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb{
+    background-color: var(--green);
+    border-radius: 10px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+    background-color: rgb(var(--lightGreen));
+}

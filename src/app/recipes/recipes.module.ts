@@ -18,6 +18,7 @@ import { SearchComponent } from './search/search.component';
 import { MealPlanComponent } from './meal-plan/meal-plan.component';
 import { StoreModule } from '@ngrx/store';
 import { userReducer } from '../store/user.reducer';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -42,6 +43,7 @@ import { userReducer } from '../store/user.reducer';
   imports: [
     CommonModule,
     AppRoutingModule,
+    SharedModule,
     StoreModule.forRoot({ user: userReducer }),
    
   ],

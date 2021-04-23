@@ -78,6 +78,13 @@ i
     background-color: var(--green);
     color: white;
 }
+.btn-red
+{
+    background-color: red !important;
+    color: white;
+}
+
+
 .table-wrapper
 {
     overflow:hidden;

@@ -24,7 +24,6 @@ export class NavBarComponent implements OnInit {
 
     this.navbarMenu.nativeElement.classList.toggle('active');
 
-    console.log(this.navbarMenu)
 
   }
   

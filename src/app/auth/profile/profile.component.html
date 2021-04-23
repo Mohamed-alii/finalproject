@@ -1,5 +1,3 @@
-
-
 <div class="row py-5 color w-100 no-gutters">
     <div class="spinner-grow text-warning" role="status" *ngIf="!user">
         <span class="sr-only">Loading...</span>
@@ -10,65 +8,60 @@
             <!-- Profile widget -->
             <div class="bg-white shadow rounded overflow-hidden">
                 <div class="px-4 pt-0 pb-4 cover">
-                    <div class="media align-items-end profile-head">
-                        <div class="profile mr-3">
-                            <img src="{{user.photo}}"
-                                alt="..." width="130" class="rounded mb-2 img-thumbnail" />
+                    <div class="media align-items-end profile-head ">
+                        <div class="profile mr-3 ">
+                            <img src="{{user.photo}}" alt="..." width="130" class="rounded mb-2 img-thumbnail " />
                         </div>
                         <div class="media-body mb-5 text-white">
-                            <h4 class="mt-0 mb-0">{{user.fName}} {{user.lName}}</h4>
+                            <h2 class="mt-0 mb-0">{{user.fName}} {{user.lName}}</h2>
                             <p class="small mb-4">
                                 <i class="fas fa-map-marker-alt mr-2"></i>New York
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="bg-light p-4 d-flex justify-content-end text-center">
+                <div class="cover p-4 d-flex justify-content-center justify-content-md-end text-center ">
                     <ul class="list-inline mb-0">
-                        <li class="list-inline-item">
-                            <h3 class="font-weight-bold mb-0 d-block">{{user.age}}</h3>
-                            <h3>Age</h3>
+                        <li class="list-inline-item mt-5 ">
+                            <h2 class="font-weight-bold mb-0 text-color">{{user.age}}</h2>
+                            <h2 class="b text-white p-3 ">Age</h2>
                         </li>
-                        <li class="list-inline-item">
-                            <h3 class="font-weight-bold mb-0 d-block">{{user.weight}}</h3>
-                            <h3>weight</h3>
+                        <li class="list-inline-item mt-5 ">
+                            <h2 class="font-weight-bold mb-0 text-color">{{user.weight}}</h2>
+                            <h2 class="b text-white p-3 ">weight</h2>
                         </li>
-                        <li class="list-inline-item">
-                            <h3 class="font-weight-bold mb-0 d-block">{{user.height}}</h3>
-                            <h3>Height</h3>
+                        <li class="list-inline-item mt-5">
+                            <h2 class="font-weight-bold mb-0 text-color">{{user.height}}</h2>
+                            <h2 class="b text-white  p-3 ">Height</h2>
                         </li>
                     </ul>
                 </div>
-                <div class="px-4 py-3">
-                    <h5 class="mb-0">About</h5>
-                    <div class="p-4 rounded shadow-sm bg-light">
-                        <p class="font-italic mb-0">Web Developer</p>
-                        <p class="font-italic mb-0">Lives in New York</p>
-                        <p class="font-italic mb-0">Photographer</p>
-                    </div>
-                </div>
-                <div class="py-4 px-4">
-                    <div class="d-flex align-items-center justify-content-between mb-3">
-                        <h2 class="mb-0">Favorite Meals</h2>
 
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-6 mb-2 pr-lg-1">
-                            <img src="https://images.unsplash.com/photo-1469594292607-7bd90f8d3ba4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
-                                alt="" class="img-fluid rounded shadow-sm" />
+                <div class="py-4 px-4">
+                    <h2 class="mb-3 text-center">Favorite Meals</h2>
+                    <h2 class="text-center" *ngIf="meals.length ==0">You dont have any favorite meals !</h2>
+                    <div class="row row-cols-1 row-cols-md-3">
+
+                        <div class="col mb-4 p-3 " *ngFor="let recipe of meals">
+
+                            <div class="card h-100 recipe-card">
+                                <a class="recipe-link" [routerLink]="['/recipeInfo', recipe.id]">
+                                    <figure class="img-wrapper position-relative">
+                                        <div
+                                            class="img-overlay d-flex align-items-center justify-content-center rounded">
+                                            <h2 class="text-white">View Details</h2>
+                                        </div>
+                                        <img [src]="recipe.image" [alt]='recipe.title' class="card-img-top">
+                                    </figure>
+                                </a>
+                                <div class="card-body p-1 pt-2 ">
+                                    <h2 class="card-title text-center ">{{recipe.title}} <i
+                                            class="fas fa-heart text-color" (click)="removeMeal(recipe)"></i> </h2>
+                                </div>
+                            </div>
+
                         </div>
-                        <div class="col-lg-6 mb-2 pl-lg-1">
-                            <img src="https://images.unsplash.com/photo-1493571716545-b559a19edd14?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
-                                alt="" class="img-fluid rounded shadow-sm" />
-                        </div>
-                        <div class="col-lg-6 pr-lg-1 mb-2">
-                            <img src="https://images.unsplash.com/photo-1453791052107-5c843da62d97?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-                                alt="" class="img-fluid rounded shadow-sm" />
-                        </div>
-                        <div class="col-lg-6 pl-lg-1">
-                            <img src="https://images.unsplash.com/photo-1475724017904-b712052c192a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
-                                alt="" class="img-fluid rounded shadow-sm" />
-                        </div>
+
                     </div>
                 </div>
             </div>

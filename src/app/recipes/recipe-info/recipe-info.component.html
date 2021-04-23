@@ -53,7 +53,8 @@
                 </div>
 
                 <div class="button-wrapper col-md-12  align-self-end" >
-                    <button #favBUTTON type="button" class="btn btn-green" (click)='addToFavourate()'>Add to favorites <i class="fas fa-heart text-white"></i></button>
+                    <button *ngIf='isFavorite' #favBUTTON  class="btn btn-red" (click)='addToFavourate()'>Remove From Favourates <i class="fas fa-heart text-white"></i></button>
+                    <button *ngIf='!isFavorite' #favBUTTON  class="btn btn-green" (click)='addToFavourate()'>Add To Favourates <i class="fas fa-heart text-white"></i></button>
                 </div>
 
             </div>

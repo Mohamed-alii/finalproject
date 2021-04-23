@@ -19,7 +19,6 @@ export class HomeComponent implements OnInit {
       userheight :[ null , Validators.required],
     })
 
-    this.auth.getInfo()
   }
 
   ngOnInit(): void {

@@ -12,14 +12,19 @@ import { NavbarComponent } from './navbar/navbar.component';
 import{ SharedModule} from './shared/shared.module';
 import{MainModule} from './main/main.module';
 import {FormsModule} from '@angular/forms'
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent 
+    NavbarComponent,
   ],
   imports: [
+    BrowserModule,
+    RouterModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
     BrowserModule,  
     AppRoutingModule,
     BrowserAnimationsModule,

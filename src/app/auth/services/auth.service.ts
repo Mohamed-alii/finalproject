@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import firebase from "firebase/app";
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Store } from '@ngrx/store';
-import { AddToFav, ClearFav, ClearUser, GetUser, isLogin } from 'src/app/store/user.action';
+import { AddToFav, ClearFav, ClearUser, GetUser, isLogin, RemoveFav } from 'src/app/store/user.action';
 import { HttpClient } from '@angular/common/http';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
@@ -53,12 +53,12 @@ export class AuthService {
 
   logout() {
     console.log("logout run")
+    localStorage.removeItem("token")
     this.store.dispatch(new ClearUser())
     this.store.dispatch(new isLogin(false))
-    localStorage.removeItem("token")
-    this.route.navigate(['/home']);
     this.store.dispatch(new ClearFav())
-    this.store.select("user").subscribe(data => console.log(data))
+    this.route.navigate(['/home']);
+    //this.store.select("user").subscribe(data => console.log(data))
     // this.fireBaseAuth.signOut()
   }
 
@@ -79,18 +79,14 @@ export class AuthService {
 
   getInfo() {
     console.log("getinfo run")
-    let user;
-    let meals;
-
+    console.log(this.token)
     //get user data
-    this.firestore.collection('users').doc(this.token).valueChanges().subscribe(data => {
-      if (data) {
-        user = data
-        this.store.dispatch(new GetUser(user))
+    if (this.token != undefined) {
+      this.firestore.collection('users').doc(this.token).get().subscribe(data => {
+        this.store.dispatch(new GetUser(data.data()))
         this.store.dispatch(new isLogin(true))
-      }
-    })
-
+      })
+    }
     if (this.token != undefined) {
       this.firestore.collection('meals').doc(this.token).collection(this.token).get().subscribe(data => {
         let meals: {}[] = []
@@ -125,6 +121,7 @@ export class AuthService {
 
   }
   removeFav(meal) {
+    this.store.dispatch(new RemoveFav(meal))
     this.firestore.collection('meals').doc(this.token).collection(this.token).doc(meal.uid).delete()
   }
 

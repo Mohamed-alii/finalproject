@@ -16,6 +16,8 @@ import { SnackComponent } from './snack/snack.component';
 import { BreakfastComponent } from './breakfast/breakfast.component';
 import { SearchComponent } from './search/search.component';
 import { MealPlanComponent } from './meal-plan/meal-plan.component';
+import { StoreModule } from '@ngrx/store';
+import { userReducer } from '../store/user.reducer';
 
 
 
@@ -39,7 +41,9 @@ import { MealPlanComponent } from './meal-plan/meal-plan.component';
   ],
   imports: [
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StoreModule.forRoot({ user: userReducer }),
+   
   ],
   exports: [
     GeneralRecipesComponent,

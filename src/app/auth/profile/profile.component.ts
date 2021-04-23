@@ -22,7 +22,6 @@ export class ProfileComponent {
   }
 
   removeMeal(meal) {
-    this.store.dispatch(new RemoveFav(meal))
     this.auth.removeFav(meal)
   }
 

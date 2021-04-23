@@ -100,7 +100,7 @@ export class FoodServiceService {
   // get recipes according to users search
   getRecipesSearch(query):Observable<any>
   {
-    return this.http.get(`https://api.spoonacular.com/recipes/complexSearch?query=pasta&number=50&apiKey=44e6a48b78ae497bb8e4898b5f810f90`)
+    return this.http.get(`https://api.spoonacular.com/recipes/complexSearch?query=${query}&number=50&apiKey=44e6a48b78ae497bb8e4898b5f810f90`)
   }
 
   // get meal plan

@@ -1,0 +1,70 @@
+
+
+
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-success">
+    <a class="navbar-brand " href="#">
+        <img class="img-fluid" src="../../../assets/images/logo.png" >
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Meals
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Diets
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">Meals plan <span class="sr-only">(current)</span></a>
+          </li>
+        
+      </ul>
+
+      
+
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn search-btn my-2 my-sm-0" type="submit">Search</button>
+      </form>
+
+      <div  class="action mx-5" (click)='profileToggle()'>
+        <div class="profile">
+            <img class="profile-img" src="../../../assets/images/profile.jpg" >
+        </div>
+        <div #navbarMenu class="menu p-2" >
+            <h3 class="text-center py-2 font-weight-bold">someone </h3>
+            <ul > 
+                <li> <img src="../../../assets/images/user.png"> <a >my profile</a> </li>
+                <li> <img src="../../../assets/images/log-out.png"> <a >logout</a> </li>
+
+            </ul>
+        </div>
+      </div>
+
+    </div>
+  </nav>

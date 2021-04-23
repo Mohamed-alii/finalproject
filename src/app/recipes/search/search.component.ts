@@ -23,7 +23,7 @@ export class SearchComponent implements OnInit {
       this.searchResults = data.results;
 
       // here we check if we get result from the search request or not
-      if( this.searchQuery.length != 0 ){
+      if( this.searchResults.length != 0 ){
         // here we got the results
         this.noResults = false;
       }

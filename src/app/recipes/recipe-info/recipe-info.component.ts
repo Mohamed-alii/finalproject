@@ -36,6 +36,8 @@ export class RecipeInfoComponent implements OnInit {
     this.recipeSummary = data.summary;
 
 
+
+    
      } )
 
    }

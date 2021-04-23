@@ -90,17 +90,13 @@ export class RecipeInfoComponent implements OnInit {
         }
       }
       this.Auth.removeFav(favourateRecipe)
- 
-      this.favBUTTON.nativeElement.style.backgroundColor = "green";
       this.isFavorite = false;
-
 
 
     } else {
       // here this recipe not a favorite one and the user wants to add it to favorites so he clicked add 
       // show the remove to Favorite button 
       this.Auth.setFavMeal(favourateRecipe)
-      this.favBUTTON.nativeElement.style.backgroundColor = "red";
       this.isFavorite = true;
 
     }

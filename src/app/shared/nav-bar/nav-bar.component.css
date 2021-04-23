@@ -4,6 +4,16 @@
     width: 8%;
 }
 
+.bg-transparentt
+{
+    background-color: transparent;
+}
+
+.bg-navbar
+{
+    background-color: rgba(40, 167, 69, 0.9);
+}
+
 .nav-link
 {
     font-size: 1.2rem;
@@ -14,6 +24,13 @@
     background-color: #FFFFFF;
     border-color: white;
 }
+
+.dropdown-item:focus, .dropdown-item:hover
+{
+    background-color: #1CC229;
+    color: white;
+}
+
 .navbar-dark .navbar-nav .nav-link
 {
     color: rgba(255,255,255,.8) ;
@@ -21,25 +38,31 @@
 
 .navbar-dark .navbar-nav .nav-link:hover
 {
-    background-color :#20bf55;
-background-image :linear-gradient(180deg, #20bf55 0%, #01baef 90%);
+    background-color :#1CC229;
 
     border-radius: 15px;
 }
-
+.bg-dropdown{
+    background-color: rgba(40, 167, 69, 0.8);
+    border-color: #1CC229;
+}
 .navbar-dark .navbar-nav .active>.nav-link{
     color: white !important;
-    text-transform: uppercase;
     font-weight: 500;
 }
+.dropdown-item.active{
+    background-color :#1CC229;
+}
 
-
-
+.input-search::placeholder
+{
+    color: #28A745;
+}
 
 .search-btn:hover
 {
     color: white;
-    background-color: #28A745;
+    background-color: #1CC229;
     border-color: white;
 }
 
@@ -84,7 +107,7 @@ background-image :linear-gradient(180deg, #20bf55 0%, #01baef 90%);
 
 .menu.active
 {
-    top:110%;
+    top:105%;
     visibility: visible;
     opacity: 1;
 }
@@ -128,3 +151,92 @@ background-image :linear-gradient(180deg, #20bf55 0%, #01baef 90%);
 {
     opacity: 1;
 }
+
+/* media query */
+@media ( min-width: 360px ) {
+
+    .menu
+    {
+        right: 40%;
+    }
+
+    .navbar-brand
+    {
+        width: 25%;
+    }
+
+    
+    
+}
+
+@media ( min-width: 480px ) {
+    
+    .menu
+    {
+        right: 45%;
+    }
+
+    .navbar-brand
+    {
+        width: 25%;
+    }
+
+   
+}
+
+@media ( min-width: 768px ) {
+    
+    .menu
+    {
+        right: 5%;
+    }
+
+    .navbar-brand
+    {
+        width: 15%;
+    }
+
+    
+    .bg-dropdown
+    {
+        background-color: rgba(40, 167, 69, 0.8);
+        border-color: #1CC229;
+    }
+
+    .dropdown-item
+    {
+        font-weight: 400;
+    }
+
+}
+
+@media ( min-width: 992px ) {
+    
+    .menu
+    {
+        right: 4%;
+    }
+
+    .navbar-brand
+    {
+        width: 8%;
+    }
+
+    
+
+}
+
+@media ( min-width: 1200px ) {
+    
+    .menu
+    {
+        right: 3.5%;
+    }
+
+    .navbar-brand
+    {
+        width: 8%;
+    }
+
+}
+

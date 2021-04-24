@@ -70,7 +70,7 @@ export class FoodServiceService {
   // get the informaion of a specific recipe
    getRecipeInfo(id ):Observable<any>
   {
-    return this.http.get(`https://api.spoonacular.com/recipes/${id}/information?includeNutrition=true&apiKey=44e6a48b78ae497bb8e4898b5f810f90`)
+    return this.http.get(`https://api.spoonacular.com/recipes/${id}/information?includeNutrition=true&apiKey=d2eb44ed03834a8694a9cde352526898`)
   }
 
   // get random main course recipes 

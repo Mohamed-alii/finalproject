@@ -117,16 +117,18 @@
 
             <h2 class="col-md-12 section-header text-center mb-5">Instructions</h2>
 
-            <div class="col-md-12" *ngFor='let step of recipe.analyzedInstructions[0].steps'>
+            <div class="col-md-12 mt-2" *ngFor='let step of recipe.analyzedInstructions[0].steps'>
 
                 <div class="row">
 
-                    <div class="col-md-1 d-flex align-items-center ">
-                        <h2 class="rounded-circle p-1 step-number text-white text-center">{{step.number}}</h2>
+                    <div class=" col-md-1 d-flex align-items-center justify-content-center">
+                        <div class="step-number-wrapper d-flex align-items-center justify-content-center">
+                            <h2 class="rounded-circle m-0 step-number text-white text-center">{{step.number}}</h2>
+                        </div>
                     </div>
 
                     <div class="col-md-6 d-flex align-items-center ">
-                        <p>{{step.step}}</p>
+                        <p class="m-0">{{step.step}}</p>
                     </div>
 
                     <div class="col-md-5 ">

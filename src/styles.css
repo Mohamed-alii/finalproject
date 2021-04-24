@@ -14,7 +14,19 @@ html
     margin: 0;
     padding: 0;
 }
-
+ngp-image-picker .place-image .editing-bar-btn .mat-icon-button
+{
+    display: none;
+}
+ngp-image-picker .place-image .image-holder{
+    width: 230px !important;
+    min-height: 230px !important;
+}
+ngp-image-picker .place-image .image-holder .image-upload-btn mat-icon{
+    font-size: 15px !important;
+    text-align: center;
+    width: 100%;
+}
 body{
     position: relative;
     background-color: #fff;

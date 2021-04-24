@@ -70,6 +70,11 @@ button.reg-btn:hover{
     box-shadow: 2px 2px 5px #184d47;
     color:#184d47;
 }
+
+.img-pickerr
+{
+    min-height: 200px;
+}
 .validat-txt{
     border-radius: 20px;
     background-color: transparent;

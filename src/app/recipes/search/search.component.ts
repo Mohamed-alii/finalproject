@@ -16,6 +16,7 @@ export class SearchComponent implements OnInit {
 
   constructor(private foodServiceService:FoodServiceService , private activatedRoute:ActivatedRoute) {
 
+
     this.searchQuery = this.activatedRoute.snapshot.paramMap.get('query');
 
       // there is a query so we send the request

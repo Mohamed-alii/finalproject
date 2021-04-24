@@ -25,6 +25,7 @@ export class MealPlanComponent implements OnInit {
 
     search(){
 
+
       // we check here if the user checked day or week
       if(this.dayButton.checked){
         this.planTimeFrame = 'day';

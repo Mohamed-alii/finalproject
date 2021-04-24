@@ -99,11 +99,20 @@ export class NavBarComponent implements OnInit {
       //this.router.navigate(['/search' , this.searchInput.nativeElement.value]);
 
       // we used this to reload the search component so we get the new query the user has entered
-      this.router.navigate(['/search', this.searchInput.nativeElement.value])
-        .then(() => {
-          window.location.reload();
-        });
+      // this.router.navigate(['/search', this.searchInput.nativeElement.value])
+      //   .then(() => {
+      //     window.location.reload();
+      //   });
+      // this.router.navigate([`search/${this.searchInput.nativeElement.value}`])
+      // .then(() => {
+      //   window.location.reload();
+      // });
 
+
+      // here we update the page without reloading the whole website :D
+      this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+        this.router.navigate([`/search/${this.searchInput.nativeElement.value}`]);
+    });
 
     }
 

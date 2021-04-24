@@ -9,9 +9,13 @@
 
     <div class="container">
         <div class="row">
-            <div class="recipes-header col-md-12 py-2 text-center rounded">
+            <div class=" no-results col-md-12 text-center d-flex justify-content-center align-items-center" *ngIf='noResults'>
 
-                <h1 *ngIf='noResults'>No results found for "{{searchQuery}}"</h1>
+                <h1 class="recipes-header rounded py-2 w-100">No results found for "{{searchQuery}}"</h1>
+                
+            </div>
+            <div class="recipes-header col-md-12 py-2 text-center rounded" *ngIf='!noResults'>
+
                 <h1 *ngIf='!noResults'>Search results for "{{searchQuery}}"</h1>
                 
             </div>

@@ -15,6 +15,7 @@ export class MealPlanComponent implements OnInit {
   prefixImgSrc="https://spoonacular.com/recipeImages/";
   imgSize="-556x370.jpg";
 
+  requestsWorking:boolean = true;
   emptyErrorMsg:boolean = false;
   nanErrorMsg:boolean = false;
   rangeErrorMsg:boolean = false;
@@ -41,7 +42,7 @@ export class MealPlanComponent implements OnInit {
 
       }else if(isFinite( parseInt(this.targetCalories.value) )){
         // here the user entered a number so we need to check if the nuber is less than 3500 or not
-        if( parseInt(this.targetCalories.value) > 3500 || parseInt(this.targetCalories.value) <= 0 ){
+        if( parseInt(this.targetCalories.value) > 3000 || parseInt(this.targetCalories.value) <= 0 ){
           // show error
         this.emptyErrorMsg = false;
         this.nanErrorMsg = false;
@@ -66,6 +67,14 @@ export class MealPlanComponent implements OnInit {
                       }, 500);
                       
             
+                      } ,
+                      (err) => {
+                        // 402 => requests limit finished
+                        if(err.error.code == 402){
+                          console.log(err.error.code)
+                          this.requestsWorking = false;
+
+                        }
                       } );
                     break;
                   case 'day':

@@ -135,12 +135,30 @@ export class AuthService {
         var user = result.user;
         localStorage.setItem('token', JSON.stringify(user.uid))
         this.token = user.uid
-        this.setUserInfo(user.photoURL, user.displayName)
-        this.route.navigate(['/profile-form']);
+        this.firestore.collection('users').doc(this.token).get().subscribe(data => {
+          if (data.data() == undefined) {
+            this.setUserInfo(user.photoURL, user.displayName)
+            this.route.navigate(['/profile-form']);
+            return
+          }
+        })
+        this.getInfo()
+        this.route.navigate(['/home']);
       })
       .catch((error) => {
         console.log(error)
       });
   }
+  
+  getUserInfoFace() {
+    this.firestore.collection('users').doc(this.token).get().subscribe(data => {
+      console.log(data.data())
+    return data.data()
+    })
+  }
+
+
+
+
 
 }

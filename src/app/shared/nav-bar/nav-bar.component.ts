@@ -114,7 +114,7 @@ export class NavBarComponent implements OnInit {
 // Mostafa start here /**************/
   logout() {
     this.auth.logout()
-   
+    this.isPlanClicked = false
   }
   onOpenAlert() {
     this.isPlanClicked = true

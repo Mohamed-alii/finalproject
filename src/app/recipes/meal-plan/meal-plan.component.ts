@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , ViewChild , ElementRef} from '@angular/core';
 import { FoodServiceService } from '../../food-service.service';
 
 @Component({
@@ -20,11 +20,11 @@ export class MealPlanComponent implements OnInit {
   rangeErrorMsg:boolean = false;
 
 
+
   constructor(private foodServiceService:FoodServiceService) { }
 
     search(){
 
-      console.log(typeof (parseInt(this.targetCalories.value)) , parseInt(this.targetCalories.value))
       // we check here if the user checked day or week
       if(this.dayButton.checked){
         this.planTimeFrame = 'day';
@@ -60,7 +60,10 @@ export class MealPlanComponent implements OnInit {
             
                       this.mealPlan = data.week;
                 
-                      console.log(this.mealPlan)
+                      setTimeout(function(){
+                        window.scrollTo(0,800)
+                      }, 500);
+                      
             
                       } );
                     break;
@@ -69,7 +72,9 @@ export class MealPlanComponent implements OnInit {
             
                       this.mealPlan = data;
                 
-                      console.log(this.mealPlan)
+                      setTimeout(function(){
+                        window.scrollTo(0,800)
+                         }, 3000);
                 
                       } );
                     break;
@@ -93,6 +98,7 @@ export class MealPlanComponent implements OnInit {
 
     this.targetCalories = document.getElementById("target-calories");
     this.dayButton = document.getElementById("day");
+
 
   }
 

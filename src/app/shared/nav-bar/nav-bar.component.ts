@@ -31,7 +31,7 @@ export class NavBarComponent implements OnInit {
 
   onWindowScroll(e) {
 
-    if (window.location.pathname == "/home") {
+    if(window.location.pathname == "/home" || window.location.pathname == "/"){
       // transparent navbar
       if (window.pageYOffset > (window.screen.availHeight - 200)) {
 

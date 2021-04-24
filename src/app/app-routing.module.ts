@@ -43,7 +43,7 @@ const routes: Routes = [
   {path:"salad" , component:SaladComponent},
   {path:"breakfast" , component:BreakfastComponent},
   {path:"snack" , component:SnackComponent },
-  { path: "mealPlan", component: MealPlanComponent, canActivate: [AuthGuardGuard]},
+  { path: "mealPlan", component: MealPlanComponent},
   {path:"recipeInfo/:id" , component:RecipeInfoComponent},
   {path:"search/:query" , component:SearchComponent}
 

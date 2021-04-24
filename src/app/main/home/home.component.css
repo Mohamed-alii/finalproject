@@ -38,6 +38,7 @@ h1{
     letter-spacing: 0.2rem;
     font-family: 'Original Surfer', cursive;
 }
+
 header p{
     color: #fff !important;
     font-size: 1rem;
@@ -109,7 +110,7 @@ li{
 }
 .container h2{
 	letter-spacing: 3px;
-    color:#ABB94F;
+    color:green;
     font-size: 3rem;
     font-family: 'Original Surfer', cursive;
 }

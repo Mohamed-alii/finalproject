@@ -41,3 +41,8 @@ input[type="radio"]:focus {
   border: solid #DEE2E6 1px;
   border-radius: 10px;
 }
+
+.user-input
+{
+  height: 100vh;
+}

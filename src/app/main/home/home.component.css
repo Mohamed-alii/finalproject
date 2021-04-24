@@ -152,6 +152,10 @@ input[type="radio"]:focus {
 .weightcalc h2{
     line-height: 1.1;
 }
+button[disabled]{
+    opacity: 0.65; 
+  cursor: not-allowed;
+  }
 input[type="number"]::placeholder{color: #999;}
 label{
     font-size: 1.2rem;

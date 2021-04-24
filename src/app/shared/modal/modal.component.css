@@ -10,3 +10,8 @@
 .move{
 margin-top: 20%;
 }
+.shad{
+   border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px rgba(40, 167, 69, 0.9)
+}

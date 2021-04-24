@@ -18,18 +18,21 @@ export class SearchComponent implements OnInit {
 
     this.searchQuery = this.activatedRoute.snapshot.paramMap.get('query');
 
-    this.foodServiceService.getRecipesSearch(this.searchQuery).subscribe( (data) => {
+      // there is a query so we send the request
+      this.foodServiceService.getRecipesSearch(this.searchQuery).subscribe( (data) => {
 
-      this.searchResults = data.results;
+        this.searchResults = data.results;
+  
+        // here we check if we get result from the search request or not
+        if( this.searchResults.length != 0 ){
+          // here we got the results
+          this.noResults = false;
+        }
+  
+        
+      } )
 
-      // here we check if we get result from the search request or not
-      if( this.searchQuery.length != 0 ){
-        // here we got the results
-        this.noResults = false;
-      }
-
-      
-    } )
+    
 
    }
 

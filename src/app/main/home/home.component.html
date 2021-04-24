@@ -56,16 +56,13 @@
       <hr class="m-auto">
     </div>
     <div class="row my-1">
-      <form class="sec-padding" [formGroup]="userdata" (ngSubmit)="bmimethod()">
+      <form class="sec-padding col-md-12" [formGroup]="userdata" (ngSubmit)="bmimethod()">
         <label for="weight" class="col-4 text-right text-muted my-4">Your weight in Kg *</label>
-        <input type="number" id="weight" class="form-control  col-6 email-field" formControlName="userweight">
+        <input type="number" id="weight" class="form-control  col-6 email-field" placeholder="enter your weight" formControlName="userweight">
         <label for="height" class="col-4 text-right text-muted my-3">Your Height in CM *</label>
-        <input type="number" id="height" class="text-left form-control col-6 email-field"  placeholder="enter your height" formControlName="userheight">
-        <label for="gender" class="col-4 text-right text-muted my-5">Your Gender *</label>
-        <input type="radio" id="gender" name="gender" class="mx-2" >Male
-        <input type="radio" id="gender" name="gender" class="mx-2" >Female
+        <input type="number" id="height" class=" form-control col-6 email-field"  placeholder="enter your height" formControlName="userheight">
         <div class="text-center">
-          <input type="submit" class=" gen-btn">
+          <button [disabled]="userdata.invalid == true" type="submit" class=" gen-btn mt-5" >Calculate</button>
         </div>
       </form>
     </div>

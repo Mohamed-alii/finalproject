@@ -18,8 +18,13 @@ export class FoodServiceService {
   // apikey=7273358ac4ff4c21bb7b2da832fa7a29
   // apikey=44e6a48b78ae497bb8e4898b5f810f90 
   // apikey=cf90ee8d96ad45a68cb4c292a2aabdfa
-  // apikey =90d7c4b825564263a72ef5373d0140a7
-  
+  // apikey=90d7c4b825564263a72ef5373d0140a7
+  // apikey=14a2531cbc3d4e6c94cfc160b2146388
+  // apikey=845021c2f5da40f0a2b9a093308e29fd
+  // apikey=d2eb44ed03834a8694a9cde352526898
+
+
+
   // get random recipes 
   getGeneralRecipes():Observable<any>
   {
@@ -65,7 +70,7 @@ export class FoodServiceService {
   // get the informaion of a specific recipe
    getRecipeInfo(id ):Observable<any>
   {
-     return this.http.get(`https://api.spoonacular.com/recipes/${id}/information?includeNutrition=true&apiKey=845021c2f5da40f0a2b9a093308e29fd`)
+    return this.http.get(`https://api.spoonacular.com/recipes/${id}/information?includeNutrition=true&apiKey=44e6a48b78ae497bb8e4898b5f810f90`)
   }
 
   // get random main course recipes 
@@ -101,7 +106,7 @@ export class FoodServiceService {
   // get recipes according to users search
   getRecipesSearch(query):Observable<any>
   {
-    return this.http.get(`https://api.spoonacular.com/recipes/complexSearch?query=pasta&number=50&apiKey=44e6a48b78ae497bb8e4898b5f810f90`)
+    return this.http.get(`https://api.spoonacular.com/recipes/complexSearch?query=${query}&number=50&apiKey=14a2531cbc3d4e6c94cfc160b2146388`)
   }
 
   // get meal plan

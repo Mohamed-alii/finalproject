@@ -22,7 +22,7 @@ export class FoodServiceService {
   // apikey=14a2531cbc3d4e6c94cfc160b2146388
   // apikey=845021c2f5da40f0a2b9a093308e29fd
   // apikey=d2eb44ed03834a8694a9cde352526898
-
+  // apikey=933a0b54692b45b2abc44f6816d1b7fa
 
 
   // get random recipes 

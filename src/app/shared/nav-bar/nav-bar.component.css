@@ -39,7 +39,7 @@
 .navbar-dark .navbar-nav .nav-link:hover
 {
     background-color :#1CC229;
-
+    color: white;
     border-radius: 15px;
 }
 .bg-dropdown{

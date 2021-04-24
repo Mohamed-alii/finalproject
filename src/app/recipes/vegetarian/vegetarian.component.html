@@ -1,9 +1,11 @@
 
-<div class="w-100 h-100 d-flex justify-content-center align-items-center" *ngIf='!vegetarianRecipes'>
+
+<div class="spinner-h w-100 d-flex justify-content-center align-items-center" *ngIf='!vegetarianRecipes'>
     <div class="spinner-grow text-success" role="status" *ngIf='!vegetarianRecipes'>
         <span class="sr-only">Loading...</span>
     </div>    
 </div>
+
 
 <header class="mt-5 pt-5" *ngIf='vegetarianRecipes'>
 

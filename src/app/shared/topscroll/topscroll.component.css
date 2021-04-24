@@ -14,6 +14,12 @@
     border: solid white 1px;
 }
 
+.scroll-up:hover
+{
+    background-color: #4CF700;
+    cursor: pointer;
+}
+
 .arrow-icon
 {
     size: 60px;

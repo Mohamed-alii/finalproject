@@ -44,7 +44,16 @@ body{
 {
     background-color: rgb(var(--lightGreen));
 }
+.spinner-h
+{
+    height: 100vh;
+}
 
+.nav-item.dropdown .nav-link.dropdown-toggle.actv
+{
+    font: bold !important;
+    color: white !important;
+}
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

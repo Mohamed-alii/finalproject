@@ -19,32 +19,30 @@
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          Meals
+          aria-haspopup="true" aria-expanded="false" [ngClass]="{'actv': breakfast.isActive || mainCourse.isActive || salad.isActive || snack.isActive || sideDish.isActive }">
+          Meals 
         </a>
-        <div class="dropdown-menu text-center bg-dropdown" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item p-2 text-white" routerLink='breakfast' routerLinkActive="active">Break fast</a>
-          <a class="dropdown-item p-2 text-white" routerLink='mainCourse' routerLinkActive="active">Main course</a>
-          <a class="dropdown-item p-2 text-white" routerLink='salad' routerLinkActive="active">Salads</a>
-          <a class="dropdown-item p-2 text-white" routerLink='snack' routerLinkActive="active">Snacks</a>
-          <a class="dropdown-item p-2 text-white" routerLink='sideDish' routerLinkActive="active">Side dishes</a>
+        <div class="dropdown-menu text-center bg-dropdown" aria-labelledby="navbarDropdown"  >
+          <a class="dropdown-item p-2 text-white" routerLink='breakfast' routerLinkActive="active"  routerLinkActive="active" #breakfast="routerLinkActive">Break fast</a>
+          <a class="dropdown-item p-2 text-white" routerLink='mainCourse' routerLinkActive="active" routerLinkActive="active" #mainCourse="routerLinkActive">Main course</a>
+          <a class="dropdown-item p-2 text-white" routerLink='salad' routerLinkActive="active" routerLinkActive="active" #salad="routerLinkActive">Salads</a>
+          <a class="dropdown-item p-2 text-white" routerLink='snack' routerLinkActive="active" routerLinkActive="active" #snack="routerLinkActive">Snacks</a>
+          <a class="dropdown-item p-2 text-white" routerLink='sideDish' routerLinkActive="active" routerLinkActive="active" #sideDish="routerLinkActive">Side dishes</a>
         </div>
       </li>
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
+          aria-haspopup="true" aria-expanded="false" [ngClass]="{'actv': glutenFreeRecipes.isActive || ketogenicRecipes.isActive || vegetarianRecipes.isActive || veganRecipes.isActive || lactovegetarianRecipes.isActive || ovoVegetarianRecipes.isActive }">
           Diets
         </a>
         <div class="dropdown-menu text-center bg-dropdown" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item text-white" routerLinkActive="active" routerLink='glutenFreeRecipes'>Gluten free</a>
-          <a class="dropdown-item text-white" routerLinkActive="active" routerLink='ketogenicRecipes'>KetoGeneic</a>
-          <a class="dropdown-item text-white" routerLinkActive="active" routerLink='vegetarianRecipes'>Vegeterian</a>
-          <a class="dropdown-item text-white" routerLinkActive="active" routerLink='veganRecipes'>Vegan</a>
-          <a class="dropdown-item text-white" routerLinkActive="active"
-            routerLink='lactovegetarianRecipes'>Lacto-Vegeterian</a>
-          <a class="dropdown-item text-white" routerLinkActive="active"
-            routerLink='ovoVegetarianRecipes'>Ovo-Vegeterian</a>
+          <a class="dropdown-item text-white" routerLinkActive="active" routerLink='glutenFreeRecipes' routerLinkActive="active" #glutenFreeRecipes="routerLinkActive">Gluten free</a>
+          <a class="dropdown-item text-white" routerLinkActive="active" routerLink='ketogenicRecipes' routerLinkActive="active" #ketogenicRecipes="routerLinkActive">KetoGeneic</a>
+          <a class="dropdown-item text-white" routerLinkActive="active" routerLink='vegetarianRecipes' routerLinkActive="active" #vegetarianRecipes="routerLinkActive">Vegeterian</a>
+          <a class="dropdown-item text-white" routerLinkActive="active" routerLink='veganRecipes' routerLinkActive="active" #veganRecipes="routerLinkActive">Vegan</a>
+          <a class="dropdown-item text-white" routerLinkActive="active" routerLink='lactovegetarianRecipes' routerLinkActive="active" #lactovegetarianRecipes="routerLinkActive">Lacto-Vegeterian</a>
+          <a class="dropdown-item text-white" routerLinkActive="active" routerLink='ovoVegetarianRecipes' routerLinkActive="active" #ovoVegetarianRecipes="routerLinkActive">Ovo-Vegeterian</a>
         </div>
       </li>
 
@@ -106,32 +104,30 @@
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
+          aria-haspopup="true" aria-expanded="false" [ngClass]="{'actv': breakfast.isActive || mainCourse.isActive || salad.isActive || snack.isActive || sideDish.isActive }">
           Meals
         </a>
-        <div class="dropdown-menu text-center bg-dropdown" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item p-2 text-white" routerLink='breakfast' routerLinkActive="active">Break fast</a>
-          <a class="dropdown-item p-2 text-white" routerLink='mainCourse' routerLinkActive="active">Main course</a>
-          <a class="dropdown-item p-2 text-white" routerLink='salad' routerLinkActive="active">Salads</a>
-          <a class="dropdown-item p-2 text-white" routerLink='snack' routerLinkActive="active">Snacks</a>
-          <a class="dropdown-item p-2 text-white" routerLink='sideDish' routerLinkActive="active">Side dishes</a>
+        <div class="dropdown-menu text-center bg-dropdown" aria-labelledby="navbarDropdown"  >
+          <a class="dropdown-item p-2 text-white" routerLink='breakfast' routerLinkActive="active"  routerLinkActive="active" #breakfast="routerLinkActive">Break fast</a>
+          <a class="dropdown-item p-2 text-white" routerLink='mainCourse' routerLinkActive="active" routerLinkActive="active" #mainCourse="routerLinkActive">Main course</a>
+          <a class="dropdown-item p-2 text-white" routerLink='salad' routerLinkActive="active" routerLinkActive="active" #salad="routerLinkActive">Salads</a>
+          <a class="dropdown-item p-2 text-white" routerLink='snack' routerLinkActive="active" routerLinkActive="active" #snack="routerLinkActive">Snacks</a>
+          <a class="dropdown-item p-2 text-white" routerLink='sideDish' routerLinkActive="active" routerLinkActive="active" #sideDish="routerLinkActive">Side dishes</a>
         </div>
       </li>
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
+          aria-haspopup="true" aria-expanded="false" [ngClass]="{'actv': glutenFreeRecipes.isActive || ketogenicRecipes.isActive || vegetarianRecipes.isActive || veganRecipes.isActive || lactovegetarianRecipes.isActive || ovoVegetarianRecipes.isActive }">
           Diets
         </a>
         <div class="dropdown-menu text-center bg-dropdown" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item text-white" routerLinkActive="active" routerLink='glutenFreeRecipes'>Gluten free</a>
-          <a class="dropdown-item text-white" routerLinkActive="active" routerLink='ketogenicRecipes'>KetoGeneic</a>
-          <a class="dropdown-item text-white" routerLinkActive="active" routerLink='vegetarianRecipes'>Vegeterian</a>
-          <a class="dropdown-item text-white" routerLinkActive="active" routerLink='veganRecipes'>Vegan</a>
-          <a class="dropdown-item text-white" routerLinkActive="active"
-            routerLink='lactovegetarianRecipes'>Lacto-Vegeterian</a>
-          <a class="dropdown-item text-white" routerLinkActive="active"
-            routerLink='ovoVegetarianRecipes'>Ovo-Vegeterian</a>
+          <a class="dropdown-item text-white" routerLinkActive="active" routerLink='glutenFreeRecipes' routerLinkActive="active" #glutenFreeRecipes="routerLinkActive">Gluten free</a>
+          <a class="dropdown-item text-white" routerLinkActive="active" routerLink='ketogenicRecipes' routerLinkActive="active" #ketogenicRecipes="routerLinkActive">KetoGeneic</a>
+          <a class="dropdown-item text-white" routerLinkActive="active" routerLink='vegetarianRecipes' routerLinkActive="active" #vegetarianRecipes="routerLinkActive">Vegeterian</a>
+          <a class="dropdown-item text-white" routerLinkActive="active" routerLink='veganRecipes' routerLinkActive="active" #veganRecipes="routerLinkActive">Vegan</a>
+          <a class="dropdown-item text-white" routerLinkActive="active" routerLink='lactovegetarianRecipes' routerLinkActive="active" #lactovegetarianRecipes="routerLinkActive">Lacto-Vegeterian</a>
+          <a class="dropdown-item text-white" routerLinkActive="active" routerLink='ovoVegetarianRecipes' routerLinkActive="active" #ovoVegetarianRecipes="routerLinkActive">Ovo-Vegeterian</a>
         </div>
       </li>
 

@@ -61,7 +61,7 @@ export class MealPlanComponent implements OnInit {
                       this.mealPlan = data.week;
                 
                       setTimeout(function(){
-                        window.scrollTo(0,800)
+                        window.scrollTo(0,700)
                       }, 500);
                       
             
@@ -73,7 +73,7 @@ export class MealPlanComponent implements OnInit {
                       this.mealPlan = data;
                 
                       setTimeout(function(){
-                        window.scrollTo(0,800)
+                        window.scrollTo(0,700)
                          }, 3000);
                 
                       } );

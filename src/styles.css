@@ -17,8 +17,8 @@ html
 
 body{
     position: relative;
-    background-color: #fff;
-    font-family: 'Indie Flower', cursive;
+    background-color: #ffffff;
+    font-family: 'Poppins', sans-serif;
     min-height: 100vh;
     min-width: 100vh;
     overflow-y: scroll;
@@ -43,6 +43,12 @@ body{
 .bg-lightgreen
 {
     background-color: rgb(var(--lightGreen));
+}
+
+
+/*Mostafa*/
+.font{
+    font-family: 'Poppins', sans-serif !important; 
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -100,7 +106,12 @@ hr{
     transition: 0.3s linear;
 }
 
-
+h2{
+    font-size: 18px;
+}
+.profile-name{
+    font-size: 18px;
+}
 
 
 

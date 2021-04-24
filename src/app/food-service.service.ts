@@ -70,7 +70,7 @@ export class FoodServiceService {
   // get the informaion of a specific recipe
    getRecipeInfo(id ):Observable<any>
   {
-    return this.http.get(`https://api.spoonacular.com/recipes/${id}/information?includeNutrition=true&apiKey=44e6a48b78ae497bb8e4898b5f810f90`)
+     return this.http.get(`https://api.spoonacular.com/recipes/${id}/information?includeNutrition=true&apiKey=d2eb44ed03834a8694a9cde352526898`)
   }
 
   // get random main course recipes 
@@ -112,7 +112,7 @@ export class FoodServiceService {
   // get meal plan
   getMealPlan(timeFrame , targetCalories):Observable<any>
   {
-    return this.http.get(`https://api.spoonacular.com/mealplanner/generate?timeFrame=${timeFrame}&targetCalories=${targetCalories}&apiKey=fe26a95e13b64e73946d15117dd36a89`)
+    return this.http.get(`https://api.spoonacular.com/mealplanner/generate?timeFrame=${timeFrame}&targetCalories=${targetCalories}&apiKey=845021c2f5da40f0a2b9a093308e29fd`)
   }
 
 

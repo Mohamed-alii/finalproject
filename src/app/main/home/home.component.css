@@ -24,21 +24,20 @@ video{
     right: 0;
     left: 0;
     z-index:2;
-    background-color: rgba(56, 54, 54, 0.822);
+    background-color: rgba(114, 112, 68, 0.6);
     padding-top: 18rem;
     padding-bottom: 18rem;
 }
 h1{
-    color: #fff;
+    color:#FFFADD;
     font-size: 4rem;
     font-weight: 800;
     margin-top: -3rem;
     line-height: 5rem;
     text-transform: uppercase;
     letter-spacing: 0.2rem;
-    font-family: 'Original Surfer', cursive;
+    font-family:'Fugaz One', cursive;
 }
-
 header p{
     color: #fff !important;
     font-size: 1rem;
@@ -55,7 +54,7 @@ a{
 }
 /* abouts-us section */
 .about-us{
-    background-color: #F7F4ED;
+   background-color:#FFFADD;
 
 }
 .about-us .container{
@@ -75,7 +74,7 @@ a{
     font-size: 1.8rem;
     line-height: 2.5rem;
     text-transform:uppercase ;
-    font-family: 'Original Surfer', cursive;
+    font-family: 'Fugaz One', cursive;
 }
 .about-us p{
     font-size: 0.9rem;
@@ -99,9 +98,10 @@ li{
 
 /* subscribe form style */
 .subscribe{
-    background: url('/assets/images/50.png');
+   background-color:#FFFADD;
     background-repeat: repeat-x;
     background-position: top;
+
 }
 .subsribe-content{
 	text-align: center;
@@ -112,7 +112,7 @@ li{
 	letter-spacing: 3px;
     color:green;
     font-size: 3rem;
-    font-family: 'Original Surfer', cursive;
+    font-family: 'Fugaz One', cursive;
 }
 .container p{
     color: #333333;

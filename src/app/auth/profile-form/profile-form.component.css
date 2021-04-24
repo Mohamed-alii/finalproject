@@ -82,6 +82,11 @@ button.pro-btn:hover{
     box-shadow: 2px 2px 5px #184d47;
     color:rgb(255, 251, 239);
 }
+.place-image .image-holder .image-upload-btn mat-icon{
+    font-size: 10px !important;
+}
+
+
 
 @media (max-width:1025px){
     .profile-form{

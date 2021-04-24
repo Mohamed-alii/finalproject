@@ -47,6 +47,10 @@ i
 .reipe-title-bg
 {
     background-color:  var(--green);
+    font-size: 18px;
+    font-weight: 400;
+    color: white;
+    padding: 5px 0;
 }
 
 .section-lightGrey-bg

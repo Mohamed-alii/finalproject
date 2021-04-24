@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/auth/services/auth.service';
 
 
+
 @Component({
   selector: 'app-recipe-info',
   templateUrl: './recipe-info.component.html',
@@ -22,38 +23,48 @@ export class RecipeInfoComponent implements OnInit {
   igredientsImgprefix;
   equipmentImgprefix;
   isFavorite: boolean = false; // if true => this means that this recipe is Favorite for the user and vice versa
-  favMeals=[]; //from store ngrx
-
+  //Mostafa/********/
+  favMeals = []; //from store ngrx
+  isloged;
+  isFavClicked = false;
+  message ="You must login first before adding recipe to your favorite recipes "
+  
   constructor(private foodServiceService: FoodServiceService, private activatedRoute: ActivatedRoute,
     private Auth: AuthService,
     private store: Store<{ user }>) {
 
 
-    this.store.select("user").subscribe(data => this.favMeals = data.fav)
+    this.store.select("user").subscribe(data => {
+      this.isloged = data.login
+      this.favMeals = data.fav
+    })
+
+
+
     this.recipeId = this.activatedRoute.snapshot.paramMap.get('id');
 
     console.log(this.favMeals.length)
 
-    if(this.favMeals.length != 0){
+    if (this.favMeals.length != 0) {
       // the user has fav meals
       // so we want to know if this recipe is one of them or not , so we can show the right button
-      for(let i = 0; i < this.favMeals.length; i++){
+      for (let i = 0; i < this.favMeals.length; i++) {
 
         console.log(this.favMeals[i].id)
         console.log(this.recipeId)
 
 
-        if(this.favMeals[i].id == this.recipeId){
+        if (this.favMeals[i].id == this.recipeId) {
           // this recipe is already a favorite one
           this.isFavorite = true;
           break;
         }
 
       }
-      
+
     }
 
-      
+
 
     this.foodServiceService.getRecipeInfo(this.recipeId).subscribe((data) => {
 
@@ -70,6 +81,11 @@ export class RecipeInfoComponent implements OnInit {
   }
 
   addToFavourate() {
+    if (!this.isloged) {
+      this.isFavClicked = !this.isFavClicked
+      return
+}
+
     // object will be send
     let favourateRecipe = {
       title: this.recipe.title,
@@ -90,23 +106,28 @@ export class RecipeInfoComponent implements OnInit {
         }
       }
       this.Auth.removeFav(favourateRecipe)
+
+
       this.isFavorite = false;
+
 
 
     } else {
       // here this recipe not a favorite one and the user wants to add it to favorites so he clicked add 
       // show the remove to Favorite button 
       this.Auth.setFavMeal(favourateRecipe)
+     
       this.isFavorite = true;
 
     }
-
-
-
-
   }
 
   ngOnInit(): void {
+  }
+
+
+  onCloseAlert() {
+    this.isFavClicked = false
   }
 
 

@@ -76,7 +76,7 @@ export class FoodServiceService {
   // get random main course recipes 
   getMainCourseRecipes():Observable<any>
   {
-    return this.http.get(`https://api.spoonacular.com/recipes/random?number=50&tags=main%20course&apiKey=44e6a48b78ae497bb8e4898b5f810f90 `)
+    return this.http.get(`https://api.spoonacular.com/recipes/random?number=50&tags=main%20course&apiKey=845021c2f5da40f0a2b9a093308e29fd`)
   }
 
   // get random side dish recipes 

@@ -1,150 +1,175 @@
-
 <!-- [ngClass]=" isHomePage == true && isSmallScreen == false? 'bg-transparentt' : 'bg-navbar' -->
 
-  <!--  home page  -->
-<nav #navbar *ngIf='isHomePage == true && isSmallScreen == false'  class="navbar navbar-expand-lg fixed-top navbar-dark bg-transparentt" >
-    <a class="navbar-brand " href="#">
-        <img class="img-fluid" src="../../../assets/images/logo.png" >
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto text-center">
-        <li class="nav-item " routerLinkActive="active">
-          <a class="nav-link" routerLink='home' >Home </a>
-        </li>
-        
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Meals
-          </a>
-          <div class="dropdown-menu text-center bg-dropdown"  aria-labelledby="navbarDropdown">
-            <a class="dropdown-item p-2 text-white" routerLink='breakfast' routerLinkActive="active">Break fast</a>
-            <a class="dropdown-item p-2 text-white" routerLink='mainCourse' routerLinkActive="active" >Main course</a>
-            <a class="dropdown-item p-2 text-white" routerLink='salad' routerLinkActive="active" >Salads</a>
-            <a class="dropdown-item p-2 text-white" routerLink='snack' routerLinkActive="active" >Snacks</a>
-            <a class="dropdown-item p-2 text-white" routerLink='sideDish' routerLinkActive="active" >Side dishes</a>
-          </div>
-        </li>
+<!--  home page  -->
+<nav #navbar *ngIf='isHomePage == true && isSmallScreen == false'
+  class="navbar navbar-expand-lg fixed-top navbar-dark bg-transparentt">
+  <a class="navbar-brand " href="#">
+    <img class="img-fluid" src="../../../assets/images/logo.png">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Diets
-            </a>
-            <div class="dropdown-menu text-center bg-dropdown" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item text-white" routerLinkActive="active" routerLink='glutenFreeRecipes'>Gluten free</a>
-              <a class="dropdown-item text-white" routerLinkActive="active" routerLink='ketogenicRecipes'>KetoGeneic</a>
-              <a class="dropdown-item text-white" routerLinkActive="active" routerLink='vegetarianRecipes'>Vegeterian</a>
-              <a class="dropdown-item text-white" routerLinkActive="active" routerLink='veganRecipes'>Vegan</a>
-              <a class="dropdown-item text-white" routerLinkActive="active" routerLink='lactovegetarianRecipes'>Lacto-Vegeterian</a>
-              <a class="dropdown-item text-white" routerLinkActive="active" routerLink='ovoVegetarianRecipes'>Ovo-Vegeterian</a>
-            </div>
-          </li>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto text-center">
+      <li class="nav-item " routerLinkActive="active">
+        <a class="nav-link" routerLink='home'>Home </a>
+      </li>
 
-          <li class="nav-item " routerLinkActive="active">
-            <a class="nav-link" routerLink='mealPlan' >Meals plan </a>
-          </li>
-        
-      </ul>
-
-      
-
-      <form class="form-inline my-2 my-lg-0">
-        <input #searchInput class="form-control mx-sm-auto mx-lg-2   input-search" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn search-btn my-2 my-sm-2 mx-auto" type="button" (click)='search($event)'>Search</button>
-      </form>
-
-      <div  class="action mx-5" (click)='profileToggle()'>
-        <div class="profile mx-auto">
-            <img class="profile-img" src="../../../assets/images/profile.jpg" >
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Meals
+        </a>
+        <div class="dropdown-menu text-center bg-dropdown" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item p-2 text-white" routerLink='breakfast' routerLinkActive="active">Break fast</a>
+          <a class="dropdown-item p-2 text-white" routerLink='mainCourse' routerLinkActive="active">Main course</a>
+          <a class="dropdown-item p-2 text-white" routerLink='salad' routerLinkActive="active">Salads</a>
+          <a class="dropdown-item p-2 text-white" routerLink='snack' routerLinkActive="active">Snacks</a>
+          <a class="dropdown-item p-2 text-white" routerLink='sideDish' routerLinkActive="active">Side dishes</a>
         </div>
-          <div #navbarMenu class="menu p-2" >
-            <h3 *ngIf='isLoginUser' class="text-center py-2 font-weight-bold">someone </h3>
-            <ul > 
-                <li *ngIf='isLoginUser' > <img src="../../../assets/images/user.png"> <a routerLink='profile'>my profile</a> </li>
-                <li *ngIf='isLoginUser'> <img src="../../../assets/images/log-out.png"> <a routerLink='register'>logout</a> </li>
-                <li class="mt-3" *ngIf='!isLoginUser'> <img src="../../../assets/images/user.png"> <a routerLink='profile'>sign in</a> </li>
-                <li *ngIf='!isLoginUser'> <img src="../../../assets/images/log-out.png"> <a routerLink='register'>sign up</a> </li>
+      </li>
 
-            </ul>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Diets
+        </a>
+        <div class="dropdown-menu text-center bg-dropdown" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item text-white" routerLinkActive="active" routerLink='glutenFreeRecipes'>Gluten free</a>
+          <a class="dropdown-item text-white" routerLinkActive="active" routerLink='ketogenicRecipes'>KetoGeneic</a>
+          <a class="dropdown-item text-white" routerLinkActive="active" routerLink='vegetarianRecipes'>Vegeterian</a>
+          <a class="dropdown-item text-white" routerLinkActive="active" routerLink='veganRecipes'>Vegan</a>
+          <a class="dropdown-item text-white" routerLinkActive="active"
+            routerLink='lactovegetarianRecipes'>Lacto-Vegeterian</a>
+          <a class="dropdown-item text-white" routerLinkActive="active"
+            routerLink='ovoVegetarianRecipes'>Ovo-Vegeterian</a>
         </div>
+      </li>
+
+      <li class="nav-item " routerLinkActive="active">
+        <modal *ngIf="! isLoginUser && isPlanClicked" (close)="onCloseAlert()" [message]="message"></modal>
+        <a class="nav-link" routerLink='mealPlan' (click)="onOpenAlert()">Meals plan </a>
+      </li>
+
+    </ul>
+
+
+
+    <form class="form-inline my-2 my-lg-0">
+      <input #searchInput class="form-control mx-sm-auto mx-lg-2   input-search" type="search" placeholder="Search"
+        aria-label="Search">
+      <button class="btn search-btn my-2 my-sm-2 mx-auto" type="button" (click)='search($event)'>Search</button>
+    </form>
+
+    <div class="action mx-5" (click)='profileToggle()'>
+      <div class="profile mx-auto">
+        <img *ngIf=" ! isLoginUser" class="profile-img" src="../../../assets/pngkey.com-avatar-png-1150152.png">
+        <img *ngIf="isLoginUser" class="profile-img" src="{{user.photo}}">
       </div>
-
-    </div>
-  </nav>
-
-  <!-- not home page  -->
-  <nav #navbar *ngIf='!isHomePage == true || isSmallScreen == true'  class="navbar navbar-expand-lg fixed-top navbar-dark bg-navbar" >
-    <a class="navbar-brand " href="#">
-        <img class="img-fluid" src="../../../assets/images/logo.png" >
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto text-center">
-        <li class="nav-item " routerLinkActive="active">
-          <a class="nav-link" routerLink='home' >Home </a>
-        </li>
-        
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Meals
-          </a>
-          <div class="dropdown-menu text-center bg-dropdown"  aria-labelledby="navbarDropdown">
-            <a class="dropdown-item p-2 text-white" routerLink='breakfast' routerLinkActive="active">Break fast</a>
-            <a class="dropdown-item p-2 text-white" routerLink='mainCourse' routerLinkActive="active" >Main course</a>
-            <a class="dropdown-item p-2 text-white" routerLink='salad' routerLinkActive="active" >Salads</a>
-            <a class="dropdown-item p-2 text-white" routerLink='snack' routerLinkActive="active" >Snacks</a>
-            <a class="dropdown-item p-2 text-white" routerLink='sideDish' routerLinkActive="active" >Side dishes</a>
-          </div>
-        </li>
-
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Diets
-            </a>
-            <div class="dropdown-menu text-center bg-dropdown" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item text-white" routerLinkActive="active" routerLink='glutenFreeRecipes'>Gluten free</a>
-              <a class="dropdown-item text-white" routerLinkActive="active" routerLink='ketogenicRecipes'>KetoGeneic</a>
-              <a class="dropdown-item text-white" routerLinkActive="active" routerLink='vegetarianRecipes'>Vegeterian</a>
-              <a class="dropdown-item text-white" routerLinkActive="active" routerLink='veganRecipes'>Vegan</a>
-              <a class="dropdown-item text-white" routerLinkActive="active" routerLink='lactovegetarianRecipes'>Lacto-Vegeterian</a>
-              <a class="dropdown-item text-white" routerLinkActive="active" routerLink='ovoVegetarianRecipes'>Ovo-Vegeterian</a>
-            </div>
+      <div #navbarMenu class="menu p-2">
+        <h3 *ngIf='isLoginUser' class="text-center py-2 font-weight-bold">{{user.fName}} {{user.lName}} </h3>
+        <ul>
+          <li *ngIf='isLoginUser'> <img src="../../../assets/images/user.png"> <a routerLink='profile'>My profile</a>
+          </li>
+          <li *ngIf='isLoginUser'> <img src="../../../assets/images/log-out.png"> <a routerLink='/home'
+              (click)=" logout()">Logout</a> </li>
+          <li class="mt-3" *ngIf='!isLoginUser'> <img src="../../../assets/login.png"> <a routerLink='/login'>Sign
+              in</a> </li>
+          <li *ngIf='!isLoginUser'> <img src="../../../assets/registration.png"> <a routerLink='register'>Sign up</a>
           </li>
 
-          <li class="nav-item " routerLinkActive="active">
-            <a class="nav-link" routerLink='mealPlan' routerLinkActive="active">Meals plan </a>
-          </li>
-        
-      </ul>
-
-      
-
-      <form class="form-inline my-2 my-lg-0">
-        <input #searchInput class="form-control mx-sm-auto mx-lg-2   input-search" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn search-btn my-2 my-sm-2 mx-auto" type="button" (click)='search($event)'>Search</button>
-      </form>
-
-      <div  class="action mx-5" (click)='profileToggle()'>
-        <div class="profile mx-auto">
-            <img class="profile-img" src="../../../assets/images/profile.jpg" >
-        </div>
-        <div #navbarMenu class="menu p-2" >
-            <h3 *ngIf='isLoginUser' class="text-center py-2 font-weight-bold">someone </h3>
-            <ul > 
-                <li *ngIf='isLoginUser' > <img src="../../../assets/images/user.png"> <a routerLink='profile'>my profile</a> </li>
-                <li *ngIf='isLoginUser'> <img src="../../../assets/images/log-out.png"> <a routerLink='register'>logout</a> </li>
-                <li class="mt-3" *ngIf='!isLoginUser'> <img src="../../../assets/images/user.png"> <a routerLink='profile'>sign in</a> </li>
-                <li *ngIf='!isLoginUser'> <img src="../../../assets/images/log-out.png"> <a routerLink='register'>sign up</a> </li>
-
-            </ul>
-        </div>
+        </ul>
       </div>
-
     </div>
-  </nav>
+
+  </div>
+</nav>
+
+<!-- not home page  -->
+<nav #navbar *ngIf='!isHomePage == true || isSmallScreen == true'
+  class="navbar navbar-expand-lg fixed-top navbar-dark bg-navbar">
+  <a class="navbar-brand " href="#">
+    <img class="img-fluid" src="../../../assets/images/logo.png">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto text-center">
+      <li class="nav-item " routerLinkActive="active">
+        <a class="nav-link" routerLink='home'>Home </a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Meals
+        </a>
+        <div class="dropdown-menu text-center bg-dropdown" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item p-2 text-white" routerLink='breakfast' routerLinkActive="active">Break fast</a>
+          <a class="dropdown-item p-2 text-white" routerLink='mainCourse' routerLinkActive="active">Main course</a>
+          <a class="dropdown-item p-2 text-white" routerLink='salad' routerLinkActive="active">Salads</a>
+          <a class="dropdown-item p-2 text-white" routerLink='snack' routerLinkActive="active">Snacks</a>
+          <a class="dropdown-item p-2 text-white" routerLink='sideDish' routerLinkActive="active">Side dishes</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Diets
+        </a>
+        <div class="dropdown-menu text-center bg-dropdown" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item text-white" routerLinkActive="active" routerLink='glutenFreeRecipes'>Gluten free</a>
+          <a class="dropdown-item text-white" routerLinkActive="active" routerLink='ketogenicRecipes'>KetoGeneic</a>
+          <a class="dropdown-item text-white" routerLinkActive="active" routerLink='vegetarianRecipes'>Vegeterian</a>
+          <a class="dropdown-item text-white" routerLinkActive="active" routerLink='veganRecipes'>Vegan</a>
+          <a class="dropdown-item text-white" routerLinkActive="active"
+            routerLink='lactovegetarianRecipes'>Lacto-Vegeterian</a>
+          <a class="dropdown-item text-white" routerLinkActive="active"
+            routerLink='ovoVegetarianRecipes'>Ovo-Vegeterian</a>
+        </div>
+      </li>
+
+      <li class="nav-item " routerLinkActive="active">
+        <modal *ngIf="! isLoginUser && isPlanClicked" (close)="onCloseAlert()" [message]="message"></modal>
+        <a class="nav-link" routerLink='mealPlan' (click)="onOpenAlert()">Meals plan </a>
+      </li>
+
+    </ul>
+
+
+
+    <form class="form-inline my-2 my-lg-0">
+      <input #searchInput class="form-control mx-sm-auto mx-lg-2   input-search" type="search" placeholder="Search"
+        aria-label="Search">
+      <button class="btn search-btn my-2 my-sm-2 mx-auto" type="button" (click)='search($event)'>Search</button>
+    </form>
+
+    <div class="action mx-5" (click)='profileToggle()'>
+      <div class="profile mx-auto">
+        <img *ngIf=" ! isLoginUser" class="profile-img" src="../../../assets/pngkey.com-avatar-png-1150152.png">
+        <img *ngIf="isLoginUser" class="profile-img" src="{{user.photo}}">
+      </div>
+      <div #navbarMenu class="menu p-2">
+        <h3 *ngIf='isLoginUser' class="text-center py-2 font-weight-bold">{{user.fName}} {{user.lName}} </h3>
+        <ul>
+          <li *ngIf='isLoginUser'> <img src="../../../assets/images/user.png"> <a routerLink='profile'>My profile</a>
+          </li>
+          <li *ngIf='isLoginUser'> <img src="../../../assets/images/log-out.png"> <a routerLink='home'
+              (click)=" logout()">Logout</a> </li>
+          <li class="mt-3" *ngIf='!isLoginUser'> <img src="../../../assets/login.png"> <a routerLink='/login'>Sign
+              in</a> </li>
+          <li *ngIf='!isLoginUser'> <img src="../../../assets/registration.png"> <a routerLink='register'>Sign up</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</nav>

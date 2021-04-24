@@ -1,0 +1,16 @@
+<div class="backdrop" (click)="onClose()">
+    <div class="row move">
+        <div class="container">
+            <div class="col-8 col-md-5 mx-auto bg-white  shad border p-3 animate__animated animate__backInUp">
+                <div class="text-right">
+                    <!-- <i class="far fa-times-circle fa-x2 text-warning m-1 " (click)="onClose()"></i> -->
+                </div>
+                <h2 class="text-success text-center mb-4">{{message}}</h2>
+              <div class="d-flex justify-content-center mt-4">
+                  <button type="button" class="btn btn-success  border mr-2 "  routerLink="/login" (click)="onClose()">Sign in</button>
+                  <button type="button" class="btn btn-secondary"  routerLink="/register" (click)="onClose()">Sign up</button>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>

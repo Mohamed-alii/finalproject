@@ -20,13 +20,13 @@
         </div>
     </div>
     <div class="mb-1">
-        <input type="password" placeholder="Password..." class="form-control" id="pass" name="pass" ngModel #pass="ngModel" minlength="8" required>
+        <input type="password" placeholder="Password..." class="form-control" id="pass" name="pass" ngModel #pass="ngModel" minlength="6" required>
         <div *ngIf="pass.errors && pass.touched">
             <div *ngIf="pass.errors.required">
                 <div class=" validat-txt m-auto text-center">This feild is required</div>
             </div>
             <div *ngIf="pass.errors.minlength">
-                <div class="validat-txt m-auto text-center">at least 8 characters</div>
+                <div class="validat-txt m-auto text-center">at least 6 characters</div>
             </div>
         </div>
     </div>

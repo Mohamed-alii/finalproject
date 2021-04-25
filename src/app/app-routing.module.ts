@@ -27,7 +27,7 @@ import { ContactUsComponent } from './auth/contact-us/contact-us.component';
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  {path:"" , redirectTo:"home" ,pathMatch:"full" },
   { path: 'home', component: HomeComponent },
   { path: 'profile-form', component: ProfileFormComponent },
   { path: 'profile', component: ProfileComponent },
@@ -46,7 +46,7 @@ const routes: Routes = [
   {path:"breakfast" , component:BreakfastComponent},
   {path:"ContactUs" , component:ContactUsComponent},
   {path:"snack" , component:SnackComponent },
-  { path: "mealPlan", component: MealPlanComponent, canActivate :[AuthGuardGuard]},
+  { path:"mealPlan", component: MealPlanComponent, canActivate :[AuthGuardGuard]},
   {path:"recipeInfo/:id" , component:RecipeInfoComponent},
   {path:"search/:query" , component:SearchComponent}
 

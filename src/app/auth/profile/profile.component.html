@@ -3,8 +3,8 @@
         <span class="sr-only">Loading...</span>
     </div>
 
-    <div class="container-fluid">
-        <div class="col-md-12 " *ngIf="user">
+    <div class="container-fluid ">
+        <div class="col-md-12 profile" *ngIf="user">
             <!-- Profile widget -->
             <div class="bg-white shadow rounded overflow-hidden">
                 <div class="px-4 pt-0 pb-4 cover">
@@ -20,7 +20,7 @@
                 </div>
                 <div class="cover p-4 d-flex justify-content-center justify-content-md-end text-center ">
                     <ul class="list-inline mb-0 " >
-                        <li class="list-inline-item mt-5 " *ngIf='mealsLen' >
+                        <li class="list-inline-item mt-5 animate_animated animate_fadeInRight" *ngIf='mealsLen' >
                             <h2 class="b  p-3  " style="color: rgb(0, 0, 0);">Meals <i class="fas fa-heart text-color" style="color: rgb(0, 0, 0);"></i></h2>
                             <h2 class="font-weight-bold mb-0 text-color">{{mealsLen}}
                                </h2>
@@ -41,7 +41,7 @@
                     </ul>
                 </div>
 
-                <div class="py-4 px-4">
+                <div class="py-4 px-4" *ngIf='mealsLen'>
                     <h3 class="mb-3 text-center " style="font-family: 'Fugaz One', cursive;;">Favorite Meals</h3>
                     <h2 class="text-center" *ngIf="meals.length ==0">You dont have any favorite meals !</h2>
                     <div class="row row-cols-1 row-cols-md-3">

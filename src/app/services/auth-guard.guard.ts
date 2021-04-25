@@ -11,6 +11,7 @@ export class AuthGuardGuard implements CanActivate {
 
   constructor(private store: Store<{ user }>) {
     this.store.select('user').subscribe(data => this.isLogedIn = data.login)
+    console.log(this.isLogedIn ,"from guard")
   }
 
 

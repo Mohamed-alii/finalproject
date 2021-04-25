@@ -29,8 +29,8 @@ ngp-image-picker .place-image .image-holder .image-upload-btn mat-icon{
 }
 body{
     position: relative;
-    background-color: #fff;
-    font-family: 'Indie Flower', cursive;
+    background-color: #ffffff;
+    font-family: 'Poppins', sans-serif;
     min-height: 100vh;
     min-width: 100vh;
     overflow-y: scroll;
@@ -66,6 +66,12 @@ body{
     font: bold !important;
     color: white !important;
 }
+
+/*Mostafa*/
+.font{
+    font-family: 'Poppins', sans-serif !important; 
+}
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -121,13 +127,33 @@ hr{
     transition: 0.3s linear;
 }
 
+h2{
+    font-size: 18px;
+}
+.profile-name{
+    font-size: 18px;
+}
 
 
 
 
 
+.cdk-overlay-container
+{
+    display: none;
+    position: fixed;
+    top: 60%;
+    left: 60%;
+    width: 20%;
+    height: 50%;
+    background-color: yellow;
+    overflow: hidden;
+}
+.cdk-visually-hidden
+{
+    display: none;
 
-
+}
 
 
 

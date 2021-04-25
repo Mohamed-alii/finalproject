@@ -11,8 +11,11 @@ import { AuthService } from '../services/auth.service';
 })
 
 export class ProfileFormComponent implements OnInit {
-  photoLink
-  constructor(private auth: AuthService) { }
+
+photoLink
+  constructor(private auth: AuthService) {
+
+   }
   profileForm = new FormGroup({
     datePic: new FormControl('', [Validators.required]),
     firstName: new FormControl('', [Validators.required]),
@@ -28,7 +31,6 @@ export class ProfileFormComponent implements OnInit {
     const weight = this.profileForm.get("weight").value
     const phoneNumber = this.profileForm.get("phoneNumber").value
     const height = this.profileForm.get("height").value
-
     this.auth.setUserInfo(this.photoLink , firstName, lastName, datePic, weight, phoneNumber, height)
   }
 
@@ -42,6 +44,7 @@ export class ProfileFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
   }
 
 

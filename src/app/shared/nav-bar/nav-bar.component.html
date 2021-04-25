@@ -51,6 +51,10 @@
         <a class="nav-link" routerLink='mealPlan' (click)="onOpenAlert()">Meals plan </a>
       </li>
 
+      <li class="nav-item " routerLinkActive="active">
+        <a class="nav-link" routerLink='ContactUs'>Contact us</a>
+      </li>
+
     </ul>
 
 
@@ -63,11 +67,12 @@
 
     <div class="action mx-5" (click)='profileToggle()'>
       <div class="profile mx-auto">
+        <img *ngIf=" isLoginUser && !user.photo " class="profile-img" src="../../../assets/pngkey.com-avatar-png-1150152.png">
         <img *ngIf=" ! isLoginUser" class="profile-img" src="../../../assets/pngkey.com-avatar-png-1150152.png">
         <img *ngIf="isLoginUser" class="profile-img" src="{{user.photo}}">
       </div>
       <div #navbarMenu class="menu p-2">
-        <h3 *ngIf='isLoginUser' class="text-center py-2 font-weight-bold">{{user.fName}} {{user.lName}} </h3>
+        <h3 *ngIf='isLoginUser' class="text-center py-2 font-weight-bold profile-name">{{user.fName}} {{user.lName}} </h3>
         <ul>
           <li *ngIf='isLoginUser'> <img src="../../../assets/images/user.png"> <a routerLink='profile'>My profile</a>
           </li>
@@ -136,6 +141,10 @@
         <a class="nav-link" routerLink='mealPlan' (click)="onOpenAlert()">Meals plan </a>
       </li>
 
+      <li class="nav-item " routerLinkActive="active">
+        <a class="nav-link" routerLink='ContactUs'>Contact us</a>
+      </li>
+
     </ul>
 
 
@@ -148,11 +157,12 @@
 
     <div class="action mx-5" (click)='profileToggle()'>
       <div class="profile mx-auto">
+        <img *ngIf=" isLoginUser && !user.photo " class="profile-img" src="../../../assets/pngkey.com-avatar-png-1150152.png">
         <img *ngIf=" ! isLoginUser" class="profile-img" src="../../../assets/pngkey.com-avatar-png-1150152.png">
-        <img *ngIf="isLoginUser" class="profile-img" src="{{user.photo}}">
+        <img *ngIf="isLoginUser" class="profile-img " src="{{user.photo}}">
       </div>
       <div #navbarMenu class="menu p-2">
-        <h3 *ngIf='isLoginUser' class="text-center py-2 font-weight-bold">{{user.fName}} {{user.lName}} </h3>
+        <h3 *ngIf='isLoginUser' class="text-center py-2 font-weight-bold profile-name">{{user.fName}} {{user.lName}} </h3>
         <ul>
           <li *ngIf='isLoginUser'> <img src="../../../assets/images/user.png"> <a routerLink='profile'>My profile</a>
           </li>

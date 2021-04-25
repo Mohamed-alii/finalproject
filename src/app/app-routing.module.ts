@@ -21,6 +21,8 @@ import { ProfileComponent } from './auth/profile/profile.component';
 import { RegistrationComponent } from './auth/registration/registration.component';
 import { HomeComponent } from './main/home/home.component';
 import { AuthGuardGuard } from './services/auth-guard.guard';
+import { ContactUsComponent } from './auth/contact-us/contact-us.component';
+
 
 
 
@@ -42,8 +44,9 @@ const routes: Routes = [
   {path:"sideDish" , component:SideDishComponent},
   {path:"salad" , component:SaladComponent},
   {path:"breakfast" , component:BreakfastComponent},
+  {path:"ContactUs" , component:ContactUsComponent},
   {path:"snack" , component:SnackComponent },
-  { path: "mealPlan", component: MealPlanComponent},
+  { path: "mealPlan", component: MealPlanComponent, canActivate :[AuthGuardGuard]},
   {path:"recipeInfo/:id" , component:RecipeInfoComponent},
   {path:"search/:query" , component:SearchComponent}
 

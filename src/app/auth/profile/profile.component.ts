@@ -12,11 +12,13 @@ import { AuthService } from '../services/auth.service';
 export class ProfileComponent {
   user;
   meals;
-
+  mealsLen 
   constructor(private store: Store<{ user }>, private auth: AuthService) {
     this.store.select("user").subscribe(data => {
+      
       this.user = data.user
       this.meals = data.fav
+      this.mealsLen = this.meals.length
       console.log(this.meals)
     })
   }

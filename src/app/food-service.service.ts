@@ -23,8 +23,12 @@ export class FoodServiceService {
   // apikey=845021c2f5da40f0a2b9a093308e29fd
   // apikey=d2eb44ed03834a8694a9cde352526898
   // apikey=933a0b54692b45b2abc44f6816d1b7fa
+  // apikey=792673c4db2047c89d47e2dba9e43d4b
+  // apikey=79b9d3439ca24515abeb98425c9614bc
+  // apikey=2bc9496d04904edf890910812537d527
 
 
+  
   // get random recipes 
   getGeneralRecipes():Observable<any>
   {
@@ -70,7 +74,7 @@ export class FoodServiceService {
   // get the informaion of a specific recipe
    getRecipeInfo(id ):Observable<any>
   {
-    return this.http.get(`https://api.spoonacular.com/recipes/${id}/information?includeNutrition=true&apiKey=d2eb44ed03834a8694a9cde352526898`)
+     return this.http.get(`https://api.spoonacular.com/recipes/${id}/information?includeNutrition=true&apiKey=d2eb44ed03834a8694a9cde352526898`)
   }
 
   // get random main course recipes 
@@ -112,7 +116,7 @@ export class FoodServiceService {
   // get meal plan
   getMealPlan(timeFrame , targetCalories):Observable<any>
   {
-    return this.http.get(`https://api.spoonacular.com/mealplanner/generate?timeFrame=${timeFrame}&targetCalories=${targetCalories}&apiKey=fe26a95e13b64e73946d15117dd36a89`)
+    return this.http.get(`https://api.spoonacular.com/mealplanner/generate?timeFrame=${timeFrame}&targetCalories=${targetCalories}&apiKey=845021c2f5da40f0a2b9a093308e29fd`)
   }
 
 

@@ -13,32 +13,36 @@
                             <img src="{{user.photo}}" alt="..." width="130" class="rounded mb-2 img-thumbnail " />
                         </div>
                         <div class="media-body mb-5 text-white">
-                            <h2 class="mt-0 mb-0">{{user.fName}} {{user.lName}}</h2>
-                            <p class="small mb-4">
-                                <i class="fas fa-map-marker-alt mr-2"></i>New York
-                            </p>
+                            <h3 class="mt-0 mb-0" style="color: rgb(0, 0, 0);">{{user.fName}} {{user.lName}}</h3>
+
                         </div>
                     </div>
                 </div>
                 <div class="cover p-4 d-flex justify-content-center justify-content-md-end text-center ">
-                    <ul class="list-inline mb-0">
-                        <li class="list-inline-item mt-5 ">
-                            <h2 class="font-weight-bold mb-0 text-color">{{user.age}}</h2>
-                            <h2 class="b text-white p-3 ">Age</h2>
+                    <ul class="list-inline mb-0 " >
+                        <li class="list-inline-item mt-5 " *ngIf='mealsLen' >
+                            <h2 class="b  p-3  " style="color: rgb(0, 0, 0);">Meals <i class="fas fa-heart text-color" style="color: rgb(0, 0, 0);"></i></h2>
+                            <h2 class="font-weight-bold mb-0 text-color">{{mealsLen}}
+                               </h2>
                         </li>
                         <li class="list-inline-item mt-5 ">
+                            <h2 class="b  p-3  " style="color: rgb(0, 0, 0);">Age</h2>
+                            <h2 class="font-weight-bold mb-0 text-color">{{user.age}}</h2>
+                        </li>
+                        <li class="list-inline-item mt-5 ">
+                            <h2 class="b p-3 " style="color: rgb(0, 0, 0);">weight</h2>
                             <h2 class="font-weight-bold mb-0 text-color">{{user.weight}}</h2>
-                            <h2 class="b text-white p-3 ">weight</h2>
                         </li>
                         <li class="list-inline-item mt-5">
+                            <h2 class="b p-3 " style="color: rgb(0, 0, 0);">Height</h2>
                             <h2 class="font-weight-bold mb-0 text-color">{{user.height}}</h2>
-                            <h2 class="b text-white  p-3 ">Height</h2>
                         </li>
+                        
                     </ul>
                 </div>
 
                 <div class="py-4 px-4">
-                    <h2 class="mb-3 text-center">Favorite Meals</h2>
+                    <h3 class="mb-3 text-center " style="font-family: 'Fugaz One', cursive;;">Favorite Meals</h3>
                     <h2 class="text-center" *ngIf="meals.length ==0">You dont have any favorite meals !</h2>
                     <div class="row row-cols-1 row-cols-md-3">
 
@@ -46,7 +50,7 @@
 
                             <div class="card h-100 recipe-card">
                                 <a class="recipe-link" [routerLink]="['/recipeInfo', recipe.id]">
-                                    <figure class="img-wrapper position-relative">
+                                    <figure class="img-wrapper position-relative  ">
                                         <div
                                             class="img-overlay d-flex align-items-center justify-content-center rounded">
                                             <h2 class="text-white">View Details</h2>
@@ -55,8 +59,9 @@
                                     </figure>
                                 </a>
                                 <div class="card-body p-1 pt-2 ">
-                                    <h2 class="card-title text-center ">{{recipe.title}} <i
-                                            class="fas fa-heart text-color" (click)="removeMeal(recipe)"></i> </h2>
+                                    <h2 class="card-title text-center  ">{{recipe.title}} <i
+                                            class="fas fa-heart text-color  "
+                                            style="color: rgb(0, 0, 0);" (click)="removeMeal(recipe) "></i> </h2>
                                 </div>
                             </div>
 

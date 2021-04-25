@@ -76,6 +76,7 @@ export class NavBarComponent implements OnInit {
     // Mostafa start here /******************/
     this.auth.getInfo()
     this.store.select("user").subscribe(data => {
+      console.log(data.login)
       this.isLoginUser = data.login
       this.user = data.user
     })
@@ -123,13 +124,14 @@ export class NavBarComponent implements OnInit {
 // Mostafa start here /**************/
   logout() {
     this.auth.logout()
-   
+    this.isPlanClicked = false
   }
   onOpenAlert() {
     this.isPlanClicked = true
   }
   onCloseAlert() {
     this.isPlanClicked = false
+    console.log(this.isPlanClicked , " click")
 
   }
 

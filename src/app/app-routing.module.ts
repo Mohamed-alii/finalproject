@@ -28,6 +28,7 @@ import { ContactUsComponent } from './auth/contact-us/contact-us.component';
 
 
 
+
 const routes: Routes = [
   {path:"" , redirectTo:"home" ,pathMatch:"full" },
   { path: 'home', component: HomeComponent },

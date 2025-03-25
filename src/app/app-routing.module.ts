@@ -22,7 +22,7 @@ import { RegistrationComponent } from './auth/registration/registration.componen
 import { HomeComponent } from './main/home/home.component';
 import { AuthGuardGuard } from './services/auth-guard.guard';
 import { ContactUsComponent } from './auth/contact-us/contact-us.component';
-import { ContactUsComponent } from './auth/contact-us/contact-us.component';
+
 
 
 
